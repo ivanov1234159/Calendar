@@ -22,6 +22,8 @@ unsigned Date::getLastDay(unsigned month, unsigned year) {
     return last_day;
 }
 
+Date::Date(): m_day(1), m_month(1), m_year(0) {}
+
 Date::Date(unsigned day, unsigned month, unsigned year) {
     normalize(day, month, year);
 }

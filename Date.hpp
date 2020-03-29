@@ -12,6 +12,7 @@ class Date {
 
     unsigned getLastDay(unsigned month, unsigned year);
 public:
+    Date();
     Date(unsigned day, unsigned month, unsigned year);
 
     bool operator==(Date const& other) const;
