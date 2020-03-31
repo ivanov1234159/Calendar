@@ -32,6 +32,10 @@ bool Date::operator==(Date const& other) const {
     return m_year == other.m_year && m_month == other.m_month && m_day == other.m_day;
 }
 
+bool Date::operator!=(Date const& other) const {
+    return !(*this == other);
+}
+
 bool Date::operator>(Date const& other) const {
     if(m_year != other.m_year){
         return m_year > other.m_year;
