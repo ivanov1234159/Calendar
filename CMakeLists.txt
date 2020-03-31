@@ -3,4 +3,4 @@ project(Calendar)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Calendar main.cpp Time.cpp Date.cpp Appointment.cpp MyFunctions.cpp)
+add_executable(Calendar main.cpp Time.cpp Date.cpp Appointment.cpp MyFunctions.cpp Calendar.cpp)
