@@ -26,7 +26,7 @@ public:
     bool operator<=(Time const& other) const;
 
     operator int() const;
-    void print(std::ostream& out);
+    void print(std::ostream& out) const;
 
 private:
     void normalize(unsigned hours, unsigned minutes, unsigned seconds);

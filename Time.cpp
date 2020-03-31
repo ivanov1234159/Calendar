@@ -50,8 +50,8 @@ Time::operator int() const {
     return (int)getTotal();
 }
 
-void Time::print(std::ostream &out) {
-    out << obj.m_hours << ':' << obj.m_minutes << ':' << obj.m_seconds;
+void Time::print(std::ostream &out) const {
+    out << m_hours << ':' << m_minutes << ':' << m_seconds;
 }
 
 void Time::normalize(unsigned hours, unsigned minutes, unsigned seconds) {
