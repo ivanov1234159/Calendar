@@ -20,6 +20,7 @@ public:
     int difference(Time const& other) const;
 
     bool operator==(Time const& other) const;
+    bool operator!=(Time const& other) const;
     bool operator>(Time const& other) const;
     bool operator<(Time const& other) const;
     bool operator>=(Time const& other) const;

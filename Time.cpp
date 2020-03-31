@@ -30,6 +30,10 @@ bool Time::operator==(Time const& other) const {
     return difference(other) == 0;
 }
 
+bool Time::operator!=(Time const& other) const {
+    return !(*this == other);
+}
+
 bool Time::operator>(Time const& other) const {
     return difference(other) > 0;
 }
