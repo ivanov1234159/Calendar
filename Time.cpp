@@ -55,7 +55,9 @@ Time::operator int() const {
 }
 
 void Time::print(std::ostream &out) const {
-    out << m_hours << ':' << m_minutes << ':' << m_seconds;
+    out << (m_hours < 10 ? "0" : "") << m_hours
+        << (m_minutes < 10 ? ":0" : ":") << m_minutes
+        << (m_seconds < 10 ? ":0" : ":") << m_seconds;
 }
 
 void Time::normalize(unsigned hours, unsigned minutes, unsigned seconds) {

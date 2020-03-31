@@ -5,6 +5,9 @@
 #ifndef CALENDAR_DATE_HPP
 #define CALENDAR_DATE_HPP
 
+#include <iostream>
+//for: ostream
+
 class Date {
     unsigned m_day;
     unsigned m_month;
@@ -22,8 +25,12 @@ public:
     bool operator>=(Date const& other) const;
     bool operator<=(Date const& other) const;
 
+    friend std::ostream& operator<<(std::ostream& out, Date const& obj);
+
 private:
     void normalize(unsigned day, unsigned month, unsigned year);
 };
+
+std::ostream& operator<<(std::ostream& out, Date const& obj);
 
 #endif //CALENDAR_DATE_HPP

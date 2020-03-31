@@ -21,3 +21,11 @@ char const* Appointment::getNote() const { return m_note; }
 Date Appointment::getDate() const { return m_date; }
 Time Appointment::getStartTime() const { return m_start; }
 Time Appointment::getEndTime() const { return m_end; }
+
+std::ostream& operator<<(std::ostream& out, Appointment const& obj){
+    return out << "An appointment named " << obj.getName()
+    << " is on " << obj.getDate()
+    << " starts at " << obj.getStartTime()
+    << "  and ends at " << obj.getEndTime()
+    <<  std::endl << " Notes: " << obj.getNote() << std::endl;
+}

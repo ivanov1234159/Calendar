@@ -5,6 +5,8 @@
 #ifndef CALENDAR_APPOINTMENT_HPP
 #define CALENDAR_APPOINTMENT_HPP
 
+#include <iostream>
+//for: ostream, endl
 #include "Date.hpp"
 #include "Time.hpp"
 
@@ -24,5 +26,7 @@ public:
     Time getStartTime() const;
     Time getEndTime() const;
 };
+
+std::ostream& operator<<(std::ostream& out, Appointment const& obj);
 
 #endif //CALENDAR_APPOINTMENT_HPP
