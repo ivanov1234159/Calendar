@@ -34,6 +34,8 @@ public:
     bool empty() const;
     bool full() const;
 
+    void getName(char*& out_ptr) const;
+
     bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);
     bool unbook(Date const& date, Time const& start, Time const& end);
     void agenda(Date const& date, std::ostream& out);

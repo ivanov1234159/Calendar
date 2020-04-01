@@ -34,6 +34,10 @@ bool Calendar::full() const {
     return m_size == m_limit;
 }
 
+void Calendar::getName(char *&out_ptr) const {
+    mem_copy(out_ptr, m_name, false);
+}
+
 bool Calendar::book(Date const &date, Time const &start, Time const &end, char const *name, char const *note) {
     if(!isFree(date, start, end)){
         return false;
