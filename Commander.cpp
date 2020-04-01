@@ -90,7 +90,6 @@ void Commander::run(RunnerType& runner) {
     }
 }
 
-
 void commander_error(bool print_help = true){
     std::cout << "Invalid command!";
     if(print_help){
@@ -102,17 +101,36 @@ void commander_error(bool print_help = true){
 bool cmd_exit(RunnerType& runner, std::istringstream& iss){
     /* NEEDED; executes before break the while in Commander::run() */
 
-    // do nothing
+    std::cout << "Exiting the program..." << std::endl;
     return true;
 }
 
 bool cmd_open(RunnerType& runner, std::istringstream& iss){
-    //TODO
+    char* path = nullptr;
+    iss >> path;
+    if(!iss){
+        return false;
+    }
+    if(runner.open(path)){
+        std::cout << "Successfully opened " << path << std::endl;
+    } else {
+        std::cout << "Couldn't open " << path << std::endl;
+    }
     return true;
 }
 
-bool cmd_close(RunnerType& runner, std::istringstream& iss){
-    //TODO
+bool cmd_close(RunnerType& runner, std::istringstream&){
+    char* filename = nullptr;
+    if(runner.close(filename)){
+        if(filename == nullptr){
+            std::cout << "There isn't a file to be closed." << std::endl;
+        }else{
+            std::cout << "Successfully closed " << filename << std::endl;
+        }
+    } else {// never
+        std::cout << "Couldn't close the file." << std::endl;
+        return false;
+    }
     return true;
 }
 
