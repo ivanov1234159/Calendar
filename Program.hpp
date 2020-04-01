@@ -5,7 +5,7 @@
 #ifndef CALENDAR_PROGRAM_HPP
 #define CALENDAR_PROGRAM_HPP
 
-class Progrm {
+class Program {
 
 };
 
