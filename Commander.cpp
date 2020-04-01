@@ -69,8 +69,10 @@ void Commander::outUsage(unsigned index, std::ostream& out){
 void Commander::run(RunnerType& runner) {
     while (true){
         char buffer[Commander::BUFFER_SIZE];
+        //char* buffer = new char[Commander::BUFFER_SIZE];
         std::cin.getline(buffer, Commander::BUFFER_SIZE);
         std::istringstream iss(buffer);
+        //delete[] buffer;
         char* cmd;
         iss >> cmd;
         int index = Commander::findIndex(cmd);
