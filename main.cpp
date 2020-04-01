@@ -1,6 +1,7 @@
-#include <iostream>
+#include "Commander.hpp"
+#include "Program.hpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Commander::run(Program());
     return 0;
 }
