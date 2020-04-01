@@ -52,7 +52,7 @@ bool Calendar::unbook(Date const &date, Time const &start, Time const &end) {
         *search = *(search+1);
         search++;
     }
-    last = Appointment();
+    *last = Appointment();
     return true;
 }
 
