@@ -3,7 +3,6 @@
 //
 
 #include "Commander.hpp"
-#include "Calendar.hpp"
 
 /* For all of the following functions:
  *      returns false if there is a problem with the arguments (their type or count)
@@ -37,7 +36,7 @@ bool cmd_close(RunnerType& runner, std::istringstream&){
     if(runner.close(filename)){
         if(filename == nullptr){
             std::cout << "There isn't a file to be closed." << std::endl;
-        }else{
+        } else {
             std::cout << "Successfully closed " << filename << std::endl;
         }
     } else {// never
@@ -47,8 +46,18 @@ bool cmd_close(RunnerType& runner, std::istringstream&){
     return true;
 }
 
-bool cmd_save(RunnerType& runner, std::istringstream& iss){
-    //TODO
+bool cmd_save(RunnerType& runner, std::istringstream&){
+    char* filename = nullptr;
+    if(runner.save(filename)){
+        if(filename == nullptr){
+            std::cout << "There isn't a file to be saved." << std::endl;
+        } else {
+            std::cout << "Successfully saved " << filename << std::endl;
+        }
+    } else {// never
+        std::cout << "Couldn't save the file." << std::endl;
+        return false;
+    }
     return true;
 }
 

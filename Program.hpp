@@ -19,7 +19,8 @@ public:
     bool opened() const;
 
     bool open(char const* file_path);
-    bool close(char*& file_path);// file_path is to return the file_path (from m_calendar->m_name)
+    bool close(char*& file_name);// file_name is to return the file_name (from m_calendar->m_name)
+    bool save(char*& file_name);// file_name is to return the file_name (from m_calendar->m_name)
 
 private:
     void clear();

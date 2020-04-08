@@ -22,15 +22,27 @@ bool Program::open(char const *file_path) {
     return true;
 }
 
-bool Program::close(char *&file_path) {
+bool Program::close(char *&file_name) {
     if(!opened()){
         return true;
     }
-    if(file_path != nullptr){
+    if(file_name != nullptr){
         return false;
     }
-    m_calendar->getName(file_path);
+    m_calendar->getName(file_name);
     clear();
+    return true;
+}
+
+bool Program::save(char *&file_name) {
+    if(!opened()){
+        return true;
+    }
+    if(file_name != nullptr){
+        return false;
+    }
+    m_calendar->getName(file_name);
+    //TODO
     return true;
 }
 
