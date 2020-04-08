@@ -23,41 +23,53 @@ bool cmd_open(RunnerType& runner, std::istringstream& iss){
     if(!iss){
         return false;
     }
-    if(runner.open(path)){
+    bool result = runner.open(path);
+    delete[] path;
+    //reuse the variable path as file_name
+    path = nullptr;
+    runner.getFileName(path);
+    if(result){
         std::cout << "Successfully opened " << path << std::endl;
     } else {
         std::cout << "Couldn't open " << path << std::endl;
     }
+    delete[] path;
     return true;
 }
 
 bool cmd_close(RunnerType& runner, std::istringstream&){
     char* filename = nullptr;
-    if(runner.close(filename)){
+    if(runner.close()){
+        runner.getFileName(filename);
         if(filename == nullptr){
             std::cout << "There isn't a file to be closed." << std::endl;
         } else {
             std::cout << "Successfully closed " << filename << std::endl;
         }
-    } else {// never
+        delete[] filename;
+    }
+    /*else {// never
         std::cout << "Couldn't close the file." << std::endl;
         return false;
-    }
+    }*/
     return true;
 }
 
 bool cmd_save(RunnerType& runner, std::istringstream&){
     char* filename = nullptr;
-    if(runner.save(filename)){
+    if(runner.save()){
+        runner.getFileName(filename);
         if(filename == nullptr){
             std::cout << "There isn't a file to be saved." << std::endl;
         } else {
             std::cout << "Successfully saved " << filename << std::endl;
         }
-    } else {// never
+        delete[] filename;
+    }
+    /*else {// never
         std::cout << "Couldn't save the file." << std::endl;
         return false;
-    }
+    }*/
     return true;
 }
 

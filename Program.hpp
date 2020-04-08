@@ -17,12 +17,14 @@ public:
     ~Program();
 
     bool opened() const;
+    void getFileName(char*& file_name) const;// file_name is to return the file_name (from m_calendar->m_name)
 
     bool open(char const* file_path);
-    bool close(char*& file_name);// file_name is to return the file_name (from m_calendar->m_name)
-    bool save(char*& file_name);// file_name is to return the file_name (from m_calendar->m_name)
+    bool close();
+    bool save();
 
 private:
+    void getNameFromPath(char const*file_path, char*& file_name);
     void clear();
 };
 
