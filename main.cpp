@@ -2,6 +2,8 @@
 #include "Program.hpp"
 
 int main() {
-    Commander::run(Program());
+    build_commands();
+    Program p;
+    Commander::run(p);
     return 0;
 }
