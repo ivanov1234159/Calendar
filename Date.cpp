@@ -75,7 +75,8 @@ void Date::normalize(unsigned day, unsigned month, unsigned year) {
 
 
 std::ostream& operator<<(std::ostream& out, Date const& obj){
-    return out << (obj.m_day < 10 ? "0" : "") << obj.m_day
-        << (obj.m_month < 10 ? ".0" : ".") << obj.m_month
-        << "." << obj.m_year;
+    return out << (obj.m_year < 1000 ? "0" : "") << (obj.m_year < 100 ? "0" : "")
+        << (obj.m_year < 10 ? "0" : "") << obj.m_year
+        << (obj.m_month < 10 ? "-0" : "-") << obj.m_month
+        << (obj.m_day < 10 ? "-0" : "-") << obj.m_day;
 }
