@@ -7,6 +7,8 @@
 
 #include <iostream>
 //for: ostream, endl
+#include <fstream>
+//for: ifstream, ofstream
 #include "Date.hpp"
 #include "Time.hpp"
 
@@ -18,7 +20,10 @@ class Appointment {
     Time m_end;
 public:
     Appointment();
+    Appointment(std::ifstream& ifs);
     Appointment(char const* name, char const* note, Date const& date, Time const& start, Time const& end);
+
+    bool serialize(std::ofstream& ofs) const;
 
     char const* getName() const;
     char const* getNote() const;
