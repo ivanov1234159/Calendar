@@ -7,6 +7,8 @@
 
 #include <iostream>
 //for: ostream
+#include <fstream>
+//for: ifstream, ofstream
 
 class Date {
     unsigned m_day;
@@ -16,7 +18,10 @@ class Date {
     unsigned getLastDay(unsigned month, unsigned year);
 public:
     Date();
+    Date(std::ifstream& ifs);
     Date(unsigned day, unsigned month, unsigned year);
+
+    bool serialize(std::ofstream& ofs) const;
 
     bool operator==(Date const& other) const;
     bool operator!=(Date const& other) const;

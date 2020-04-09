@@ -14,6 +14,12 @@ Time::Time(std::istream &in) {
     normalize(m_hours, m_minutes, m_seconds);
 }
 
+Time::Time(std::ifstream &ifs) {
+    ifs.read((char*) &m_hours, sizeof(m_hours));
+    ifs.read((char*) &m_minutes, sizeof(m_minutes));
+    ifs.read((char*) &m_seconds, sizeof(m_seconds));
+}
+
 unsigned Time::getTotal() const {
     unsigned total = m_hours * 60;
     total += m_minutes;
@@ -24,6 +30,13 @@ unsigned Time::getTotal() const {
 
 int Time::difference(Time const &other) const {
     return getTotal() - other.getTotal();
+}
+
+bool Time::serialize(std::ofstream &ofs) const {
+    ofs.write((char const*) &m_hours, sizeof(m_hours));
+    ofs.write((char const*) &m_minutes, sizeof(m_minutes));
+    ofs.write((char const*) &m_seconds, sizeof(m_seconds));
+    return ofs.good();
 }
 
 bool Time::operator==(Time const& other) const {

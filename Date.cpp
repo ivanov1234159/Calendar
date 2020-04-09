@@ -24,8 +24,21 @@ unsigned Date::getLastDay(unsigned month, unsigned year) {
 
 Date::Date(): m_day(1), m_month(1), m_year(0) {}
 
+Date::Date(std::ifstream &ifs) {
+    ifs.read((char*) &m_year, sizeof(m_year));
+    ifs.read((char*) &m_month, sizeof(m_month));
+    ifs.read((char*) &m_day, sizeof(m_day));
+}
+
 Date::Date(unsigned day, unsigned month, unsigned year) {
     normalize(day, month, year);
+}
+
+bool Date::serialize(std::ofstream &ofs) const {
+    ofs.write((char const*) &m_year, sizeof(m_year));
+    ofs.write((char const*) &m_month, sizeof(m_month));
+    ofs.write((char const*) &m_day, sizeof(m_day));
+    return ofs.good();
 }
 
 bool Date::operator==(Date const& other) const {

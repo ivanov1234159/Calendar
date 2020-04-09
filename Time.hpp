@@ -7,6 +7,8 @@
 
 #include <iostream>
 //for: istream, ostream
+#include <fstream>
+//for: ifstream, ofstream
 
 class Time {
     unsigned m_hours;
@@ -15,10 +17,13 @@ class Time {
 public:
     Time(unsigned hours = 0, unsigned minutes = 0, unsigned seconds = 0);
     Time(std::istream& in);
+    Time(std::ifstream& ifs);
 
     unsigned getTotal() const;
 
     int difference(Time const& other) const;
+
+    bool serialize(std::ofstream& ofs) const;
 
     bool operator==(Time const& other) const;
     bool operator!=(Time const& other) const;
