@@ -6,6 +6,13 @@
 #include "MyFunctions.hpp"
 #include <cstring>
 //for: strchr()
+#include <fstream>
+//for: ifstream, ios::binary
+
+Program& Program::self(){
+    static Program p;
+    return p;
+}
 
 Program::Program(): m_calendar(nullptr) {}
 
@@ -18,34 +25,40 @@ bool Program::opened() const {
 }
 
 void Program::getFileName(char*& file_name) const {
-    return m_calendar->getName(file_name);
+    if(!opened()){
+        return;
+    }
+    char* file_path = nullptr;
+    m_calendar->getFilePath(file_path);
+    Program::getNameFromPath(file_path, file_name);
+    delete[] file_path;
 }
 
 bool Program::open(char const *file_path) {
     if(opened()){
         return false;
     }
-    char* temp = nullptr;
-    Program::getNameFromPath(file_path, temp);
-    m_calendar = new Calendar(temp);
-    delete[] temp;
+    std::ifstream ifs(file_path, std::ios::binary);
+    m_calendar = new Calendar(ifs);
+    //ifs.close(); //this is done with (in) the destructor
     return true;
 }
 
-bool Program::close() {
-    if(!opened()){
-        return true;
+void Program::close() {
+    if(opened()){
+        clear();
     }
-    clear();
-    return true;
 }
 
 bool Program::save() {
     if(!opened()){
         return true;
     }
-    //TODO
-    return true;
+    char* file_path = nullptr;
+    m_calendar->getFilePath(file_path);
+    std::ofstream ofs(file_path, std::ios::binary);
+    delete[] file_path;
+    return m_calendar->serialize(ofs);
 }
 
 void Program::getNameFromPath(char const *file_path, char *&file_name) {

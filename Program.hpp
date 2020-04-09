@@ -8,23 +8,26 @@
 #include "Calendar.hpp"
 
 class Program {
+public:
+    static Program& self();
+private:
     Calendar* m_calendar;// only one; (not a list)
 
+    Program();
     Program(Program const& other) = delete;
     Program& operator=(Program const& other) = delete;
 public:
-    Program();
     ~Program();
 
     bool opened() const;
     void getFileName(char*& file_name) const;// file_name is to return the file_name (from m_calendar->m_name)
 
     bool open(char const* file_path);
-    bool close();
+    void close();
     bool save();
 
 private:
-    void getNameFromPath(char const*file_path, char*& file_name);
+    static void getNameFromPath(char const*file_path, char*& file_name);
     void clear();
 };
 

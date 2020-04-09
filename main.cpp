@@ -3,7 +3,6 @@
 
 int main() {
     build_commands();
-    Program p;
-    Commander::run(p);
+    Commander::run(Program::self());
     return 0;
 }
