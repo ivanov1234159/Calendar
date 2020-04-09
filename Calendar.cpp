@@ -5,9 +5,17 @@
 #include "Calendar.hpp"
 #include "MyFunctions.hpp"
 
-Calendar::Calendar(const char *calendar_name): m_name(nullptr), m_list(nullptr), m_size(0), m_limit(2) {
-    mem_copy(m_name, calendar_name, false);
+Calendar::Calendar(const char *calendar_path): m_file_path(nullptr), m_list(nullptr), m_size(0), m_limit(2) {
+    mem_copy(m_file_path, calendar_path, false);
     m_list = new Appointment[m_limit];
+}
+
+Calendar::Calendar(std::ifstream &ifs): m_file_path(nullptr), m_list(nullptr) {
+    ifs.read((char*) &m_size, sizeof(m_size));
+    m_list = new Appointment[m_size];
+    for(unsigned i = 0; i < m_size; i++){
+        m_list[i] = Appointment(ifs);
+    }
 }
 
 Calendar::Calendar(Calendar const &other) {
@@ -34,8 +42,18 @@ bool Calendar::full() const {
     return m_size == m_limit;
 }
 
-void Calendar::getName(char *&out_ptr) const {
-    mem_copy(out_ptr, m_name, false);
+void Calendar::getFilePath(char *&out_ptr) const {
+    mem_copy(out_ptr, m_file_path, false);
+}
+
+bool Calendar::serialize(std::ofstream &ofs) const {
+    ofs.write((char const*) &m_size, sizeof(m_size));
+    for(unsigned i = 0; i < m_size; i++){
+        if(!m_list[i].serialize(ofs)){
+            break;
+        }
+    }
+    return ofs.good();
 }
 
 bool Calendar::book(Date const &date, Time const &start, Time const &end, char const *name, char const *note) {
@@ -97,9 +115,9 @@ void Calendar::book(Appointment const &app) {
 }
 
 void Calendar::clear() {
-    if(m_name != nullptr){
-        delete[] m_name;
-        m_name = nullptr;
+    if(m_file_path != nullptr){
+        delete[] m_file_path;
+        m_file_path = nullptr;
     }
     if(m_list != nullptr){
         delete[] m_list;
@@ -108,7 +126,7 @@ void Calendar::clear() {
 }
 
 void Calendar::copy(Calendar const &other) {
-    mem_copy(m_name, other.m_name);
+    mem_copy(m_file_path, other.m_file_path);
     m_size = other.m_size;
     m_limit = other.m_limit;
     if(m_list != nullptr){

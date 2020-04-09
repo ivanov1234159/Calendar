@@ -7,6 +7,8 @@
 
 #include <iostream>
 //for: ostream, endl
+#include <fstream>
+//for: ifstream, ofstream
 #include "Appointment.hpp"
 #include "Date.hpp"
 #include "Time.hpp"
@@ -21,12 +23,13 @@
 };*/
 
 class Calendar {
-    char* m_name;// the same as the file name in which the calendar had been saved
+    char* m_file_path;// the file path in which the calendar had been saved
     Appointment* m_list;
     unsigned m_size;
     unsigned m_limit;
 public:
-    Calendar(char const* calendar_name = nullptr);
+    Calendar(char const* calendar_path = nullptr);
+    Calendar(std::ifstream& ifs);
     Calendar(Calendar const& other);
     Calendar& operator=(Calendar const& other);
     ~Calendar();
@@ -34,7 +37,8 @@ public:
     bool empty() const;
     bool full() const;
 
-    void getName(char*& out_ptr) const;
+    void getFilePath(char*& out_ptr) const;
+    bool serialize(std::ofstream& ofs) const;
 
     bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);
     bool unbook(Date const& date, Time const& start, Time const& end);
