@@ -20,11 +20,12 @@ public:
     ~Program();
 
     bool opened() const;
-    void getFileName(char*& file_name, char* path = nullptr) const;// file_name is to return the file_name (from m_calendar->m_name)
+    void getFileName(char*& file_name, char const* path = nullptr) const;// file_name is to return the file_name (from m_calendar->m_name)
 
     bool open(char const* file_path);
     void close();
     bool save();
+    bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);
 
 private:
     static void getNameFromPath(char const*file_path, char*& file_name);

@@ -37,7 +37,7 @@ public:
     bool empty() const;
     bool full() const;
 
-    void getFilePath(char*& out_ptr) const;
+    char const* getFilePath() const;
     bool serialize(std::ofstream& ofs) const;
 
     bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);

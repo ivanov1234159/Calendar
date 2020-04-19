@@ -24,18 +24,15 @@ bool Program::opened() const {
     return m_calendar != nullptr;
 }
 
-void Program::getFileName(char*& file_name, char* path) const {
+void Program::getFileName(char*& file_name, char const* path) const {
     if(path == nullptr && !opened()){
         return;
     }
-    char* file_path = path;
+    char const* file_path = path;
     if(path == nullptr){
-        m_calendar->getFilePath(file_path);
+        file_path = m_calendar->getFilePath();
     }
     Program::getNameFromPath(file_path, file_name);
-    if(path == nullptr){
-        delete[] file_path;
-    }
 }
 
 bool Program::open(char const *file_path) {
@@ -65,11 +62,12 @@ bool Program::save() {
     if(!opened()){
         return true;
     }
-    char* file_path = nullptr;
-    m_calendar->getFilePath(file_path);
-    std::ofstream ofs(file_path, std::ios::binary);
-    delete[] file_path;
+    std::ofstream ofs(m_calendar->getFilePath(), std::ios::binary);
     return m_calendar->serialize(ofs);
+}
+
+bool Program::book(Date const &date, Time const &start, Time const &end, char const *name, char const *note) {
+    return m_calendar->book(date, start, end, name, note);
 }
 
 void Program::getNameFromPath(char const *file_path, char *&file_name) {

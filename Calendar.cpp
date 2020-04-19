@@ -42,8 +42,8 @@ bool Calendar::full() const {
     return m_size == m_limit;
 }
 
-void Calendar::getFilePath(char *&out_ptr) const {
-    MySpace::mem_copy(out_ptr, m_file_path, false);
+char const* Calendar::getFilePath() const {
+    return m_file_path;
 }
 
 bool Calendar::serialize(std::ofstream &ofs) const {
