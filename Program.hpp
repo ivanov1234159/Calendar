@@ -20,7 +20,7 @@ public:
     ~Program();
 
     bool opened() const;
-    void getFileName(char*& file_name) const;// file_name is to return the file_name (from m_calendar->m_name)
+    void getFileName(char*& file_name, char* path = nullptr) const;// file_name is to return the file_name (from m_calendar->m_name)
 
     bool open(char const* file_path);
     void close();

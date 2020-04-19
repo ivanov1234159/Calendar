@@ -52,7 +52,7 @@ void Commander::run(RunnerType& runner) {
         std::cin.getline(buffer, Commander::BUFFER_SIZE);
         std::istringstream iss(buffer);
         //delete[] buffer;
-        char* cmd;
+        char* cmd = buffer;
         iss >> cmd;
         int index = Commander::findIndex(cmd);
         if(index >= 0){

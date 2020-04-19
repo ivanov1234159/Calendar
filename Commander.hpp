@@ -12,7 +12,6 @@
 class Commander {
 private:
     static const unsigned EXIT = 0;
-    static const unsigned BUFFER_SIZE = 1024;
     static unsigned cmd_count;
     static unsigned cmd_count_max;
     static Command* cmd_list;
@@ -24,6 +23,7 @@ private:
     static int findIndex(char const* cmd);// returns -1 if not found
     static void outUsage(unsigned index, std::ostream& out);
 public:
+    static const unsigned BUFFER_SIZE = 256;
     friend bool cmd_help(RunnerType&, std::istringstream&);// uses ONLY cmd_count and outUsage()
     static void add(Command const& item);
     static void run(RunnerType& runner);

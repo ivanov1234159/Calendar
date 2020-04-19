@@ -24,14 +24,18 @@ bool Program::opened() const {
     return m_calendar != nullptr;
 }
 
-void Program::getFileName(char*& file_name) const {
-    if(!opened()){
+void Program::getFileName(char*& file_name, char* path) const {
+    if(path == nullptr && !opened()){
         return;
     }
-    char* file_path = nullptr;
-    m_calendar->getFilePath(file_path);
+    char* file_path = path;
+    if(path == nullptr){
+        m_calendar->getFilePath(file_path);
+    }
     Program::getNameFromPath(file_path, file_name);
-    delete[] file_path;
+    if(path == nullptr){
+        delete[] file_path;
+    }
 }
 
 bool Program::open(char const *file_path) {
@@ -39,6 +43,13 @@ bool Program::open(char const *file_path) {
         return false;
     }
     std::ifstream ifs(file_path, std::ios::binary);
+    if(!ifs.good() || ifs.seekg(0, ifs.end).tellg() == 0){
+        std::ofstream ofs(file_path, std::ios::binary);
+        m_calendar = new Calendar(file_path);
+        //ofs.close(); //this is done with (in) the destructor
+        return true;
+    }
+    ifs.seekg(0, ifs.beg);
     m_calendar = new Calendar(ifs);
     //ifs.close(); //this is done with (in) the destructor
     return true;
@@ -79,7 +90,14 @@ void Program::getNameFromPath(char const *file_path, char *&file_name) {
     char const* last = nullptr;
     do{
         last = temp;
-        temp = std::strchr(file_path, delimiter);
+        if(last != nullptr){
+            temp = std::strchr(last, delimiter);
+        }else{
+            temp = std::strchr(file_path, delimiter);
+        }
+        if(temp != nullptr && *temp == delimiter){
+            temp++;
+        }
     }while(temp != nullptr);
     MySpace::mem_copy(file_name, last, false);
 }

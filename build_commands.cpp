@@ -19,20 +19,20 @@ bool cmd_exit(RunnerType& runner, std::istringstream& iss){
 
 bool cmd_open(RunnerType& runner, std::istringstream& iss){
     char* path = nullptr;
+    path = new char[Commander::BUFFER_SIZE];
     iss >> path;
     if(!iss){
         return false;
     }
     bool result = runner.open(path);
-    delete[] path;
-    //reuse the variable path as file_name
-    path = nullptr;
-    runner.getFileName(path);
+    char* file_name = nullptr;
+    runner.getFileName(file_name, path);
     if(result){
         std::cout << "Successfully opened " << path << std::endl;
     } else {
         std::cout << "Couldn't open " << path << std::endl;
     }
+    delete[] file_name;
     delete[] path;
     return true;
 }
