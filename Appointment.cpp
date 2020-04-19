@@ -25,7 +25,8 @@ Appointment::Appointment(std::ifstream &ifs): m_name(nullptr), m_note(nullptr) {
     m_end = Time(ifs);
 }
 
-Appointment::Appointment(char const *name, char const *note, Date const &date, Time const &start, Time const &end) {
+Appointment::Appointment(char const *name, char const *note, Date const &date, Time const &start, Time const &end)
+    : m_name(nullptr), m_note(nullptr) {
     MySpace::mem_copy(m_name, name);
     MySpace::mem_copy(m_note, note);
     m_date = date;
@@ -34,6 +35,9 @@ Appointment::Appointment(char const *name, char const *note, Date const &date, T
 }
 
 bool Appointment::serialize(std::ofstream &ofs) const {
+    if(m_name == nullptr || m_note == nullptr){
+        return false;
+    }
     unsigned size = std::strlen(m_name);
     ofs.write((char const*) &size, sizeof(size));
     ofs.write((char const*) &m_name, sizeof(m_name));
