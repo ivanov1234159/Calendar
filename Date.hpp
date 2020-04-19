@@ -6,7 +6,7 @@
 #define CALENDAR_DATE_HPP
 
 #include <iostream>
-//for: ostream
+//for: ostream, istream
 #include <fstream>
 //for: ifstream, ofstream
 
@@ -31,11 +31,13 @@ public:
     bool operator<=(Date const& other) const;
 
     friend std::ostream& operator<<(std::ostream& out, Date const& obj);
+    friend std::istream& operator>>(std::istream& in, Date& obj);
 
 private:
     void normalize(unsigned day, unsigned month, unsigned year);
 };
 
 std::ostream& operator<<(std::ostream& out, Date const& obj);
+std::istream& operator>>(std::istream& in, Date& obj);
 
 #endif //CALENDAR_DATE_HPP

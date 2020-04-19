@@ -35,10 +35,12 @@ public:
     operator int() const;
     void print(std::ostream& out) const;
 
+    friend std::istream& operator>>(std::istream& in, Time& obj);
 private:
     void normalize(unsigned hours, unsigned minutes, unsigned seconds);
 };
 
 std::ostream& operator<<(std::ostream& out, Time const& obj);
+std::istream& operator>>(std::istream& in, Time& obj);
 
 #endif //CALENDAR_TIME_HPP

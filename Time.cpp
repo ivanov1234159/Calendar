@@ -89,3 +89,8 @@ std::ostream& operator<<(std::ostream& out, Time const& obj){
     obj.print(out);
     return out;
 }
+
+std::istream& operator>>(std::istream& in, Time& obj){
+    char dots;
+    return in >> obj.m_hours >> dots >> obj.m_minutes >> dots >> obj.m_seconds;
+}
