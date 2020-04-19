@@ -79,6 +79,49 @@ bool cmd_help(RunnerType&, std::istringstream&){
     return true;
 }
 
+bool cmd_book(RunnerType& runner, std::istringstream& iss){
+    if(!runner.opened()){
+        std::cout << "There isn't an open file. Please, open one." << std::endl;
+        return true;
+    }
+    Date date;
+    iss >> date;
+    if(!iss){
+        std::cout << "Invalid date format. Cannot book an appointment." << std::endl;
+        return false;
+    }
+    Time start;
+    iss >> start;
+    if(!iss){
+        std::cout << "Invalid time format. Cannot book an appointment." << std::endl;
+        return false;
+    }
+    Time end;
+    iss >> end;
+    if(!iss){
+        std::cout << "Invalid time format. Cannot book an appointment." << std::endl;
+        return false;
+    }
+    char name[Commander::BUFFER_SIZE];
+    iss >> name;
+    if(!iss){
+        std::cout << "Couldn't read the name of an appointment. Cannot book an appointment." << std::endl;
+        return false;
+    }
+    char note[Commander::BUFFER_SIZE];
+    iss.getline(note, Commander::BUFFER_SIZE);
+    if(!iss){
+        std::cout << "Couldn't read the note of an appointment. Cannot book an appointment." << std::endl;
+        return false;
+    }
+    if(runner.book(date, start, end, name, note)){
+        std::cout << "The appointment was successfully added to the calendar." << std::endl;
+    }else{
+        std::cout << "This time interval isn't available on this date." << std::endl;
+    }
+    return true;
+}
+
 void build_commands(){
     Commander::add(Command("exit", "", "exit from the program", cmd_exit));
     Commander::add(Command("open", "<file>", "open the file at path <file>", cmd_open));
@@ -86,4 +129,6 @@ void build_commands(){
     Commander::add(Command("save", "", "save the current state of the program", cmd_save));
     Commander::add(Command("saveas", "<file>", "save the current state of the program in <file>", cmd_save_as));
     Commander::add(Command("help", "", "prints this information", cmd_help));
+    Commander::add(Command("book", "<date> <starttime> <endtime> <name> <note>",
+            "Save appointment time with name <name> and comment <note>\n on date <date> with start time <starttime> and end time <endtime>", cmd_book));
 }
