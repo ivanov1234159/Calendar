@@ -3,7 +3,7 @@
 //
 
 #include "Command.hpp"
-#include "MyFunctions.hpp"
+#include "MySpace.hpp"
 #include <cstring>
 //for: strcmp()
 
@@ -11,9 +11,9 @@ Command::Command(): m_name(nullptr), m_params(nullptr), m_notes(nullptr), m_func
 
 Command::Command(char const *name, char const *params, char const *notes, FuncCMD func)
         : m_name(nullptr), m_params(nullptr), m_notes(nullptr), m_func(nullptr) {
-    mem_copy(m_name, name);
-    mem_copy(m_params, params);
-    mem_copy(m_notes, notes);
+    MySpace::mem_copy(m_name, name);
+    MySpace::mem_copy(m_params, params);
+    MySpace::mem_copy(m_notes, notes);
     m_func = func;
 }
 
@@ -58,9 +58,9 @@ void Command::clear() {
 }
 
 void Command::copy(Command const &other) {
-    mem_copy(m_name, other.m_name);
-    mem_copy(m_params, other.m_params);
-    mem_copy(m_notes, other.m_notes);
+    MySpace::mem_copy(m_name, other.m_name);
+    MySpace::mem_copy(m_params, other.m_params);
+    MySpace::mem_copy(m_notes, other.m_notes);
     m_func = other.m_func;
 }
 

@@ -3,10 +3,10 @@
 //
 
 #include "Calendar.hpp"
-#include "MyFunctions.hpp"
+#include "MySpace.hpp"
 
 Calendar::Calendar(const char *calendar_path): m_file_path(nullptr), m_list(nullptr), m_size(0), m_limit(2) {
-    mem_copy(m_file_path, calendar_path, false);
+    MySpace::mem_copy(m_file_path, calendar_path, false);
     m_list = new Appointment[m_limit];
 }
 
@@ -43,7 +43,7 @@ bool Calendar::full() const {
 }
 
 void Calendar::getFilePath(char *&out_ptr) const {
-    mem_copy(out_ptr, m_file_path, false);
+    MySpace::mem_copy(out_ptr, m_file_path, false);
 }
 
 bool Calendar::serialize(std::ofstream &ofs) const {
@@ -126,7 +126,7 @@ void Calendar::clear() {
 }
 
 void Calendar::copy(Calendar const &other) {
-    mem_copy(m_file_path, other.m_file_path);
+    MySpace::mem_copy(m_file_path, other.m_file_path);
     m_size = other.m_size;
     m_limit = other.m_limit;
     if(m_list != nullptr){

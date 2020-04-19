@@ -3,7 +3,7 @@
 //
 
 #include "Appointment.hpp"
-#include "MyFunctions.hpp"
+#include "MySpace.hpp"
 #include <cstring>
 //for: strlen()
 
@@ -26,8 +26,8 @@ Appointment::Appointment(std::ifstream &ifs): m_name(nullptr), m_note(nullptr) {
 }
 
 Appointment::Appointment(char const *name, char const *note, Date const &date, Time const &start, Time const &end) {
-    mem_copy(m_name, name);
-    mem_copy(m_note, note);
+    MySpace::mem_copy(m_name, name);
+    MySpace::mem_copy(m_note, note);
     m_date = date;
     m_start = start;
     m_end = end;

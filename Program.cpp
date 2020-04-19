@@ -3,7 +3,7 @@
 //
 
 #include "Program.hpp"
-#include "MyFunctions.hpp"
+#include "MySpace.hpp"
 #include <cstring>
 //for: strchr()
 #include <fstream>
@@ -72,7 +72,7 @@ void Program::getNameFromPath(char const *file_path, char *&file_name) {
         delimiter = '\\';
     }
     if(delimiter == '\0' || (delimiter == '/' && std::strchr(file_path, '\\') != nullptr)){
-        mem_copy(file_name, file_path, false);
+        MySpace::mem_copy(file_name, file_path, false);
         return;
     }
     char const* temp = nullptr;
@@ -81,7 +81,7 @@ void Program::getNameFromPath(char const *file_path, char *&file_name) {
         last = temp;
         temp = std::strchr(file_path, delimiter);
     }while(temp != nullptr);
-    mem_copy(file_name, last, false);
+    MySpace::mem_copy(file_name, last, false);
 }
 
 void Program::clear() {
