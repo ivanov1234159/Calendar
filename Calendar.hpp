@@ -45,7 +45,7 @@ public:
     void agenda(Date const& date, std::ostream& out);
     //change
     //find
-    void holiday(Date const& date);
+    //void holiday(Date const& date);
     //busydays
     //findslot
     //findslotwith
