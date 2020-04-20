@@ -40,14 +40,15 @@ bool Program::open(char const *file_path) {
         return false;
     }
     std::ifstream ifs(file_path, std::ios::binary);
+    int temp_pos = ifs.tellg();
     if(!ifs.good() || ifs.seekg(0, ifs.end).tellg() == 0){
         std::ofstream ofs(file_path, std::ios::binary);
         m_calendar = new Calendar(file_path);
         //ofs.close(); //this is done with (in) the destructor
         return true;
     }
-    ifs.seekg(0, ifs.beg);
-    m_calendar = new Calendar(ifs);
+    ifs.seekg(temp_pos);
+    m_calendar = new Calendar(ifs, file_path);
     //ifs.close(); //this is done with (in) the destructor
     return true;
 }
@@ -68,6 +69,10 @@ bool Program::save() {
 
 bool Program::book(Date const &date, Time const &start, Time const &end, char const *name, char const *note) {
     return m_calendar->book(date, start, end, name, note);
+}
+
+bool Program::unbook(Date const &date, Time const &start, Time const &end) {
+    return m_calendar->unbook(date, start, end);
 }
 
 void Program::getNameFromPath(char const *file_path, char *&file_name) {
