@@ -104,8 +104,10 @@ void Calendar::book(Appointment const &app) {
         }
         search = &m_list[i];
     }
-    search++;
     Appointment* last = &m_list[m_size];
+    if(search < last){// more important is that they are not equal
+        search++;
+    }
     while(search < last){
         *last = *(last-1);
         last--;
