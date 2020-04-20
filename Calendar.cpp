@@ -10,7 +10,8 @@ Calendar::Calendar(const char *calendar_path): m_file_path(nullptr), m_list(null
     m_list = new Appointment[m_limit];
 }
 
-Calendar::Calendar(std::ifstream &ifs): m_file_path(nullptr), m_list(nullptr) {
+Calendar::Calendar(std::ifstream &ifs, char const* calendar_path): m_file_path(nullptr), m_list(nullptr) {
+    MySpace::mem_copy(m_file_path, calendar_path, false);
     ifs.read((char*) &m_size, sizeof(m_size));
     m_list = new Appointment[m_size];
     for(unsigned i = 0; i < m_size; i++){
@@ -166,7 +167,7 @@ bool Calendar::isFree(Date const &date, Time const &start, Time const &end) cons
 
 Appointment* Calendar::find(Date const &date, Time const &start, Time const &end) {
     for(unsigned i = 0; i < m_size; i++){
-        if(m_list[i].getDate() == date && m_list[i].getStartTime() == start && m_list[i].getStartTime() == end){
+        if(m_list[i].getDate() == date && m_list[i].getStartTime() == start && m_list[i].getEndTime() == end){
             return &m_list[i];
         }
     }
