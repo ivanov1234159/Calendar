@@ -29,7 +29,11 @@ unsigned Time::getTotal() const {
 }
 
 int Time::difference(Time const &other) const {
-    return getTotal() - other.getTotal();
+    int diff = (m_hours - other.m_hours) * 60;
+    diff += m_minutes - other.m_minutes;
+    diff *= 60;
+    diff += m_seconds - other.m_seconds;
+    return diff;
 }
 
 bool Time::serialize(std::ofstream &ofs) const {
