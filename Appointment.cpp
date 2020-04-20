@@ -12,14 +12,12 @@ Appointment::Appointment(): m_name(nullptr), m_note(nullptr), m_date(Date()), m_
 Appointment::Appointment(std::ifstream &ifs): m_name(nullptr), m_note(nullptr) {
     unsigned size;
     ifs.read((char*) &size, sizeof(size));
-    m_name = new char[size+1];
-    ifs.read((char*) &m_name, size);
-    m_name[size] = '\0';
+    m_name = new char[size];
+    ifs.read(m_name, size);
 
     ifs.read((char*) &size, sizeof(size));
-    m_note = new char[size+1];
-    ifs.read((char*) &m_note, size);
-    m_note[size] = '\0';
+    m_note = new char[size];
+    ifs.read(m_note, size);
     m_date = Date(ifs);
     m_start = Time(ifs);
     m_end = Time(ifs);
@@ -38,12 +36,12 @@ bool Appointment::serialize(std::ofstream &ofs) const {
     if(m_name == nullptr || m_note == nullptr){
         return false;
     }
-    unsigned size = std::strlen(m_name);
+    unsigned size = std::strlen(m_name) + 1;
     ofs.write((char const*) &size, sizeof(size));
-    ofs.write((char const*) &m_name, sizeof(m_name));
-    size = std::strlen(m_note);
+    ofs.write((char const*) m_name, size);
+    size = std::strlen(m_note) + 1;
     ofs.write((char const*) &size, sizeof(size));
-    ofs.write((char const*) &m_note, sizeof(m_note));
+    ofs.write((char const*) m_note, size);
     if(!ofs.good()){
         return false;
     }
