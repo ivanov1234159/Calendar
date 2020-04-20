@@ -6,6 +6,8 @@
 #define CALENDAR_PROGRAM_HPP
 
 #include "Calendar.hpp"
+#include "Date.hpp"
+#include "Time.hpp"
 
 class Program {
 public:
@@ -26,7 +28,9 @@ public:
     void close();
     bool save();
     bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);
+    bool unbook(Date const& date, Time const& start, Time const& end);
 
+    friend bool cmd_status(Program& runner, std::istringstream& iss);
 private:
     static void getNameFromPath(char const*file_path, char*& file_name);
     void clear();

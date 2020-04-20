@@ -21,6 +21,7 @@
     E_NAME,
     E_NOTE
 };*/
+class Program;
 
 class Calendar {
     char* m_file_path;// the file path in which the calendar had been saved
@@ -29,7 +30,7 @@ class Calendar {
     unsigned m_limit;
 public:
     Calendar(char const* calendar_path = nullptr);
-    Calendar(std::ifstream& ifs);
+    Calendar(std::ifstream& ifs, char const* calendar_path = nullptr);
     Calendar(Calendar const& other);
     Calendar& operator=(Calendar const& other);
     ~Calendar();
@@ -51,6 +52,7 @@ public:
     //findslotwith
     //merge
 
+    friend bool cmd_status(Program& runner, std::istringstream& iss);
 private:
     void book(Appointment const &app);
     void clear();

@@ -17,6 +17,25 @@ bool cmd_exit(RunnerType& runner, std::istringstream& iss){
     return true;
 }
 
+bool cmd_status(RunnerType& runner, std::istringstream& iss){
+    std::cout << "File opened: " << (runner.opened() ? "true" : "false") << std::endl;
+    std::cout << "File path: " << (runner.opened()
+        ? (runner.m_calendar->getFilePath() == nullptr
+            ? "<NULL>"
+            : runner.m_calendar->getFilePath())
+        : "<NO_PATH>") << std::endl;
+    std::cout << "Appointments: " << std::endl << std::endl;
+    if(runner.opened()){
+        for(unsigned i = 0; i < runner.m_calendar->m_size; i++){
+            std::cout << runner.m_calendar->m_list[i] << std::endl;
+        }
+        std::cout << std::endl;
+    }else{
+        std::cout << "No appointments." << std::endl;
+    }
+    return true;
+}
+
 bool cmd_open(RunnerType& runner, std::istringstream& iss){
     char* path = nullptr;
     path = new char[Commander::BUFFER_SIZE];
@@ -28,9 +47,9 @@ bool cmd_open(RunnerType& runner, std::istringstream& iss){
     char* file_name = nullptr;
     runner.getFileName(file_name, path);
     if(result){
-        std::cout << "Successfully opened " << path << std::endl;
+        std::cout << "Successfully opened " << file_name << std::endl;
     } else {
-        std::cout << "Couldn't open " << path << std::endl;
+        std::cout << "Couldn't open " << file_name << std::endl;
     }
     delete[] file_name;
     delete[] path;
@@ -122,13 +141,47 @@ bool cmd_book(RunnerType& runner, std::istringstream& iss){
     return true;
 }
 
+bool cmd_unbook(RunnerType& runner, std::istringstream& iss){
+    if(!runner.opened()){
+        std::cout << "There isn't an open file. Please, open one." << std::endl;
+        return true;
+    }
+    Date date;
+    iss >> date;
+    if(!iss){
+        std::cout << "Invalid date format. Cannot remove an appointment." << std::endl;
+        return false;
+    }
+    Time start;
+    iss >> start;
+    if(!iss){
+        std::cout << "Invalid time format. Cannot remove an appointment." << std::endl;
+        return false;
+    }
+    Time end;
+    iss >> end;
+    if(!iss){
+        std::cout << "Invalid time format. Cannot remove an appointment." << std::endl;
+        return false;
+    }
+    if(runner.unbook(date, start, end)){
+        std::cout << "The appointment was successfully removed from the calendar." << std::endl;
+    }else{
+        std::cout << "There isn't an appointment on this date at this time interval." << std::endl;
+    }
+    return true;
+}
+
 void build_commands(){
     Commander::add(Command("exit", "", "exit from the program", cmd_exit));
+    Commander::add(Command("status", "", "prints information about the program status", cmd_status));
     Commander::add(Command("open", "<file>", "open the file at path <file>", cmd_open));
     Commander::add(Command("close", "", "close the currently opened file", cmd_close));
     Commander::add(Command("save", "", "save the current state of the program", cmd_save));
     Commander::add(Command("saveas", "<file>", "save the current state of the program in <file>", cmd_save_as));
     Commander::add(Command("help", "", "prints this information", cmd_help));
-    Commander::add(Command("book", "<date> <starttime> <endtime> <name> <note>",
-            "Save appointment time with name <name> and comment <note>\n on date <date> with start time <starttime> and end time <endtime>", cmd_book));
+    Commander::add(Command("book", "<date> <start_time> <end_time> <name> <comment>",
+                           "Save appointment time with <name> and <comment>\n on <date> with <start_time> and <end_time>", cmd_book));
+    Commander::add(Command("unbook", "<date> <start_time> <end_time>",
+                           "Meeting time canceled by <date> with <start_time> and <end_time>", cmd_unbook));
 }
