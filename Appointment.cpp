@@ -60,6 +60,6 @@ std::ostream& operator<<(std::ostream& out, Appointment const& obj){
     return out << "An appointment named " << obj.getName()
     << " is on " << obj.getDate()
     << " starts at " << obj.getStartTime()
-    << "  and ends at " << obj.getEndTime()
-    <<  std::endl << " Notes: " << obj.getNote() << std::endl;
+    << " and ends at " << obj.getEndTime()
+    <<  std::endl << "\tNotes: " << obj.getNote() << std::endl;
 }
