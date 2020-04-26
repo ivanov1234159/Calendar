@@ -26,7 +26,7 @@ public:
 
     bool open(char const* file_path);
     void close();
-    bool save();
+    bool save() const ;
     bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);
     bool unbook(Date const& date, Time const& start, Time const& end);
 

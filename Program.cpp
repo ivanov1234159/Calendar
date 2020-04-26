@@ -59,7 +59,7 @@ void Program::close() {
     }
 }
 
-bool Program::save() {
+bool Program::save() const {
     if(!opened()){
         return true;
     }
