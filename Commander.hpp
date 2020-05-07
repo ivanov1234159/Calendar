@@ -25,12 +25,6 @@ public:
     static void run(RunnerType& runner);
 };
 
-/*
- * !!! IMPORTANT !!!
- * the exit command MUST be first, else change the static const in Commander class named EXIT
- *
- * the help command has a special function named cmd_help from type FuncCMD
- */
 void build_commands();
 
 #endif //CALENDAR_COMMANDER_HPP
