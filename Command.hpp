@@ -23,7 +23,7 @@ public:
     Command(char const* name, char const* params, char const* notes, bool quit = false);
     Command(Command const& other);
     Command& operator=(Command const& other);
-    ~Command();
+    virtual ~Command();
 
     bool operator==(char const* cmd);
     bool canQuit() const;
