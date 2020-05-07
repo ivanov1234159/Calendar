@@ -8,11 +8,11 @@
 #include <iostream>
 //for: cout, endl, ostream
 #include "Command.hpp"
-#include "Array.hpp"
+#include "Vector.hpp"
 
 class Commander {
 private:
-    static Array<Command*> cmd_list;
+    static Vector<Command*> cmd_list;
     Commander() = delete;
     Commander(Commander const& other) = delete;
     Commander& operator=(Commander const& other) = delete;

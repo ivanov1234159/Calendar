@@ -4,7 +4,7 @@
 
 #include "Commander.hpp"
 
-Array<Command*> Commander::cmd_list = Array<Command*>();
+Vector<Command*> Commander::cmd_list = Vector<Command*>();
 
 Command* Commander::find(char const* cmd){
     for (unsigned i = 0; i < Commander::cmd_list.size(); i++){
