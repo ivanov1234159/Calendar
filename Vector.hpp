@@ -16,6 +16,7 @@ class Vector {
     bool m_resizable;
 public:
     Vector(unsigned limit = 2, bool resizable = true);
+    Vector(T const* other, unsigned size, bool resizable = true);
     Vector(Vector<T> const& other);
     Vector& operator=(Vector<T> const& other);
     ~Vector();
@@ -30,6 +31,7 @@ public:
     bool full() const;
     unsigned size() const;
     unsigned free() const;
+    unsigned capacity() const;
     bool fixed() const;// fixed size = !resizable
 
     T& at(int index);
@@ -37,6 +39,10 @@ public:
 
     T const& at(int index) const;
     T const& operator[](int index) const;
+
+protected:
+    T*& list();
+    T const* list() const;
 
 private:
     unsigned normalizeIndex(int index) const;
@@ -49,8 +55,20 @@ template<typename T>
 std::ostream& operator<<(std::ostream& out, Vector<T> const& obj);
 
 template<typename T>
-Vector<T>::Vector(unsigned limit, bool resizable): m_list(nullptr), m_size(0), m_limit(limit), m_resizable(resizable) {
+Vector<T>::Vector(unsigned limit, bool resizable)
+    : m_list(nullptr), m_size(0), m_limit(limit), m_resizable(resizable) {
     m_list = new T[m_limit];
+}
+
+template<typename T>
+Vector<T>::Vector(T const* other, unsigned size, bool resizable)
+    : m_list(nullptr), m_size(size), m_limit(size), m_resizable(resizable) {
+    m_list = new T[m_limit];
+    if(other != nullptr){
+        for(unsigned i = 0; i < m_size; i++){
+            m_list[i] = other[i];
+        }
+    }
 }
 
 template<typename T>
@@ -149,6 +167,11 @@ unsigned Vector<T>::free() const {
 }
 
 template<typename T>
+unsigned Vector<T>::capacity() const {
+    return m_limit;
+}
+
+template<typename T>
 unsigned Vector<T>::size() const {
     return m_size;
 }
@@ -179,6 +202,16 @@ T const& Vector<T>::operator[](int index) const {
 }
 
 template<typename T>
+T*& Vector<T>::list() {
+    return m_list;
+}
+
+template<typename T>
+T const* Vector<T>::list() const {
+    return m_list;
+}
+
+template<typename T>
 unsigned Vector<T>::normalizeIndex(int index) const {
     if(index < 0){
         return m_size - ((-index) % m_size);
@@ -198,6 +231,7 @@ template<typename T>
 void Vector<T>::copy(Vector<T> const& other){
     m_size = other.m_size;
     m_limit = other.m_limit;
+    m_resizable = other.m_resizable;
     m_list = new T[m_limit];
     for(unsigned i = 0; i < m_size; i++){
         m_list[i] = other.m_list[i];

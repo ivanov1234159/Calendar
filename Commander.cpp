@@ -15,6 +15,12 @@ Command* Commander::find(char const* cmd){
     return nullptr;
 }
 
+void Commander::clear() {
+    for(unsigned i = 0; i < cmd_list.size(); i++){
+        delete cmd_list[i];
+    }
+}
+
 void Commander::add(Command* item) {
     Commander::cmd_list.push(item);
 }
@@ -26,23 +32,31 @@ void Commander::run(RunnerType& runner) {
         std::istringstream iss(buffer);
         char* cmd = buffer;
         iss >> cmd;
-        Command* search = Commander::find(cmd);
-        bool found = search != nullptr;
-        if(!found){
-            search = new Command();
-        }
-        if(!search->action(runner, iss)){
-            std::cout << "Wrong command format! Action is NOT done." << std::endl;
-            std::cout << *search;
-        }
-        if(search->canQuit()){
-            if(!found){// never
-                delete search;
-            }
+        if(!Commander::call(cmd, runner, iss)){
             break;
         }
+    }
+    Commander::clear();
+}
+
+bool Commander::call(char const* cmd, RunnerType& runner, std::istringstream& iss) {
+    Command* search = Commander::find(cmd);
+    bool found = search != nullptr;
+    if(!found){
+        search = new Command();
+    }
+    if(!search->action(runner, iss)){
+        std::cout << "Wrong command format! Action is NOT done." << std::endl;
+        std::cout << *search;
+    }
+    if(search->canQuit()){
         if(!found){
             delete search;
         }
+        return false;
     }
+    if(!found){
+        delete search;
+    }
+    return true;
 }
