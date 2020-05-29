@@ -47,9 +47,9 @@ public:
 
     Appointment* find(Date const& date, Time const& start);
 
+    bool isFree(Date const& date, Time const& start, Time const& end) const;
 private:
     void book(Appointment const &app);
-    bool isFree(Date const& date, Time const& start, Time const& end) const;
     Appointment* find(Date const& date, Time const& start, Time const& end);
 };
 

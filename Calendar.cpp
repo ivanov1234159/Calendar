@@ -84,6 +84,21 @@ Appointment* Calendar::find(Date const &date, Time const &start) {
     return nullptr;
 }
 
+bool Calendar::isFree(Date const &date, Time const &start, Time const &end) const {
+    for(unsigned i = 0; i < m_list.size(); i++){
+        if(m_list[i].getDate() != date){
+            continue;
+        }
+        if(m_list[i].getStartTime() >= start && m_list[i].getStartTime() <= end){
+            return false;
+        }
+        if(m_list[i].getStartTime() <= start && m_list[i].getEndTime() > start){
+            return false;
+        }
+    }
+    return true;
+}
+
 void Calendar::book(Appointment const &app) {
     //m_list.push(app);
     //to end: sorted insert
@@ -106,21 +121,6 @@ void Calendar::book(Appointment const &app) {
         last--;
     }
     *search = app;
-}
-
-bool Calendar::isFree(Date const &date, Time const &start, Time const &end) const {
-    for(unsigned i = 0; i < m_list.size(); i++){
-        if(m_list[i].getDate() != date){
-            continue;
-        }
-        if(m_list[i].getStartTime() >= start && m_list[i].getStartTime() <= end){
-            return false;
-        }
-        if(m_list[i].getStartTime() <= start && m_list[i].getEndTime() > start){
-            return false;
-        }
-    }
-    return true;
 }
 
 Appointment* Calendar::find(Date const &date, Time const &start, Time const &end) {
