@@ -75,6 +75,52 @@ bool Program::unbook(Date const &date, Time const &start, Time const &end) {
     return m_calendar->unbook(date, start, end);
 }
 
+bool Program::changeDate(Date const &date, Time const &start, String const &new_date) {
+    Appointment* search = m_calendar->find(date, start);
+    if(search == nullptr){
+        return false;
+    }
+    search->setDate(new_date);
+    return true;
+}
+
+bool Program::changeStartTime(Date const &date, Time const &start, String const &new_start_time) {
+    Appointment* search = m_calendar->find(date, start);
+    if(search == nullptr){
+        return false;
+    }
+    search->setStartTime(new_start_time);
+    return true;
+}
+
+bool Program::changeEndTime(Date const &date, Time const &start, String const &new_end_time) {
+    Appointment* search = m_calendar->find(date, start);
+    if(search == nullptr){
+        return false;
+    }
+    search->setEndTime(new_end_time);
+    return true;
+}
+
+bool Program::changeName(Date const &date, Time const &start, String const &new_name) {
+    Appointment* search = m_calendar->find(date, start);
+    if(search == nullptr){
+        return false;
+    }
+    search->setName(new_name);
+    return true;
+}
+
+
+bool Program::changeNote(Date const &date, Time const &start, String const &new_note) {
+    Appointment* search = m_calendar->find(date, start);
+    if(search == nullptr){
+        return false;
+    }
+    search->setNote(new_note);
+    return true;
+}
+
 String Program::getNameFromPath(char const *file_path) {
     if(file_path == nullptr){
         return String();

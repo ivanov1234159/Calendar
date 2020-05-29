@@ -30,6 +30,12 @@ public:
     bool save() const;
     bool book(Date const& date, Time const& start, Time const& end, String const& name, String const& note);
     bool unbook(Date const& date, Time const& start, Time const& end);
+
+    bool changeDate(Date const& date, Time const& start, String const& new_date);
+    bool changeStartTime(Date const& date, Time const& start, String const& new_start_time);
+    bool changeEndTime(Date const& date, Time const& start, String const& new_end_time);
+    bool changeName(Date const& date, Time const& start, String const& new_name);
+    bool changeNote(Date const& date, Time const& start, String const& new_note);
 private:
     static String getNameFromPath(char const *file_path);
     void clear();
