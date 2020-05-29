@@ -67,7 +67,7 @@ void String::read(std::istream& from, char until) {
     set(MySpace::read_stream(from, until));
 }
 
-bool String::contains(String const &other) {
+bool String::contains(String const &other) const {
     return std::strstr(get(), other.get()) != nullptr;
 }
 
