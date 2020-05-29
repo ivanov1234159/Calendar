@@ -24,7 +24,7 @@ bool Program::opened() const {
     return m_calendar != nullptr;
 }
 
-String const& Program::getFileName(String const& path) const {
+String Program::getFileName(String const& path) const {
     if(path.empty() && !opened()){
         return String();
     }
@@ -157,6 +157,13 @@ bool Program::findString(String const &needle, std::ostream &out) const {
         return false;
     }
     return m_calendar->findString(needle, out);
+}
+
+bool Program::markAsHoliday(Date const &date) {
+    if(!opened()){
+        return false;
+    }
+    return m_calendar->holiday(date);
 }
 
 String Program::getNameFromPath(char const *file_path) {

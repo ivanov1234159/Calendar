@@ -26,7 +26,7 @@ public:
     ~Program();
 
     bool opened() const;
-    String const& getFileName(String const& path = nullptr) const;// return  m_calendar->m_name
+    String getFileName(String const& path = nullptr) const;
 
     bool open(String const& file_path);
     void close();
@@ -42,6 +42,7 @@ public:
     bool changeNote(Date const& date, Time const& start, String const& new_note);
 
     bool findString(String const& needle, std::ostream& out) const;
+    bool markAsHoliday(Date const& date);
 private:
     static String getNameFromPath(char const *file_path);
     void clear();
