@@ -4,10 +4,10 @@
 
 #include "CmdFind.hpp"
 
-CmdChange::CmdChange()
+CmdFind::CmdFind()
     : Command("find", "<string>", "search for an appointment which name or note contains <string>"){}
 
-bool CmdChange::action(RunnerType &runner, std::istringstream &iss) const {
+bool CmdFind::action(RunnerType &runner, std::istringstream &iss) const {
     String needle;
     needle.read(iss, '\n');
     if(!iss){
