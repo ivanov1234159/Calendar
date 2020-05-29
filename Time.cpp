@@ -4,7 +4,7 @@
 
 #include "Time.hpp"
 
-Time::Time(unsigned hours, unsigned minutes, unsigned seconds) {
+Time::Time(unsigned seconds, unsigned minutes, unsigned hours) {
     normalize(hours, minutes, seconds);
 }
 

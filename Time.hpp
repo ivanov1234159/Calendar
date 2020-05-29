@@ -15,7 +15,7 @@ class Time {
     unsigned m_minutes;
     unsigned m_seconds;
 public:
-    Time(unsigned hours = 0, unsigned minutes = 0, unsigned seconds = 0);
+    Time(unsigned seconds = 0, unsigned minutes = 0, unsigned hours = 0);
     Time(std::istream& in);
     Time(std::ifstream& ifs);
 
