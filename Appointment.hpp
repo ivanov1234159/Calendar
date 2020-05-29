@@ -11,22 +11,23 @@
 //for: ifstream, ofstream
 #include "Date.hpp"
 #include "Time.hpp"
+#include "String.hpp"
 
 class Appointment {
-    char* m_name;
-    char* m_note;
+    String m_name;
+    String m_note;
     Date m_date;
     Time m_start;
     Time m_end;
 public:
-    Appointment();
+    Appointment() = default;
     Appointment(std::ifstream& ifs);
-    Appointment(char const* name, char const* note, Date const& date, Time const& start, Time const& end);
+    Appointment(String const& name, String const& note, Date const& date, Time const& start, Time const& end);
 
     bool serialize(std::ofstream& ofs) const;
 
-    char const* getName() const;
-    char const* getNote() const;
+    String const& getName() const;
+    String const& getNote() const;
     Date getDate() const;
     Time getStartTime() const;
     Time getEndTime() const;

@@ -4,52 +4,30 @@
 
 #include "Appointment.hpp"
 #include "MySpace.hpp"
-#include <cstring>
-//for: strlen()
 
-Appointment::Appointment(): m_name(nullptr), m_note(nullptr), m_date(Date()), m_start(Time()), m_end(Time()) {}
-
-Appointment::Appointment(std::ifstream &ifs): m_name(nullptr), m_note(nullptr) {
-    unsigned size;
-    ifs.read((char*) &size, sizeof(size));
-    m_name = new char[size];
-    ifs.read(m_name, size);
-
-    ifs.read((char*) &size, sizeof(size));
-    m_note = new char[size];
-    ifs.read(m_note, size);
+Appointment::Appointment(std::ifstream &ifs) {
+    m_name.unserialize(ifs);
+    m_note.unserialize(ifs);
     m_date = Date(ifs);
     m_start = Time(ifs);
     m_end = Time(ifs);
 }
 
-Appointment::Appointment(char const *name, char const *note, Date const &date, Time const &start, Time const &end)
-    : m_name(nullptr), m_note(nullptr) {
-    MySpace::mem_copy(m_name, name);
-    MySpace::mem_copy(m_note, note);
+Appointment::Appointment(String const& name, String const& note, Date const &date, Time const &start, Time const &end){
+    m_name = name;
+    m_note = note;
     m_date = date;
     m_start = start;
     m_end = end;
 }
 
 bool Appointment::serialize(std::ofstream &ofs) const {
-    if(m_name == nullptr || m_note == nullptr){
-        return false;
-    }
-    unsigned size = std::strlen(m_name) + 1;
-    ofs.write((char const*) &size, sizeof(size));
-    ofs.write((char const*) m_name, size);
-    size = std::strlen(m_note) + 1;
-    ofs.write((char const*) &size, sizeof(size));
-    ofs.write((char const*) m_note, size);
-    if(!ofs.good()){
-        return false;
-    }
-    return m_date.serialize(ofs) && m_start.serialize(ofs) && m_end.serialize(ofs);
+    return m_name.serialize(ofs) && m_note.serialize(ofs) && m_date.serialize(ofs)
+        && m_start.serialize(ofs) && m_end.serialize(ofs);
 }
 
-char const* Appointment::getName() const { return m_name; }
-char const* Appointment::getNote() const { return m_note; }
+String const& Appointment::getName() const { return m_name; }
+String const& Appointment::getNote() const { return m_note; }
 Date Appointment::getDate() const { return m_date; }
 Time Appointment::getStartTime() const { return m_start; }
 Time Appointment::getEndTime() const { return m_end; }
