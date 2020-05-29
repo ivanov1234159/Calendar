@@ -5,51 +5,25 @@
 #include "Calendar.hpp"
 #include "MySpace.hpp"
 
-Calendar::Calendar(const char *calendar_path): m_file_path(nullptr), m_list(nullptr), m_size(0), m_limit(2) {
-    MySpace::mem_copy(m_file_path, calendar_path, false);
-    m_list = new Appointment[m_limit];
-}
+Calendar::Calendar(String const& calendar_path): m_file_path(calendar_path) {}
 
-Calendar::Calendar(std::ifstream &ifs, char const* calendar_path): m_file_path(nullptr), m_list(nullptr) {
-    MySpace::mem_copy(m_file_path, calendar_path, false);
-    ifs.read((char*) &m_size, sizeof(m_size));
-    m_list = new Appointment[m_size];
-    for(unsigned i = 0; i < m_size; i++){
-        m_list[i] = Appointment(ifs);
+Calendar::Calendar(std::ifstream &ifs, String const& calendar_path): m_file_path(calendar_path) {
+    unsigned size;
+    ifs.read((char*) &size, sizeof(size));
+    m_list = Vector<Appointment>(size);
+    for(unsigned i = 0; i < size; i++){
+        m_list.push(Appointment(ifs));
     }
 }
 
-Calendar::Calendar(Calendar const &other) {
-    copy(other);
-}
-
-Calendar& Calendar::operator=(Calendar const &other) {
-    if(this != &other){
-        clear();
-        copy(other);
-    }
-    return *this;
-}
-
-Calendar::~Calendar() {
-    clear();
-}
-
-bool Calendar::empty() const {
-    return m_size == 0;
-}
-
-bool Calendar::full() const {
-    return m_size == m_limit;
-}
-
-char const* Calendar::getFilePath() const {
+String const& Calendar::getFilePath() const {
     return m_file_path;
 }
 
 bool Calendar::serialize(std::ofstream &ofs) const {
-    ofs.write((char const*) &m_size, sizeof(m_size));
-    for(unsigned i = 0; i < m_size; i++){
+    unsigned size = m_list.size();
+    ofs.write((char const*) &size, sizeof(size));
+    for(unsigned i = 0; i < size; i++){
         if(!m_list[i].serialize(ofs)){
             break;
         }
@@ -70,7 +44,7 @@ bool Calendar::unbook(Date const &date, Time const &start, Time const &end) {
     if(search == nullptr){
         return false;
     }
-    Appointment* last = &m_list[--m_size];
+    Appointment* last = &m_list[-1];
     while (search < last){
         *search = *(search+1);
         search++;
@@ -80,7 +54,7 @@ bool Calendar::unbook(Date const &date, Time const &start, Time const &end) {
 }
 
 void Calendar::agenda(Date const &date, std::ostream& out) {
-    for(unsigned i = 0; i < m_size; i++){
+    for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getDate() != date){
             continue;
         }
@@ -91,13 +65,11 @@ void Calendar::agenda(Date const &date, std::ostream& out) {
 //TODO
 
 void Calendar::book(Appointment const &app) {
-    if(full()){
-        resize();
-    }
-    //m_list[m_size++] = app;
+    //m_list.push(app);
     //to end: sorted insert
+    m_list.push(Appointment());
     Appointment* search = &m_list[0];
-    for(unsigned i = 1; i < m_size; i++){
+    for(unsigned i = 1; i < m_list.size(); i++){
         if(m_list[i].getDate() >= app.getDate()){
             if(m_list[i].getDate() > app.getDate() || m_list[i].getStartTime() > app.getStartTime()){
                 break;
@@ -105,7 +77,7 @@ void Calendar::book(Appointment const &app) {
         }
         search = &m_list[i];
     }
-    Appointment* last = &m_list[m_size];
+    Appointment* last = &m_list[-1];
     if(search < last){// more important is that they are not equal
         search++;
     }
@@ -114,44 +86,10 @@ void Calendar::book(Appointment const &app) {
         last--;
     }
     *search = app;
-    m_size++;
-}
-
-void Calendar::clear() {
-    if(m_file_path != nullptr){
-        delete[] m_file_path;
-        m_file_path = nullptr;
-    }
-    if(m_list != nullptr){
-        delete[] m_list;
-        m_list = nullptr;
-    }
-}
-
-void Calendar::copy(Calendar const &other) {
-    MySpace::mem_copy(m_file_path, other.m_file_path);
-    m_size = other.m_size;
-    m_limit = other.m_limit;
-    if(m_list != nullptr){
-        delete[] m_list;
-    }
-    m_list = new Appointment[m_limit];
-    for(unsigned i = 0; i < m_size; i++){
-        m_list[i] = other.m_list[i];
-    }
-}
-
-void Calendar::resize() {
-    m_limit *= 2;
-    Appointment* temp = m_list;
-    m_list = new Appointment[m_limit];
-    for(unsigned i = 0; i < m_size; i++){
-        m_list[i] = temp[i];
-    }
 }
 
 bool Calendar::isFree(Date const &date, Time const &start, Time const &end) const {
-    for(unsigned i = 0; i < m_size; i++){
+    for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getDate() != date){
             continue;
         }
@@ -166,7 +104,7 @@ bool Calendar::isFree(Date const &date, Time const &start, Time const &end) cons
 }
 
 Appointment* Calendar::find(Date const &date, Time const &start, Time const &end) {
-    for(unsigned i = 0; i < m_size; i++){
+    for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getDate() == date && m_list[i].getStartTime() == start && m_list[i].getEndTime() == end){
             return &m_list[i];
         }

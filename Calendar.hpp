@@ -12,6 +12,8 @@
 #include "Appointment.hpp"
 #include "Date.hpp"
 #include "Time.hpp"
+#include "Vector.hpp"
+#include "String.hpp"
 
 /*enum class CalendarStatus {
     I_OK,// I_ -> info
@@ -21,24 +23,16 @@
     E_NAME,
     E_NOTE
 };*/
-class Program;
 
 class Calendar {
-    char* m_file_path;// the file path in which the calendar had been saved
-    Appointment* m_list;
-    unsigned m_size;
-    unsigned m_limit;
+    String m_file_path;// the file path in which the calendar had been saved
+    Vector<Appointment> m_list;
 public:
-    Calendar(char const* calendar_path = nullptr);
-    Calendar(std::ifstream& ifs, char const* calendar_path = nullptr);
-    Calendar(Calendar const& other);
-    Calendar& operator=(Calendar const& other);
-    ~Calendar();
+    Calendar() = default;
+    Calendar(String const& calendar_path);
+    Calendar(std::ifstream& ifs, String const& calendar_path = nullptr);
 
-    bool empty() const;
-    bool full() const;
-
-    char const* getFilePath() const;
+    String const& getFilePath() const;
     bool serialize(std::ofstream& ofs) const;
 
     bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);
@@ -52,12 +46,8 @@ public:
     //findslotwith
     //merge
 
-    friend bool cmd_status(Program& runner, std::istringstream& iss);
 private:
     void book(Appointment const &app);
-    void clear();
-    void copy(Calendar const& other);
-    void resize();
     bool isFree(Date const& date, Time const& start, Time const& end) const;
     Appointment* find(Date const& date, Time const& start, Time const& end);
 };
