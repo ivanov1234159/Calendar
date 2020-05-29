@@ -121,6 +121,13 @@ bool Program::changeNote(Date const &date, Time const &start, String const &new_
     return true;
 }
 
+bool Program::findString(String const &needle, std::ostream &out) {
+    if(!opened()){
+        return false;
+    }
+    return m_calendar->findString(needle, out);
+}
+
 String Program::getNameFromPath(char const *file_path) {
     if(file_path == nullptr){
         return String();

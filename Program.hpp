@@ -5,6 +5,8 @@
 #ifndef CALENDAR_PROGRAM_HPP
 #define CALENDAR_PROGRAM_HPP
 
+#include <iostream>
+//for: ostream
 #include "Calendar.hpp"
 #include "Date.hpp"
 #include "Time.hpp"
@@ -36,6 +38,8 @@ public:
     bool changeEndTime(Date const& date, Time const& start, String const& new_end_time);
     bool changeName(Date const& date, Time const& start, String const& new_name);
     bool changeNote(Date const& date, Time const& start, String const& new_note);
+
+    bool findString(String const& needle, std::ostream& out);
 private:
     static String getNameFromPath(char const *file_path);
     void clear();

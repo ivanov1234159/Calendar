@@ -62,6 +62,17 @@ void Calendar::agenda(Date const &date, std::ostream& out) {
     }
 }
 
+bool Calendar::findString(String const &needle, std::ostream &out) {
+    bool any = false;
+    for(unsigned i = 0; i < m_list.size(); i++){
+        if(m_list[i].getName().contains(needle) || m_list[i].getNote().contains(needle)){
+            out << m_list[i];
+            any = true;
+        }
+    }
+    return any;
+}
+
 //TODO
 
 Appointment* Calendar::find(Date const &date, Time const &start) {
