@@ -9,6 +9,7 @@
 //for: ostream, istream
 #include <fstream>
 //for: ifstream, ofstream
+#include "String.hpp"
 
 class Date {
     unsigned m_day;
@@ -30,7 +31,8 @@ public:
     bool operator>=(Date const& other) const;
     bool operator<=(Date const& other) const;
 
-    friend std::ostream& operator<<(std::ostream& out, Date const& obj);
+    String to_string() const;
+
     friend std::istream& operator>>(std::istream& in, Date& obj);
 
 private:

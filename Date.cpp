@@ -77,6 +77,21 @@ bool Date::operator<=(Date const &other) const {
     return !(*this > other);
 }
 
+String Date::to_string() const {
+    String result;
+    if(m_year < 1000)   { result.push('0'); }
+    if(m_year < 100)    { result.push('0'); }
+    if(m_year < 10)     { result.push('0'); }
+    result += String::to_string(m_year);
+    result.push('-');
+    if(m_month < 10)    { result.push('0'); }
+    result += String::to_string(m_month);
+    result.push('-');
+    if(m_day < 10)    { result.push('0'); }
+    result += String::to_string(m_day);
+    return result;
+}
+
 void Date::normalize(unsigned day, unsigned month, unsigned year) {
     m_year = year;
     month %= 12;
@@ -87,10 +102,7 @@ void Date::normalize(unsigned day, unsigned month, unsigned year) {
 }
 
 std::ostream& operator<<(std::ostream& out, Date const& obj){
-    return out << (obj.m_year < 1000 ? "0" : "") << (obj.m_year < 100 ? "0" : "")
-               << (obj.m_year < 10 ? "0" : "") << obj.m_year
-               << (obj.m_month < 10 ? "-0" : "-") << obj.m_month
-               << (obj.m_day < 10 ? "-0" : "-") << obj.m_day;
+    return out << obj.to_string();
 }
 
 std::istream& operator>>(std::istream& in, Date& obj){
