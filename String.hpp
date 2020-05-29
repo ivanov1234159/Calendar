@@ -13,6 +13,8 @@
 
 class String : public Vector<char> {
 public:
+    static String to_string(int num);
+
     String(char const* str = nullptr);
 
     bool set(char const* str);
@@ -21,6 +23,8 @@ public:
     bool get(char*& str) const;
 
     void append(String const& other);
+
+    void read(std::istream& from, char until = ' ');
 
     bool operator!() const;
 
