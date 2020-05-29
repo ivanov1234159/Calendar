@@ -8,6 +8,7 @@
 #include "Calendar.hpp"
 #include "Date.hpp"
 #include "Time.hpp"
+#include "String.hpp"
 
 class Program {
 public:
@@ -22,17 +23,15 @@ public:
     ~Program();
 
     bool opened() const;
-    void getFileName(char*& file_name, char const* path = nullptr) const;// file_name is to return the file_name (from m_calendar->m_name)
+    String const& getFileName(String const& path = nullptr) const;// return  m_calendar->m_name
 
-    bool open(char const* file_path);
+    bool open(String const& file_path);
     void close();
-    bool save() const ;
-    bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);
+    bool save() const;
+    bool book(Date const& date, Time const& start, Time const& end, String const& name, String const& note);
     bool unbook(Date const& date, Time const& start, Time const& end);
-
-    friend bool cmd_status(Program& runner, std::istringstream& iss);
 private:
-    static void getNameFromPath(char const*file_path, char*& file_name);
+    static String getNameFromPath(char const *file_path);
     void clear();
 };
 

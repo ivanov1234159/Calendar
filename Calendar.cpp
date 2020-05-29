@@ -31,7 +31,7 @@ bool Calendar::serialize(std::ofstream &ofs) const {
     return ofs.good();
 }
 
-bool Calendar::book(Date const &date, Time const &start, Time const &end, char const *name, char const *note) {
+bool Calendar::book(Date const &date, Time const &start, Time const &end, String const& name, String const& note) {
     if(!isFree(date, start, end)){
         return false;
     }

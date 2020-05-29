@@ -24,25 +24,25 @@ bool Program::opened() const {
     return m_calendar != nullptr;
 }
 
-void Program::getFileName(char*& file_name, char const* path) const {
-    if(path == nullptr && !opened()){
-        return;
+String const& Program::getFileName(String const& path) const {
+    if(path.empty() && !opened()){
+        return String();
     }
-    char const* file_path = path;
-    if(path == nullptr){
+    char const* file_path = path.get();
+    if(path.empty()){
         file_path = m_calendar->getFilePath();
     }
-    Program::getNameFromPath(file_path, file_name);
+    return Program::getNameFromPath(file_path);
 }
 
-bool Program::open(char const *file_path) {
+bool Program::open(String const& file_path) {
     if(opened()){
         return false;
     }
-    std::ifstream ifs(file_path, std::ios::binary);
+    std::ifstream ifs(file_path.get(), std::ios::binary);
     int temp_pos = ifs.tellg();
     if(!ifs.good() || ifs.seekg(0, ifs.end).tellg() == 0){
-        std::ofstream ofs(file_path, std::ios::binary);
+        std::ofstream ofs(file_path.get(), std::ios::binary);
         m_calendar = new Calendar(file_path);
         //ofs.close(); //this is done with (in) the destructor
         return true;
@@ -67,7 +67,7 @@ bool Program::save() const {
     return m_calendar->serialize(ofs);
 }
 
-bool Program::book(Date const &date, Time const &start, Time const &end, char const *name, char const *note) {
+bool Program::book(Date const &date, Time const &start, Time const &end, String const& name, String const& note) {
     return m_calendar->book(date, start, end, name, note);
 }
 
@@ -75,9 +75,9 @@ bool Program::unbook(Date const &date, Time const &start, Time const &end) {
     return m_calendar->unbook(date, start, end);
 }
 
-void Program::getNameFromPath(char const *file_path, char *&file_name) {
-    if(file_path == nullptr || file_name != nullptr){
-        return;
+String Program::getNameFromPath(char const *file_path) {
+    if(file_path == nullptr){
+        return String();
     }
     char delimiter = '\0';
     if(std::strchr(file_path, '/') != nullptr){
@@ -86,8 +86,7 @@ void Program::getNameFromPath(char const *file_path, char *&file_name) {
         delimiter = '\\';
     }
     if(delimiter == '\0' || (delimiter == '/' && std::strchr(file_path, '\\') != nullptr)){
-        MySpace::mem_copy(file_name, file_path, false);
-        return;
+        return String(file_path);
     }
     char const* temp = nullptr;
     char const* last = nullptr;
@@ -102,7 +101,7 @@ void Program::getNameFromPath(char const *file_path, char *&file_name) {
             temp++;
         }
     }while(temp != nullptr);
-    MySpace::mem_copy(file_name, last, false);
+    return String(last);
 }
 
 void Program::clear() {

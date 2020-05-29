@@ -35,7 +35,7 @@ public:
     String const& getFilePath() const;
     bool serialize(std::ofstream& ofs) const;
 
-    bool book(Date const& date, Time const& start, Time const& end, char const* name, char const* note);
+    bool book(Date const& date, Time const& start, Time const& end, String const& name, String const& note);
     bool unbook(Date const& date, Time const& start, Time const& end);
     void agenda(Date const& date, std::ostream& out);
     //change
