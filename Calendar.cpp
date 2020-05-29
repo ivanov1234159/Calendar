@@ -64,6 +64,15 @@ void Calendar::agenda(Date const &date, std::ostream& out) {
 
 //TODO
 
+Appointment* Calendar::find(Date const &date, Time const &start) {
+    for(unsigned i = 0; i < m_list.size(); i++){
+        if(m_list[i].getDate() == date && m_list[i].getStartTime() == start){
+            return &m_list[i];
+        }
+    }
+    return nullptr;
+}
+
 void Calendar::book(Appointment const &app) {
     //m_list.push(app);
     //to end: sorted insert
