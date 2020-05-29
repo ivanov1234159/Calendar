@@ -5,7 +5,7 @@
 #include "CmdAgenda.hpp"
 
 CmdAgenda::CmdAgenda()
-        : Command("agenda", "<date>", "print a list with all appointments for the <date> ordered by time"){}
+        : Command("agenda", "<date>", "print a list with all appointments for the <date> order by time"){}
 
 bool CmdAgenda::action(RunnerType &runner, std::istringstream &iss) const {
     Date date;
