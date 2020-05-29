@@ -30,7 +30,7 @@ String const& Program::getFileName(String const& path) const {
     }
     char const* file_path = path.get();
     if(path.empty()){
-        file_path = m_calendar->getFilePath();
+        file_path = m_calendar->getFilePath().get();
     }
     return Program::getNameFromPath(file_path);
 }
@@ -63,7 +63,7 @@ bool Program::save() const {
     if(!opened()){
         return true;
     }
-    std::ofstream ofs(m_calendar->getFilePath(), std::ios::binary);
+    std::ofstream ofs(m_calendar->getFilePath().get(), std::ios::binary);
     return m_calendar->serialize(ofs);
 }
 
@@ -75,34 +75,55 @@ bool Program::unbook(Date const &date, Time const &start, Time const &end) {
     return m_calendar->unbook(date, start, end);
 }
 
-bool Program::changeDate(Date const &date, Time const &start, String const &new_date) {
+Pair<bool, bool> Program::changeDate(Date const &date, Time const &start, Date const &new_date) {
+    if(!opened()){
+        return { false, false };
+    }
     Appointment* search = m_calendar->find(date, start);
     if(search == nullptr){
-        return false;
+        return { false, false };
+    }
+    if(date != new_date && !m_calendar->isFree(new_date, search->getStartTime(), search->getEndTime())){
+        return { false, true };
     }
     search->setDate(new_date);
-    return true;
+    return { true, false };
 }
 
-bool Program::changeStartTime(Date const &date, Time const &start, String const &new_start_time) {
+Pair<bool, bool> Program::changeStartTime(Date const &date, Time const &start, Time const &new_start_time) {
+    if(!opened()){
+        return { false, false };
+    }
     Appointment* search = m_calendar->find(date, start);
     if(search == nullptr){
-        return false;
+        return { false, false };
+    }
+    if(new_start_time < search->getStartTime() && !m_calendar->isFree(date, new_start_time, search->getStartTime(-1))){
+        return { false, true };
     }
     search->setStartTime(new_start_time);
-    return true;
+    return { true, false };
 }
 
-bool Program::changeEndTime(Date const &date, Time const &start, String const &new_end_time) {
+Pair<bool, bool> Program::changeEndTime(Date const &date, Time const &start, Time const &new_end_time) {
+    if(!opened()){
+        return { false, false };
+    }
     Appointment* search = m_calendar->find(date, start);
     if(search == nullptr){
-        return false;
+        return { false, false };
+    }
+    if(new_end_time > search->getEndTime() && !m_calendar->isFree(date, search->getEndTime(1), new_end_time)){
+        return { false, true };
     }
     search->setEndTime(new_end_time);
-    return true;
+    return { true, false };
 }
 
 bool Program::changeName(Date const &date, Time const &start, String const &new_name) {
+    if(!opened()){
+        return false;
+    }
     Appointment* search = m_calendar->find(date, start);
     if(search == nullptr){
         return false;
@@ -113,6 +134,9 @@ bool Program::changeName(Date const &date, Time const &start, String const &new_
 
 
 bool Program::changeNote(Date const &date, Time const &start, String const &new_note) {
+    if(!opened()){
+        return false;
+    }
     Appointment* search = m_calendar->find(date, start);
     if(search == nullptr){
         return false;
