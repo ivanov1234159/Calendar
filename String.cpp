@@ -3,7 +3,7 @@
 //
 
 #include <cstring>
-//for: strlen(), strcpy(), strcmp()
+//for: strlen(), strcpy(), strcmp(), strstr()
 #include "String.hpp"
 #include "MySpace.hpp"
 
@@ -65,6 +65,10 @@ void String::append(String const &other) {
 
 void String::read(std::istream& from, char until) {
     set(MySpace::read_stream(from, until));
+}
+
+bool String::contains(String const &other) {
+    return std::strstr(get(), other.get()) != nullptr;
 }
 
 bool String::operator!() const {

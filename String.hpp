@@ -26,6 +26,8 @@ public:
 
     void read(std::istream& from, char until = ' ');
 
+    bool contains(String const& other);
+
     bool operator!() const;
 
     bool operator==(String const& other) const;
