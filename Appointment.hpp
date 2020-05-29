@@ -31,6 +31,12 @@ public:
     Date getDate() const;
     Time getStartTime() const;
     Time getEndTime() const;
+
+    void setName(String const& name);
+    void setNote(String const& note);
+    void setDate(Date const& date);
+    void setStartTime(Time const& start);
+    void setEndTime(Time const& end);
 };
 
 std::ostream& operator<<(std::ostream& out, Appointment const& obj);

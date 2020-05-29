@@ -26,11 +26,17 @@ bool Appointment::serialize(std::ofstream &ofs) const {
         && m_start.serialize(ofs) && m_end.serialize(ofs);
 }
 
-String const& Appointment::getName() const { return m_name; }
-String const& Appointment::getNote() const { return m_note; }
-Date Appointment::getDate() const { return m_date; }
-Time Appointment::getStartTime() const { return m_start; }
-Time Appointment::getEndTime() const { return m_end; }
+String const& Appointment::getName() const  { return m_name;    }
+String const& Appointment::getNote() const  { return m_note;    }
+Date Appointment::getDate() const           { return m_date;    }
+Time Appointment::getStartTime() const      { return m_start;   }
+Time Appointment::getEndTime() const        { return m_end;     }
+
+void Appointment::setName(String const &name)       { m_name = name;    }
+void Appointment::setNote(String const &note)       { m_note = note;    }
+void Appointment::setDate(Date const &date)         { m_date = date;    }
+void Appointment::setStartTime(Time const &start)   { m_start = start;  }
+void Appointment::setEndTime(Time const &end)       { m_end = end;      }
 
 std::ostream& operator<<(std::ostream& out, Appointment const& obj){
     return out << "An appointment named " << obj.getName()
