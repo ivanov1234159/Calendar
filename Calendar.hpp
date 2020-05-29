@@ -37,8 +37,8 @@ public:
 
     bool book(Date const& date, Time const& start, Time const& end, String const& name, String const& note);
     bool unbook(Date const& date, Time const& start, Time const& end);
-    void agenda(Date const& date, std::ostream& out);
-    bool findString(String const& needle, std::ostream& out);
+    bool agenda(Date const& date, std::ostream& out) const;
+    bool findString(String const& needle, std::ostream& out) const;
     //void holiday(Date const& date);
     //busydays
     //findslot

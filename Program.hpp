@@ -33,6 +33,7 @@ public:
     bool save() const;
     bool book(Date const& date, Time const& start, Time const& end, String const& name, String const& note);
     bool unbook(Date const& date, Time const& start, Time const& end);
+    bool agenda(Date const& date, std::ostream& out) const;
 
     Pair<bool, bool> changeDate(Date const& date, Time const& start, Date const& new_date);
     Pair<bool, bool> changeStartTime(Date const& date, Time const& start, Time const& new_start_time);
@@ -40,7 +41,7 @@ public:
     bool changeName(Date const& date, Time const& start, String const& new_name);
     bool changeNote(Date const& date, Time const& start, String const& new_note);
 
-    bool findString(String const& needle, std::ostream& out);
+    bool findString(String const& needle, std::ostream& out) const;
 private:
     static String getNameFromPath(char const *file_path);
     void clear();

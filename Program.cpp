@@ -75,6 +75,13 @@ bool Program::unbook(Date const &date, Time const &start, Time const &end) {
     return m_calendar->unbook(date, start, end);
 }
 
+bool Program::agenda(Date const &date, std::ostream &out) const {
+    if(!opened()){
+        return false;
+    }
+    return m_calendar->agenda(date, out);
+}
+
 Pair<bool, bool> Program::changeDate(Date const &date, Time const &start, Date const &new_date) {
     if(!opened()){
         return { false, false };
@@ -145,7 +152,7 @@ bool Program::changeNote(Date const &date, Time const &start, String const &new_
     return true;
 }
 
-bool Program::findString(String const &needle, std::ostream &out) {
+bool Program::findString(String const &needle, std::ostream &out) const {
     if(!opened()){
         return false;
     }

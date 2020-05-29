@@ -53,20 +53,23 @@ bool Calendar::unbook(Date const &date, Time const &start, Time const &end) {
     return true;
 }
 
-void Calendar::agenda(Date const &date, std::ostream& out) {
+bool Calendar::agenda(Date const &date, std::ostream& out) const {
+    bool any = false;
     for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getDate() != date){
             continue;
         }
         out << m_list[i] << std::endl;
+        any = true;
     }
+    return any;
 }
 
-bool Calendar::findString(String const &needle, std::ostream &out) {
+bool Calendar::findString(String const &needle, std::ostream &out) const {
     bool any = false;
     for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getName().contains(needle) || m_list[i].getNote().contains(needle)){
-            out << m_list[i];
+            out << m_list[i] << std::endl;
             any = true;
         }
     }
