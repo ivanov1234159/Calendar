@@ -9,22 +9,46 @@ CmdChange::CmdChange(): Command("change", "<date> <start_time> <option> <new_val
 {}
 
 bool CmdChange::action(RunnerType &runner, std::istringstream &iss) const {
-    String date, start, option, new_value;
-    iss >> date >> start >> option >> new_value;
+    Date date;
+    Time start;
+    String option;
+    iss >> date >> start >> option;
     if(!iss){
         std::cout << "Wrong format." << std::endl;
         return false;
     }
     bool result = false;
     if(option == "date"){
-        result = runner.changeDate(date, start, new_value);
+        Date new_value;
+        iss >> new_value;
+        Pair<bool, bool> temp = runner.changeDate(date, start, new_value);
+        result = temp.left;
+        if(temp.right){
+            std::cout << "The requested date is NOT free at this time period." << std::endl;
+        }
     } else if(option == "start_time"){
-        result = runner.changeStartTime(date, start, new_value);
+        Time new_value;
+        iss >> new_value;
+        Pair<bool, bool> temp = runner.changeStartTime(date, start, new_value);
+        result = temp.left;
+        if(temp.right){
+            std::cout << "The requested time period is NOT free." << std::endl;
+        }
     } else if(option == "end_time"){
-        result = runner.changeEndTime(date, start, new_value);
+        Time new_value;
+        iss >> new_value;
+        Pair<bool, bool> temp = runner.changeEndTime(date, start, new_value);
+        result = temp.left;
+        if(temp.right){
+            std::cout << "The requested time period is NOT free." << std::endl;
+        }
     } else if(option == "name"){
+        String new_value;
+        iss >> new_value;
         result = runner.changeName(date, start, new_value);
     } else if(option == "note"){
+        String new_value;
+        iss >> new_value;
         result = runner.changeNote(date, start, new_value);
     }else{
         std::cout << "Wrong format. Invalid <option> value." << std::endl;
@@ -35,9 +59,13 @@ bool CmdChange::action(RunnerType &runner, std::istringstream &iss) const {
     if(!result){
         std::cout << "NOT ";
     }
-    std::cout << "successfully changed to " << new_value << "." << std::endl;
-    if(!result){
-        std::cout << "There isn't an appointment on " << date << " at " << start << "." << std::endl;
+    std::cout << "successfully changed." << std::endl;
+    if(!result) {
+        if (runner.opened()) {
+            std::cout << "There isn't an appointment on " << date << " at " << start << "." << std::endl;
+        } else {
+            std::cout << "There isn't an opened calendar." << std::endl;
+        }
     }
     return true;
 }
