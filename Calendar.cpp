@@ -76,6 +76,16 @@ bool Calendar::findString(String const &needle, std::ostream &out) const {
     return any;
 }
 
+bool Calendar::holiday(Date const &date) {
+    if(!isFree(date, Time(), Time(59, 59, 23))){
+        return false;
+    }
+    Appointment app = Appointment("HOLIDAY", "", date, Time(), Time(59, 59, 23));
+    app.setHoliday();
+    book(app);
+    return true;
+}
+
 //TODO
 
 Appointment* Calendar::find(Date const &date, Time const &start) {

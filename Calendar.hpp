@@ -39,7 +39,7 @@ public:
     bool unbook(Date const& date, Time const& start, Time const& end);
     bool agenda(Date const& date, std::ostream& out) const;
     bool findString(String const& needle, std::ostream& out) const;
-    //void holiday(Date const& date);
+    bool holiday(Date const& date);
     //busydays
     //findslot
     //findslotwith
