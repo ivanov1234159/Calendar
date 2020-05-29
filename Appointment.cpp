@@ -29,8 +29,18 @@ bool Appointment::serialize(std::ofstream &ofs) const {
 String const& Appointment::getName() const  { return m_name;    }
 String const& Appointment::getNote() const  { return m_note;    }
 Date Appointment::getDate() const           { return m_date;    }
-Time Appointment::getStartTime() const      { return m_start;   }
-Time Appointment::getEndTime() const        { return m_end;     }
+Time Appointment::getStartTime(int diff_seconds) const {
+    if(diff_seconds != 0){
+        return Time(diff_seconds + m_start);
+    }
+    return m_start;
+}
+Time Appointment::getEndTime(int diff_seconds) const {
+    if(diff_seconds != 0){
+        return Time(diff_seconds + m_end);
+    }
+    return m_end;
+}
 
 void Appointment::setName(String const &name)       { m_name = name;    }
 void Appointment::setNote(String const &note)       { m_note = note;    }

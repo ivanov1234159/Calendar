@@ -29,8 +29,8 @@ public:
     String const& getName() const;
     String const& getNote() const;
     Date getDate() const;
-    Time getStartTime() const;
-    Time getEndTime() const;
+    Time getStartTime(int diff_seconds = 0) const;
+    Time getEndTime(int diff_seconds = 0) const;
 
     void setName(String const& name);
     void setNote(String const& note);
