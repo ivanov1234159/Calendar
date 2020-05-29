@@ -16,9 +16,10 @@ Command* Commander::find(char const* cmd){
 }
 
 void Commander::clear() {
-    for(unsigned i = 0; i < cmd_list.size(); i++){
-        delete cmd_list[i];
+    while (!cmd_list.empty()){
+        delete cmd_list.pop();
     }
+    cmd_list = Vector<Command*>();
 }
 
 void Commander::add(Command* item) {
