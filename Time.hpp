@@ -32,6 +32,9 @@ public:
     bool operator>=(Time const& other) const;
     bool operator<=(Time const& other) const;
 
+    Time const& operator+=(Time const& other);
+    Time operator+(Time const& other) const;
+
     operator int() const;
     void print(std::ostream& out) const;
 

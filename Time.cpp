@@ -67,6 +67,19 @@ bool Time::operator<=(Time const& other) const {
     return !(*this > other);
 }
 
+Time const& Time::operator+=(Time const &other) {
+    m_hours += other.m_hours;
+    m_minutes += other.m_minutes;
+    m_seconds += other.m_seconds;
+    normalize(m_hours, m_minutes, m_seconds);
+    return *this;
+}
+
+Time Time::operator+(Time const &other) const {
+    Time temp = *this;
+    return temp += other;
+}
+
 Time::operator int() const {
     return (int)getTotal();
 }
