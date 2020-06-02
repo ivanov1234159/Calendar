@@ -14,6 +14,7 @@
 #include "Time.hpp"
 #include "Vector.hpp"
 #include "String.hpp"
+#include "Pair.hpp"
 
 /*enum class CalendarStatus {
     I_OK,// I_ -> info
@@ -40,7 +41,7 @@ public:
     bool agenda(Date const& date, std::ostream& out) const;
     bool findString(String const& needle, std::ostream& out) const;
     bool holiday(Date const& date);
-    //busydays
+    Vector<Pair<Date, int>> findBusyDays(Date const& from, Date const& to);
     //findslot
     //findslotwith
     //merge

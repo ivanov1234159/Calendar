@@ -86,6 +86,30 @@ bool Calendar::holiday(Date const &date) {
     return true;
 }
 
+Vector<Pair<Date, int>> Calendar::findBusyDays(Date const &from, Date const &to) {
+    Vector<Pair<Date, int>> result;
+    for(unsigned i = 0; i < m_list.size(); i++){
+        Date const& current = m_list[i].getDate();
+        if(current < from || current > to || m_list[i].isHoliday()){
+            continue;
+        }
+
+        int diff = m_list[i].getEndTime().difference(m_list[i].getStartTime());
+        bool any = false;
+        for(unsigned j = 0; j < result.size() ; j++){
+            if(result[j].left == current){
+                result[j].right += diff;
+                any = true;
+                break;
+            }
+        }
+        if(!any){
+            result.push({ current, diff });
+        }
+    }
+    return result;
+}
+
 //TODO
 
 Appointment* Calendar::find(Date const &date, Time const &start) {
