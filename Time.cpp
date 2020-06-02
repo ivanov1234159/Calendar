@@ -4,7 +4,7 @@
 
 #include "Time.hpp"
 
-static const unsigned SEC_IN_DAY = 24 * 3600;
+const Time Time::max_time = Time((24 * 3600) - 1);
 
 Time::Time(unsigned seconds, unsigned minutes, unsigned hours) {
     normalize(hours, minutes, seconds);
@@ -46,7 +46,7 @@ bool Time::serialize(std::ofstream &ofs) const {
 }
 
 bool Time::operator==(Time const& other) const {
-    return difference(other) == 0;
+    return m_hours == other.m_hours && m_minutes == other.m_minutes && m_seconds == other.m_seconds;
 }
 
 bool Time::operator!=(Time const& other) const {
@@ -93,7 +93,7 @@ void Time::print(std::ostream &out) const {
 }
 
 bool Time::max() const {
-    return *this == Time(SEC_IN_DAY - 1);
+    return *this == Time::max_time;
 }
 
 void Time::normalize(unsigned hours, unsigned minutes, unsigned seconds) {
