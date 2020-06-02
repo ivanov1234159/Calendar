@@ -8,6 +8,8 @@
 //for: strchr()
 #include <fstream>
 //for: ifstream, ios::binary
+#include <utility>
+//for: swap()
 
 Program& Program::self(){
     static Program p;
@@ -164,6 +166,35 @@ bool Program::markAsHoliday(Date const &date) {
         return false;
     }
     return m_calendar->holiday(date);
+}
+
+Pair<bool, Vector<Date>> Program::getBusyDays(Date const &from, Date const &to) {
+    if(!opened() || to < from){
+        return { false, Vector<Date>(1, false) };
+    }
+    Vector<Pair<Date, int>> search = m_calendar->findBusyDays(from, to);
+    //begin buble sort
+    bool any;
+    unsigned end = search.size();
+    do {
+        any = false;
+        for(unsigned i = 1; i < end; i++){
+            if(search[i-1].right > search[i].right){
+                std::swap(search[i-1], search[i]);
+                any = true;
+            }
+        }
+        if(any && end > 0){// "end > 0" is the same as "end != 0"
+            end--;
+        }
+    } while (any);
+    //end buble sort
+    Pair<bool, Vector<Date>> result;
+    result.right = search.empty();
+    for(unsigned i = 0; i < search.size(); i++){
+        result.right.push(search[i].left);
+    }
+    return result;
 }
 
 String Program::getNameFromPath(char const *file_path) {
