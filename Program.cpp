@@ -173,7 +173,7 @@ Pair<bool, Vector<Date>> Program::getBusyDays(Date const &from, Date const &to) 
         return { false, Vector<Date>(1, false) };
     }
     Vector<Pair<Date, int>> search = m_calendar->findBusyDays(from, to);
-    //begin buble sort
+    //begin bubble sort
     bool any;
     unsigned end = search.size();
     do {
@@ -188,7 +188,7 @@ Pair<bool, Vector<Date>> Program::getBusyDays(Date const &from, Date const &to) 
             end--;
         }
     } while (any);
-    //end buble sort
+    //end bubble sort
     Pair<bool, Vector<Date>> result;
     result.right = search.empty();
     for(unsigned i = 0; i < search.size(); i++){
