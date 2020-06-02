@@ -38,6 +38,8 @@ public:
     operator int() const;
     void print(std::ostream& out) const;
 
+    bool max() const;
+
     friend std::istream& operator>>(std::istream& in, Time& obj);
 private:
     void normalize(unsigned hours, unsigned minutes, unsigned seconds);

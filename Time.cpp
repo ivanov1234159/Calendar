@@ -4,6 +4,8 @@
 
 #include "Time.hpp"
 
+static const unsigned SEC_IN_DAY = 24 * 3600;
+
 Time::Time(unsigned seconds, unsigned minutes, unsigned hours) {
     normalize(hours, minutes, seconds);
 }
@@ -88,6 +90,10 @@ void Time::print(std::ostream &out) const {
     out << (m_hours < 10 ? "0" : "") << m_hours
         << (m_minutes < 10 ? ":0" : ":") << m_minutes
         << (m_seconds < 10 ? ":0" : ":") << m_seconds;
+}
+
+bool Time::max() const {
+    return *this == Time(SEC_IN_DAY - 1);
 }
 
 void Time::normalize(unsigned hours, unsigned minutes, unsigned seconds) {
