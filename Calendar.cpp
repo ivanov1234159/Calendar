@@ -5,6 +5,10 @@
 #include "Calendar.hpp"
 #include "MySpace.hpp"
 
+static const unsigned DAY_START_AT_HOUR = 8;
+static const unsigned DAY_END_AT_HOUR = 17;
+static const unsigned SEC_IN_HOUR = 3600;
+
 Calendar::Calendar(String const& calendar_path): m_file_path(calendar_path) {}
 
 Calendar::Calendar(std::ifstream &ifs, String const& calendar_path): m_file_path(calendar_path) {
@@ -77,10 +81,10 @@ bool Calendar::findString(String const &needle, std::ostream &out) const {
 }
 
 bool Calendar::holiday(Date const &date) {
-    if(!isFree(date, Time(), Time(59, 59, 23))){
+    if(!isFree(date, Time(), Time::MAX_TIME)){
         return false;
     }
-    Appointment app = Appointment("HOLIDAY", "", date, Time(), Time(59, 59, 23));
+    Appointment app = Appointment("HOLIDAY", "", date, Time(), Time::MAX_TIME);
     app.setHoliday();
     book(app);
     return true;
@@ -110,12 +114,35 @@ Vector<Pair<Date, int>> Calendar::findBusyDays(Date const &from, Date const &to)
     return result;
 }
 
+bool Calendar::findSlotAt(Date const &date, Time const &duration, Time &begin) const {
+    static const Time end_time = Time(DAY_END_AT_HOUR * SEC_IN_HOUR);
+    if(isHoliday(date)){
+        return false;
+    }
+    if(duration > Time((DAY_END_AT_HOUR - DAY_START_AT_HOUR) * SEC_IN_HOUR)){
+        begin = Time::MAX_TIME;
+        return false;
+    }
+    begin = Time(DAY_START_AT_HOUR * SEC_IN_HOUR);
+    for(Appointment const* search = nullptr; ; ){
+        search = findFirst(date, begin, begin + duration);
+        if (search == nullptr) {
+            break;
+        }
+        begin = search->getEndTime(1);
+        if (begin + duration > end_time) {
+            return false;
+        }
+    }
+    return true;
+}
+
 //TODO
 
-Appointment* Calendar::find(Date const &date, Time const &start) {
+Appointment* Calendar::find(Date const &date, Time const &start) const {
     for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getDate() == date && m_list[i].getStartTime() == start){
-            return &m_list[i];
+            return const_cast<Appointment*>(&m_list[i]);
         }
     }
     return nullptr;
@@ -134,6 +161,14 @@ bool Calendar::isFree(Date const &date, Time const &start, Time const &end) cons
         }
     }
     return true;
+}
+
+bool Calendar::isHoliday(Date const &date) const {
+    Appointment* search = find(date, Time());
+    if(search == nullptr){
+        return false;
+    }
+    return search->isHoliday();
 }
 
 void Calendar::book(Appointment const &app) {
@@ -163,6 +198,21 @@ void Calendar::book(Appointment const &app) {
 Appointment* Calendar::find(Date const &date, Time const &start, Time const &end) {
     for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getDate() == date && m_list[i].getStartTime() == start && m_list[i].getEndTime() == end){
+            return &m_list[i];
+        }
+    }
+    return nullptr;
+}
+
+Appointment const* Calendar::findFirst(Date const &date, Time const &start, Time const &end) const {
+    for(unsigned i = 0; i < m_list.size(); i++){
+        if(m_list[i].getDate() != date){
+            continue;
+        }
+        if(m_list[i].getStartTime() >= start && m_list[i].getStartTime() <= end){
+            return &m_list[i];
+        }
+        if(m_list[i].getStartTime() <= start && m_list[i].getEndTime() > start){
             return &m_list[i];
         }
     }

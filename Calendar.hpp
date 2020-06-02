@@ -16,15 +16,6 @@
 #include "String.hpp"
 #include "Pair.hpp"
 
-/*enum class CalendarStatus {
-    I_OK,// I_ -> info
-    E_DATE,// E_ -> error
-    E_START_TIME,
-    E_END_TIME,
-    E_NAME,
-    E_NOTE
-};*/
-
 class Calendar {
     String m_file_path;// the file path in which the calendar had been saved
     Vector<Appointment> m_list;
@@ -42,16 +33,43 @@ public:
     bool findString(String const& needle, std::ostream& out) const;
     bool holiday(Date const& date);
     Vector<Pair<Date, int>> findBusyDays(Date const& from, Date const& to) const;
-    //findslot
+
+    /**
+     * search for a time period with length <duration> on <date>
+     * and the hours cannot be before 08 or after 17
+     * @param date - cannot be holiday
+     * @param duration - if longer than (17 - 8) hours, then begin is 23:59:59
+     * @param begin - used to return the starting time
+     * @return false if there isn't a time period with length <duration> on <date>
+     *      or the date is holiday
+     */
+    bool findSlotAt(Date const& date, Time const& duration, Time& begin) const;
     //findslotwith
     //merge
 
-    Appointment* find(Date const& date, Time const& start);
+    Appointment* find(Date const& date, Time const& start) const;
 
     bool isFree(Date const& date, Time const& start, Time const& end) const;
+
+    /**
+     * check if <date> is holiday
+     * @param date
+     * @return false if it's not holiday or there isn't an appointment on that day
+     */
+    bool isHoliday(Date const& date) const;
 private:
+
     void book(Appointment const &app);
     Appointment* find(Date const& date, Time const& start, Time const& end);
+
+    /**
+     * search for the first appointment that is in the interval between <start> and <end> on <date>
+     * @param date
+     * @param start
+     * @param end
+     * @return nullptr if not found (ONLY if isFree(date, start, end) == true)
+     */
+    Appointment const* findFirst(Date const& date, Time const& start, Time const& end) const;
 };
 
 #endif //CALENDAR_CALENDAR_HPP
