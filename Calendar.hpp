@@ -41,7 +41,7 @@ public:
     bool agenda(Date const& date, std::ostream& out) const;
     bool findString(String const& needle, std::ostream& out) const;
     bool holiday(Date const& date);
-    Vector<Pair<Date, int>> findBusyDays(Date const& from, Date const& to);
+    Vector<Pair<Date, int>> findBusyDays(Date const& from, Date const& to) const;
     //findslot
     //findslotwith
     //merge

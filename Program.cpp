@@ -168,7 +168,7 @@ bool Program::markAsHoliday(Date const &date) {
     return m_calendar->holiday(date);
 }
 
-Pair<bool, Vector<Date>> Program::getBusyDays(Date const &from, Date const &to) {
+Pair<bool, Vector<Date>> Program::getBusyDays(Date const &from, Date const &to) const {
     if(!opened() || to < from){
         return { false, Vector<Date>(1, false) };
     }

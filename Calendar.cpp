@@ -86,7 +86,7 @@ bool Calendar::holiday(Date const &date) {
     return true;
 }
 
-Vector<Pair<Date, int>> Calendar::findBusyDays(Date const &from, Date const &to) {
+Vector<Pair<Date, int>> Calendar::findBusyDays(Date const &from, Date const &to) const {
     Vector<Pair<Date, int>> result;
     for(unsigned i = 0; i < m_list.size(); i++){
         Date const& current = m_list[i].getDate();

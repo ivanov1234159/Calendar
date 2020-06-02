@@ -43,7 +43,7 @@ public:
 
     bool findString(String const& needle, std::ostream& out) const;
     bool markAsHoliday(Date const& date);
-    Pair<bool, Vector<Date>> getBusyDays(Date const& from, Date const& to);
+    Pair<bool, Vector<Date>> getBusyDays(Date const& from, Date const& to) const;
 private:
     static String getNameFromPath(char const *file_path);
     void clear();
