@@ -44,6 +44,15 @@ public:
     bool findString(String const& needle, std::ostream& out) const;
     bool markAsHoliday(Date const& date);
     Pair<bool, Vector<Date>> getBusyDays(Date const& from, Date const& to) const;
+
+    /**
+     * find the first possible date after <from> with <duration>
+     * and the date cannot be holiday and the hours cannot be before 08 or after 17
+     * @param from
+     * @param duration
+     * @return { the date, starting time }; starting time is max time if duration > (17 - 8) hours
+     */
+    Pair<Date, Time> findSlot(Date const& from, Time const& duration) const;
 private:
     static String getNameFromPath(char const *file_path);
     void clear();

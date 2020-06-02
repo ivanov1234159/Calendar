@@ -197,6 +197,17 @@ Pair<bool, Vector<Date>> Program::getBusyDays(Date const &from, Date const &to) 
     return result;
 }
 
+Pair<Date, Time> Program::findSlot(Date const &from, Time const &duration) const {
+    Date date = from;
+    Time start;
+    if(!opened()){
+        return { date, start };
+    }
+    for(; !m_calendar->findSlotAt(date, duration, start) && !start.max(); ++date)
+        {}
+    return { date, start };
+}
+
 String Program::getNameFromPath(char const *file_path) {
     if(file_path == nullptr){
         return String();
