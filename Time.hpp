@@ -15,7 +15,7 @@ class Time {
     unsigned m_minutes;
     unsigned m_seconds;
 public:
-    static const Time max_time;
+    static const Time MAX_TIME;
     Time(unsigned seconds = 0, unsigned minutes = 0, unsigned hours = 0);
     Time(std::istream& in);
     Time(std::ifstream& ifs);

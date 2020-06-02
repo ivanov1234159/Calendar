@@ -4,7 +4,7 @@
 
 #include "Time.hpp"
 
-const Time Time::max_time = Time((24 * 3600) - 1);
+const Time Time::MAX_TIME = Time((24 * 3600) - 1);
 
 Time::Time(unsigned seconds, unsigned minutes, unsigned hours) {
     normalize(hours, minutes, seconds);
@@ -93,7 +93,7 @@ void Time::print(std::ostream &out) const {
 }
 
 bool Time::max() const {
-    return *this == Time::max_time;
+    return *this == Time::MAX_TIME;
 }
 
 void Time::normalize(unsigned hours, unsigned minutes, unsigned seconds) {
