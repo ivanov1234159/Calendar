@@ -77,6 +77,26 @@ bool Date::operator<=(Date const &other) const {
     return !(*this > other);
 }
 
+Date& Date::operator++() {
+    m_day++;
+    unsigned last_day = Date::getLastDay(m_month, m_year);
+    if(m_day > last_day){
+        m_day -= last_day;
+        m_month++;
+        if(m_month > 12){
+            m_month -= 12;
+            m_year++;
+        }
+    }
+    return *this;
+}
+
+Date Date::operator++(int) {
+    Date temp = *this;
+    ++(*this);
+    return temp;
+}
+
 String Date::to_string() const {
     String result;
     if(m_year < 1000)   { result.push('0'); }

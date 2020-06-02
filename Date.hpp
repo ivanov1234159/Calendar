@@ -31,6 +31,9 @@ public:
     bool operator>=(Date const& other) const;
     bool operator<=(Date const& other) const;
 
+    Date& operator++();
+    Date operator++(int);
+
     String to_string() const;
 
     friend std::istream& operator>>(std::istream& in, Date& obj);
