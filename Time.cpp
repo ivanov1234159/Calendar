@@ -82,6 +82,16 @@ Time Time::operator+(Time const &other) const {
     return temp += other;
 }
 
+Time& Time::operator++() {
+    normalize(m_hours, m_minutes, m_seconds+1);
+}
+
+Time Time::operator++(int) {
+    Time temp = *this;
+    ++(*this);
+    return temp;
+}
+
 Time::operator int() const {
     return (int)getTotal();
 }

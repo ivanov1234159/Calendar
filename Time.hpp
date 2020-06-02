@@ -36,6 +36,9 @@ public:
     Time const& operator+=(Time const& other);
     Time operator+(Time const& other) const;
 
+    Time& operator++();
+    Time operator++(int);
+
     operator int() const;
     void print(std::ostream& out) const;
 
