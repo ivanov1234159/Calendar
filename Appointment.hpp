@@ -25,20 +25,71 @@ public:
     Appointment(std::ifstream& ifs);
     Appointment(String const& name, String const& note, Date const& date, Time const& start, Time const& end);
 
+    /**
+     * serialize this object
+     * @param ofs
+     * @return false on fail
+     */
     bool serialize(std::ofstream& ofs) const;
 
+    /// @return m_name
     String const& getName() const;
+
+    /// @return m_note
     String const& getNote() const;
+
+    /// @return m_date
     Date getDate() const;
+
+    /**
+     * @param diff_seconds
+     * @return m_start + diff_seconds
+     */
     Time getStartTime(int diff_seconds = 0) const;
+
+    /**
+     * @param diff_seconds
+     * @return m_end + diff_seconds
+     */
     Time getEndTime(int diff_seconds = 0) const;
+
+    /// @return m_holiday
     bool isHoliday() const;
 
+    /**
+     * set <name> to m_name
+     * @param name
+     */
     void setName(String const& name);
+
+    /**
+     * set <note> to m_note
+     * @param note
+     */
     void setNote(String const& note);
+
+    /**
+     * set <date> to m_date
+     * @param date
+     */
     void setDate(Date const& date);
+
+    /**
+     * set <start> to m_start
+     * @param start
+     */
     void setStartTime(Time const& start);
+
+    /**
+     * set <end> to m_end
+     * @param end
+     */
     void setEndTime(Time const& end);
+
+    /**
+     * set <holiday> to m_holiday
+     * @param holiday
+     */
     void setHoliday(bool holiday = true);
 };
 

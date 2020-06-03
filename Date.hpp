@@ -16,12 +16,23 @@ class Date {
     unsigned m_month;
     unsigned m_year;
 
-    unsigned getLastDay(unsigned month, unsigned year);
+    /**
+     * calculate the last day of the month
+     * @param month
+     * @param year
+     * @return the last day
+     */
+    static unsigned getLastDay(unsigned month, unsigned year);
 public:
     Date();
     Date(std::ifstream& ifs);
     Date(unsigned day, unsigned month, unsigned year);
 
+    /**
+     * serialize this object
+     * @param ofs
+     * @return false on fail
+     */
     bool serialize(std::ofstream& ofs) const;
 
     bool operator==(Date const& other) const;
@@ -34,11 +45,18 @@ public:
     Date& operator++();
     Date operator++(int);
 
+    /// @return this object as string (format: YYYY-MM-DD)
     String to_string() const;
 
     friend std::istream& operator>>(std::istream& in, Date& obj);
 
 private:
+    /**
+     * set m_day, m_month and m_year but valid
+     * @param day
+     * @param month
+     * @param year
+     */
     void normalize(unsigned day, unsigned month, unsigned year);
 };
 
