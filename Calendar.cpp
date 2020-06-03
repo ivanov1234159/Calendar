@@ -145,8 +145,6 @@ bool Calendar::findSlotAt(Date const &date, Time const &duration, Time &begin) c
     return true;
 }
 
-//TODO
-
 Appointment* Calendar::find(Date const &date, Time const &start) const {
     for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getDate() == date && m_list[i].getStartTime() == start){
