@@ -19,7 +19,7 @@ bool CmdSaveAs::action(std::ostream& out, RunnerType &runner, std::istringstream
     if(runner.opened()){
         Commander::call("close", runner, iss, oss);
     }
-    std::istringstream iss2(path);
+    std::istringstream iss2(path.get());
     Commander::call("open", runner, iss2, oss);
     runner.restoreCalendar(calendar);
     Commander::call("save", runner, iss2, out);
