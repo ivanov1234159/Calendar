@@ -38,21 +38,7 @@ String Program::getFileName(String const& path) const {
 }
 
 bool Program::open(String const& file_path) {
-    if(opened()){
-        return false;
-    }
-    std::ifstream ifs(file_path.get(), std::ios::binary);
-    int temp_pos = ifs.tellg();
-    if(!ifs.good() || ifs.seekg(0, ifs.end).tellg() == 0){
-        std::ofstream ofs(file_path.get(), std::ios::binary);
-        m_calendar = new Calendar(file_path);
-        //ofs.close(); //this is done with (in) the destructor
-        return true;
-    }
-    ifs.seekg(temp_pos);
-    m_calendar = new Calendar(ifs, file_path);
-    //ifs.close(); //this is done with (in) the destructor
-    return true;
+    return open(file_path, m_calendar);
 }
 
 void Program::close() {
@@ -217,15 +203,60 @@ Pair<bool, Vector<Date>> Program::getBusyDays(Date const &from, Date const &to) 
     return result;
 }
 
-Pair<Date, Time> Program::findSlot(Date const &from, Time const &duration) const {
+Pair<Date, Time> Program::findSlot(Date const &from, Time const &duration, Calendar const* calendar) const {
+    if(calendar == nullptr){
+        calendar = m_calendar;
+    }
     Date date = from;
     Time start;
-    if(!opened()){
-        return { date, start };
+    if(calendar != nullptr){// same as "opened()" when calendar is m_calendar
+        for(; !calendar->findSlotAt(date, duration, start) && !start.max(); ++date)
+            {}
     }
-    for(; !m_calendar->findSlotAt(date, duration, start) && !start.max(); ++date)
-        {}
     return { date, start };
+}
+
+Pair<Date, Time> Program::findSlotWith(Date const &from, Time const &duration, Calendar const *calendar) const {
+    if(calendar == nullptr || !opened()){
+        return { from, Time() };
+    }
+    Time begin_time;
+    Date date = from;
+    for(Pair<Date, Time> this_result, other_result; /* no condition */ ; ++date){
+        do{
+            this_result = findSlot(date, duration);
+            other_result = findSlot(date, duration, calendar);
+            date = MySpace::max(this_result.left, other_result.left);
+        } while (this_result.left != other_result.left);
+
+        begin_time = MySpace::max(this_result.right, other_result.right);
+        if(begin_time.max()){
+            return { date, begin_time };
+        }
+        Time end_time = begin_time + duration;
+        if(m_calendar->isFree(date, begin_time, end_time) && calendar->isFree(date, begin_time, end_time)){
+            break;
+        }
+    }
+    return { date, begin_time };
+}
+
+bool Program::open(String const& file_path, Calendar*& calendar) {
+    if(calendar != nullptr){
+        return false;
+    }
+    std::ifstream ifs(file_path.get(), std::ios::binary);
+    int temp_pos = ifs.tellg();
+    if(!ifs.good() || ifs.seekg(0, ifs.end).tellg() == 0){
+        std::ofstream ofs(file_path.get(), std::ios::binary);
+        calendar = new Calendar(file_path);
+        //ofs.close(); //this is done with (in) the destructor
+        return true;
+    }
+    ifs.seekg(temp_pos);
+    calendar = new Calendar(ifs, file_path);
+    //ifs.close(); //this is done with (in) the destructor
+    return true;
 }
 
 String Program::getNameFromPath(char const *file_path) {

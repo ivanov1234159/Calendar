@@ -28,6 +28,11 @@ public:
     bool opened() const;
     String getFileName(String const& path = nullptr) const;
 
+    /**
+     * opens a calendar using <file_path>
+     * @param file_path
+     * @return false if the calendar is already opened
+     */
     bool open(String const& file_path);
     void close();
     bool save() const;
@@ -62,9 +67,27 @@ public:
      * and the date cannot be holiday and the hours cannot be before 08 or after 17
      * @param from
      * @param duration
+     * @param calendar - if is nullptr then uses m_calendar instead
      * @return { the date, starting time }; starting time is max time if duration > (17 - 8) hours
      */
-    Pair<Date, Time> findSlot(Date const& from, Time const& duration) const;
+    Pair<Date, Time> findSlot(Date const& from, Time const& duration, Calendar const* calendar = nullptr) const;
+
+    /**
+     * uses fundSlot() method to find the best match for both calendars (m_calendar and calendar)
+     * @param from
+     * @param duration
+     * @param calendar - if is nullptr then returns { from, Time() }
+     * @return { the date, starting time }; starting time is max time if duration > (17 - 8) hours
+     */
+    Pair<Date, Time> findSlotWith(Date const& from, Time const& duration, Calendar const* calendar) const;
+
+    /**
+     * opens <calendar> using <file_path>
+     * @param file_path
+     * @param calendar
+     * @return false if the calendar is not nullptr
+     */
+    static bool open(String const& file_path, Calendar*& calendar);
 private:
     static String getNameFromPath(char const *file_path);
     void clear();
