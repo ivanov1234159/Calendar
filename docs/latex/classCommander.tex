@@ -1,0 +1,74 @@
+\hypertarget{classCommander}{}\section{Commander Class Reference}
+\label{classCommander}\index{Commander@{Commander}}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classCommander_a467f6a4ceeb5dab750cf3f4821b5db90}{add} (\hyperlink{classCommand}{Command} $\ast$item)
+\item 
+static void \hyperlink{classCommander_afea1bfe2bc8dbeea0d0523f369c9539e}{run} (\hyperlink{classProgram}{Runner\+Type} \&runner)
+\item 
+static bool \hyperlink{classCommander_a28323e9560f01aba51869d54832ca987}{call} (char const $\ast$cmd, \hyperlink{classProgram}{Runner\+Type} \&runner, std\+::istringstream \&iss, std\+::ostream \&out)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommander_a9e1b32d844b2d8080e51c4e8a4ca0442}\label{classCommander_a9e1b32d844b2d8080e51c4e8a4ca0442}} 
+static const unsigned {\bfseries B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE} = 256
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommander_aaf5700242631ebac67a8b2f6eaf9c730}\label{classCommander_aaf5700242631ebac67a8b2f6eaf9c730}} 
+class {\bfseries Cmd\+Help}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommander_a467f6a4ceeb5dab750cf3f4821b5db90}\label{classCommander_a467f6a4ceeb5dab750cf3f4821b5db90}} 
+\index{Commander@{Commander}!add@{add}}
+\index{add@{add}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Commander\+::add (\begin{DoxyParamCaption}\item[{\hyperlink{classCommand}{Command} $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+add the command in the list (cmd\+\_\+list) 
+\begin{DoxyParams}{Parameters}
+{\em item} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCommander_a28323e9560f01aba51869d54832ca987}\label{classCommander_a28323e9560f01aba51869d54832ca987}} 
+\index{Commander@{Commander}!call@{call}}
+\index{call@{call}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{call()}{call()}}
+{\footnotesize\ttfamily bool Commander\+::call (\begin{DoxyParamCaption}\item[{char const $\ast$}]{cmd,  }\item[{\hyperlink{classProgram}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+calls the command named $<$cmd$>$; if no such command, uses the \char`\"{}empty\char`\"{} (\char`\"{}default\char`\"{}) command 
+\begin{DoxyParams}{Parameters}
+{\em cmd} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+{\em out} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the command can quit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCommander_afea1bfe2bc8dbeea0d0523f369c9539e}\label{classCommander_afea1bfe2bc8dbeea0d0523f369c9539e}} 
+\index{Commander@{Commander}!run@{run}}
+\index{run@{run}!Commander@{Commander}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Commander\+::run (\begin{DoxyParamCaption}\item[{\hyperlink{classProgram}{Runner\+Type} \&}]{runner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+base function for the class 
+\begin{DoxyParams}{Parameters}
+{\em runner} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Commander.\+hpp\item 
+Commander.\+cpp\end{DoxyCompactItemize}

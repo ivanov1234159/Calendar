@@ -1,0 +1,190 @@
+\hypertarget{classAppointment}{}\section{Appointment Class Reference}
+\label{classAppointment}\index{Appointment@{Appointment}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAppointment_a3b5b82331c630dcce3b1e724d0e6c48e}\label{classAppointment_a3b5b82331c630dcce3b1e724d0e6c48e}} 
+{\bfseries Appointment} (std\+::ifstream \&ifs)
+\item 
+\mbox{\Hypertarget{classAppointment_a5ad76b006f94741008318f0a5053b7a0}\label{classAppointment_a5ad76b006f94741008318f0a5053b7a0}} 
+{\bfseries Appointment} (\hyperlink{classString}{String} const \&name, \hyperlink{classString}{String} const \&note, \hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end)
+\item 
+bool \hyperlink{classAppointment_a2542a8dd24e926a2531f1d88bbf4dd88}{serialize} (std\+::ofstream \&ofs) const
+\item 
+\hyperlink{classString}{String} const  \& \hyperlink{classAppointment_ab2cbd469ff67c37c34a91c02a1ba9d35}{get\+Name} () const
+\item 
+\hyperlink{classString}{String} const  \& \hyperlink{classAppointment_aaf6078fe8f092e321a38d173bc7093c3}{get\+Note} () const
+\item 
+\hyperlink{classDate}{Date} \hyperlink{classAppointment_ac4f82720deaa4daf6679d1c60fadfb67}{get\+Date} () const
+\item 
+\hyperlink{classTime}{Time} \hyperlink{classAppointment_a577870c4d05eb584d58c61c98b9b65a0}{get\+Start\+Time} (int diff\+\_\+seconds=0) const
+\item 
+\hyperlink{classTime}{Time} \hyperlink{classAppointment_a5ba3b128ad963c9676af3fb199b98613}{get\+End\+Time} (int diff\+\_\+seconds=0) const
+\item 
+bool \hyperlink{classAppointment_a0307e814d106ba2b2314a28a9701efae}{is\+Holiday} () const
+\item 
+void \hyperlink{classAppointment_a65ff6f9a246d1bf437cb0be725841a84}{set\+Name} (\hyperlink{classString}{String} const \&name)
+\item 
+void \hyperlink{classAppointment_a367bc61167a71691ba150808968f3b8c}{set\+Note} (\hyperlink{classString}{String} const \&note)
+\item 
+void \hyperlink{classAppointment_a0a69e652f7d3fa5091330a92479749a6}{set\+Date} (\hyperlink{classDate}{Date} const \&date)
+\item 
+void \hyperlink{classAppointment_ae0e33915a3e3d3af95c7e6180809e5fe}{set\+Start\+Time} (\hyperlink{classTime}{Time} const \&start)
+\item 
+void \hyperlink{classAppointment_a9e6455381eebacbaa3aa98ad3707baac}{set\+End\+Time} (\hyperlink{classTime}{Time} const \&end)
+\item 
+void \hyperlink{classAppointment_acd825ab9b1d23efe1bc95dd440030094}{set\+Holiday} (bool holiday=true)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classAppointment_ac4f82720deaa4daf6679d1c60fadfb67}\label{classAppointment_ac4f82720deaa4daf6679d1c60fadfb67}} 
+\index{Appointment@{Appointment}!get\+Date@{get\+Date}}
+\index{get\+Date@{get\+Date}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{get\+Date()}{getDate()}}
+{\footnotesize\ttfamily \hyperlink{classDate}{Date} Appointment\+::get\+Date (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+date 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAppointment_a5ba3b128ad963c9676af3fb199b98613}\label{classAppointment_a5ba3b128ad963c9676af3fb199b98613}} 
+\index{Appointment@{Appointment}!get\+End\+Time@{get\+End\+Time}}
+\index{get\+End\+Time@{get\+End\+Time}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{get\+End\+Time()}{getEndTime()}}
+{\footnotesize\ttfamily \hyperlink{classTime}{Time} Appointment\+::get\+End\+Time (\begin{DoxyParamCaption}\item[{int}]{diff\+\_\+seconds = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parameters}
+{\em diff\+\_\+seconds} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\+\_\+end + diff\+\_\+seconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAppointment_ab2cbd469ff67c37c34a91c02a1ba9d35}\label{classAppointment_ab2cbd469ff67c37c34a91c02a1ba9d35}} 
+\index{Appointment@{Appointment}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} const  \& Appointment\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAppointment_aaf6078fe8f092e321a38d173bc7093c3}\label{classAppointment_aaf6078fe8f092e321a38d173bc7093c3}} 
+\index{Appointment@{Appointment}!get\+Note@{get\+Note}}
+\index{get\+Note@{get\+Note}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{get\+Note()}{getNote()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} const  \& Appointment\+::get\+Note (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+note 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAppointment_a577870c4d05eb584d58c61c98b9b65a0}\label{classAppointment_a577870c4d05eb584d58c61c98b9b65a0}} 
+\index{Appointment@{Appointment}!get\+Start\+Time@{get\+Start\+Time}}
+\index{get\+Start\+Time@{get\+Start\+Time}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{get\+Start\+Time()}{getStartTime()}}
+{\footnotesize\ttfamily \hyperlink{classTime}{Time} Appointment\+::get\+Start\+Time (\begin{DoxyParamCaption}\item[{int}]{diff\+\_\+seconds = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+\begin{DoxyParams}{Parameters}
+{\em diff\+\_\+seconds} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+m\+\_\+start + diff\+\_\+seconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAppointment_a0307e814d106ba2b2314a28a9701efae}\label{classAppointment_a0307e814d106ba2b2314a28a9701efae}} 
+\index{Appointment@{Appointment}!is\+Holiday@{is\+Holiday}}
+\index{is\+Holiday@{is\+Holiday}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{is\+Holiday()}{isHoliday()}}
+{\footnotesize\ttfamily bool Appointment\+::is\+Holiday (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+holiday 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAppointment_a2542a8dd24e926a2531f1d88bbf4dd88}\label{classAppointment_a2542a8dd24e926a2531f1d88bbf4dd88}} 
+\index{Appointment@{Appointment}!serialize@{serialize}}
+\index{serialize@{serialize}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily bool Appointment\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const}
+
+serialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ofs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAppointment_a0a69e652f7d3fa5091330a92479749a6}\label{classAppointment_a0a69e652f7d3fa5091330a92479749a6}} 
+\index{Appointment@{Appointment}!set\+Date@{set\+Date}}
+\index{set\+Date@{set\+Date}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{set\+Date()}{setDate()}}
+{\footnotesize\ttfamily void Appointment\+::set\+Date (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date }\end{DoxyParamCaption})}
+
+set $<$date$>$ to m\+\_\+date 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAppointment_a9e6455381eebacbaa3aa98ad3707baac}\label{classAppointment_a9e6455381eebacbaa3aa98ad3707baac}} 
+\index{Appointment@{Appointment}!set\+End\+Time@{set\+End\+Time}}
+\index{set\+End\+Time@{set\+End\+Time}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{set\+End\+Time()}{setEndTime()}}
+{\footnotesize\ttfamily void Appointment\+::set\+End\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{classTime}{Time} const \&}]{end }\end{DoxyParamCaption})}
+
+set $<$end$>$ to m\+\_\+end 
+\begin{DoxyParams}{Parameters}
+{\em end} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAppointment_acd825ab9b1d23efe1bc95dd440030094}\label{classAppointment_acd825ab9b1d23efe1bc95dd440030094}} 
+\index{Appointment@{Appointment}!set\+Holiday@{set\+Holiday}}
+\index{set\+Holiday@{set\+Holiday}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{set\+Holiday()}{setHoliday()}}
+{\footnotesize\ttfamily void Appointment\+::set\+Holiday (\begin{DoxyParamCaption}\item[{bool}]{holiday = {\ttfamily true} }\end{DoxyParamCaption})}
+
+set $<$holiday$>$ to m\+\_\+holiday 
+\begin{DoxyParams}{Parameters}
+{\em holiday} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAppointment_a65ff6f9a246d1bf437cb0be725841a84}\label{classAppointment_a65ff6f9a246d1bf437cb0be725841a84}} 
+\index{Appointment@{Appointment}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{set\+Name()}{setName()}}
+{\footnotesize\ttfamily void Appointment\+::set\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{name }\end{DoxyParamCaption})}
+
+set $<$name$>$ to m\+\_\+name 
+\begin{DoxyParams}{Parameters}
+{\em name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAppointment_a367bc61167a71691ba150808968f3b8c}\label{classAppointment_a367bc61167a71691ba150808968f3b8c}} 
+\index{Appointment@{Appointment}!set\+Note@{set\+Note}}
+\index{set\+Note@{set\+Note}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{set\+Note()}{setNote()}}
+{\footnotesize\ttfamily void Appointment\+::set\+Note (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{note }\end{DoxyParamCaption})}
+
+set $<$note$>$ to m\+\_\+note 
+\begin{DoxyParams}{Parameters}
+{\em note} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAppointment_ae0e33915a3e3d3af95c7e6180809e5fe}\label{classAppointment_ae0e33915a3e3d3af95c7e6180809e5fe}} 
+\index{Appointment@{Appointment}!set\+Start\+Time@{set\+Start\+Time}}
+\index{set\+Start\+Time@{set\+Start\+Time}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{set\+Start\+Time()}{setStartTime()}}
+{\footnotesize\ttfamily void Appointment\+::set\+Start\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{classTime}{Time} const \&}]{start }\end{DoxyParamCaption})}
+
+set $<$start$>$ to m\+\_\+start 
+\begin{DoxyParams}{Parameters}
+{\em start} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Appointment.\+hpp\item 
+Appointment.\+cpp\end{DoxyCompactItemize}

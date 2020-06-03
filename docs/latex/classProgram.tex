@@ -1,0 +1,396 @@
+\hypertarget{classProgram}{}\section{Program Class Reference}
+\label{classProgram}\index{Program@{Program}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classProgram_a2f494b9e0a50657ac89a61a96e92face}{opened} () const
+\item 
+\hyperlink{classString}{String} \hyperlink{classProgram_a78c686e8f768666e0377b23317134b4a}{get\+File\+Name} (\hyperlink{classString}{String} const \&path=nullptr) const
+\item 
+bool \hyperlink{classProgram_a4658796d44178138e3c50df2346f20c9}{open} (\hyperlink{classString}{String} const \&file\+\_\+path)
+\item 
+\mbox{\Hypertarget{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}\label{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}} 
+void \hyperlink{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}{close} ()
+\begin{DoxyCompactList}\small\item\em calls clear() method if the calendar is opened \end{DoxyCompactList}\item 
+bool \hyperlink{classProgram_a9ab390cc3caa8cc7dee9704a273a6979}{save} () const
+\item 
+\hyperlink{classCalendar}{Calendar} $\ast$ \hyperlink{classProgram_ae2bc41544b2cedf95611867ead89d6c9}{clone\+Calendar} () const
+\item 
+bool \hyperlink{classProgram_a0c4c553237a075bc9ab5d4c6b80b4471}{restore\+Calendar} (\hyperlink{classCalendar}{Calendar} $\ast$cloned)
+\item 
+bool \hyperlink{classProgram_a3fd5b4cf3d1eaa58809f593ccdc7a2d3}{book} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end, \hyperlink{classString}{String} const \&name, \hyperlink{classString}{String} const \&note)
+\item 
+bool \hyperlink{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}{unbook} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end)
+\item 
+bool \hyperlink{classProgram_a36916661bfce488ed07dbc2a7f3fadce}{agenda} (\hyperlink{classDate}{Date} const \&date, std\+::ostream \&out) const
+\item 
+\hyperlink{structPair}{Pair}$<$ bool, bool $>$ \hyperlink{classProgram_a4a25f61fe0747f0f13ace13b310ed7a3}{change\+Date} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classDate}{Date} const \&new\+\_\+date)
+\item 
+\hyperlink{structPair}{Pair}$<$ bool, bool $>$ \hyperlink{classProgram_afb92c7d470233331feb450698ea66531}{change\+Start\+Time} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&new\+\_\+start\+\_\+time)
+\item 
+\hyperlink{structPair}{Pair}$<$ bool, bool $>$ \hyperlink{classProgram_a8038bf54fd0e358c48d02ced033b6848}{change\+End\+Time} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&new\+\_\+end\+\_\+time)
+\item 
+bool \hyperlink{classProgram_a606ccb02438885b2894843613d6de157}{change\+Name} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classString}{String} const \&new\+\_\+name)
+\item 
+bool \hyperlink{classProgram_a63f49d8259cb4038274a1cb6e9b82374}{change\+Note} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classString}{String} const \&new\+\_\+note)
+\item 
+bool \hyperlink{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}{find\+String} (\hyperlink{classString}{String} const \&needle, std\+::ostream \&out) const
+\item 
+bool \hyperlink{classProgram_ad14086e73ec4aef58c705e3a19089d97}{mark\+As\+Holiday} (\hyperlink{classDate}{Date} const \&date)
+\item 
+\hyperlink{structPair}{Pair}$<$ bool, \hyperlink{classVector}{Vector}$<$ \hyperlink{classDate}{Date} $>$ $>$ \hyperlink{classProgram_af91512a81cffe079b6c300f47df906e8}{get\+Busy\+Days} (\hyperlink{classDate}{Date} const \&from, \hyperlink{classDate}{Date} const \&to) const
+\item 
+\hyperlink{structPair}{Pair}$<$ \hyperlink{classDate}{Date}, \hyperlink{classTime}{Time} $>$ \hyperlink{classProgram_a639a0af6603bda2f6dc8ec051fd1dd93}{find\+Slot} (\hyperlink{classDate}{Date} const \&from, \hyperlink{classTime}{Time} const \&duration, \hyperlink{classCalendar}{Calendar} const $\ast$calendar=nullptr) const
+\item 
+\hyperlink{structPair}{Pair}$<$ \hyperlink{classDate}{Date}, \hyperlink{classTime}{Time} $>$ \hyperlink{classProgram_aa2159591c5711c2846c261cd672643d6}{find\+Slot\+With} (\hyperlink{classDate}{Date} const \&from, \hyperlink{classTime}{Time} const \&duration, \hyperlink{classCalendar}{Calendar} const $\ast$calendar) const
+\item 
+bool \hyperlink{classProgram_aea58a5865e12fbbb2dda1563e66d092a}{merge\+With} (\hyperlink{classCalendar}{Calendar} $\ast$other\+\_\+calendar, std\+::ostream \&out, std\+::istream \&in)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classProgram_a6f703bef529f93987481e04ab6f3014a}\label{classProgram_a6f703bef529f93987481e04ab6f3014a}} 
+static \hyperlink{classProgram}{Program} \& {\bfseries self} ()
+\item 
+static bool \hyperlink{classProgram_ad12fa0703d93dbec2b2badc96ab97cf6}{open} (\hyperlink{classString}{String} const \&file\+\_\+path, \hyperlink{classCalendar}{Calendar} $\ast$\&calendar)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classProgram_a36916661bfce488ed07dbc2a7f3fadce}\label{classProgram_a36916661bfce488ed07dbc2a7f3fadce}} 
+\index{Program@{Program}!agenda@{agenda}}
+\index{agenda@{agenda}!Program@{Program}}
+\subsubsection{\texorpdfstring{agenda()}{agenda()}}
+{\footnotesize\ttfamily bool Program\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+print all appointments for the day $<$date$>$; calls m\+\_\+calendar-\/$>$\hyperlink{classProgram_a36916661bfce488ed07dbc2a7f3fadce}{agenda()} 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em out} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if prints nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a3fd5b4cf3d1eaa58809f593ccdc7a2d3}\label{classProgram_a3fd5b4cf3d1eaa58809f593ccdc7a2d3}} 
+\index{Program@{Program}!book@{book}}
+\index{book@{book}!Program@{Program}}
+\subsubsection{\texorpdfstring{book()}{book()}}
+{\footnotesize\ttfamily bool Program\+::book (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{end,  }\item[{\hyperlink{classString}{String} const \&}]{name,  }\item[{\hyperlink{classString}{String} const \&}]{note }\end{DoxyParamCaption})}
+
+book an appointment; calls m\+\_\+calendar-\/$>$\hyperlink{classProgram_a3fd5b4cf3d1eaa58809f593ccdc7a2d3}{book()} 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em end} & \\
+\hline
+{\em name} & \\
+\hline
+{\em note} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it\textquotesingle{}s opened OR the day is N\+OT free at that time 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a4a25f61fe0747f0f13ace13b310ed7a3}\label{classProgram_a4a25f61fe0747f0f13ace13b310ed7a3}} 
+\index{Program@{Program}!change\+Date@{change\+Date}}
+\index{change\+Date@{change\+Date}!Program@{Program}}
+\subsubsection{\texorpdfstring{change\+Date()}{changeDate()}}
+{\footnotesize\ttfamily \hyperlink{structPair}{Pair}$<$ bool, bool $>$ Program\+::change\+Date (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classDate}{Date} const \&}]{new\+\_\+date }\end{DoxyParamCaption})}
+
+change date of an appointment 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em new\+\_\+date} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ success, is free new\+\_\+date \}; success is false if calendar isn\textquotesingle{}t opened OR it\textquotesingle{}s not found such appointment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a8038bf54fd0e358c48d02ced033b6848}\label{classProgram_a8038bf54fd0e358c48d02ced033b6848}} 
+\index{Program@{Program}!change\+End\+Time@{change\+End\+Time}}
+\index{change\+End\+Time@{change\+End\+Time}!Program@{Program}}
+\subsubsection{\texorpdfstring{change\+End\+Time()}{changeEndTime()}}
+{\footnotesize\ttfamily \hyperlink{structPair}{Pair}$<$ bool, bool $>$ Program\+::change\+End\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{new\+\_\+end\+\_\+time }\end{DoxyParamCaption})}
+
+change end time of an appointment 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em new\+\_\+end\+\_\+time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ success, is free new\+\_\+end\+\_\+time \}; success is false if calendar isn\textquotesingle{}t opened OR it\textquotesingle{}s not found such appointment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a606ccb02438885b2894843613d6de157}\label{classProgram_a606ccb02438885b2894843613d6de157}} 
+\index{Program@{Program}!change\+Name@{change\+Name}}
+\index{change\+Name@{change\+Name}!Program@{Program}}
+\subsubsection{\texorpdfstring{change\+Name()}{changeName()}}
+{\footnotesize\ttfamily bool Program\+::change\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classString}{String} const \&}]{new\+\_\+name }\end{DoxyParamCaption})}
+
+change name of an appointment 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em new\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if calendar isn\textquotesingle{}t opened OR it\textquotesingle{}s not found such appointment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a63f49d8259cb4038274a1cb6e9b82374}\label{classProgram_a63f49d8259cb4038274a1cb6e9b82374}} 
+\index{Program@{Program}!change\+Note@{change\+Note}}
+\index{change\+Note@{change\+Note}!Program@{Program}}
+\subsubsection{\texorpdfstring{change\+Note()}{changeNote()}}
+{\footnotesize\ttfamily bool Program\+::change\+Note (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classString}{String} const \&}]{new\+\_\+note }\end{DoxyParamCaption})}
+
+change note of an appointment 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em new\+\_\+note} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if calendar isn\textquotesingle{}t opened OR it\textquotesingle{}s not found such appointment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_afb92c7d470233331feb450698ea66531}\label{classProgram_afb92c7d470233331feb450698ea66531}} 
+\index{Program@{Program}!change\+Start\+Time@{change\+Start\+Time}}
+\index{change\+Start\+Time@{change\+Start\+Time}!Program@{Program}}
+\subsubsection{\texorpdfstring{change\+Start\+Time()}{changeStartTime()}}
+{\footnotesize\ttfamily \hyperlink{structPair}{Pair}$<$ bool, bool $>$ Program\+::change\+Start\+Time (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{new\+\_\+start\+\_\+time }\end{DoxyParamCaption})}
+
+change start time of an appointment 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em new\+\_\+start\+\_\+time} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ success, is free new\+\_\+start\+\_\+time \}; success is false if calendar isn\textquotesingle{}t opened OR it\textquotesingle{}s not found such appointment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_ae2bc41544b2cedf95611867ead89d6c9}\label{classProgram_ae2bc41544b2cedf95611867ead89d6c9}} 
+\index{Program@{Program}!clone\+Calendar@{clone\+Calendar}}
+\index{clone\+Calendar@{clone\+Calendar}!Program@{Program}}
+\subsubsection{\texorpdfstring{clone\+Calendar()}{cloneCalendar()}}
+{\footnotesize\ttfamily \hyperlink{classCalendar}{Calendar} $\ast$ Program\+::clone\+Calendar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+pointer to cloned value of m\+\_\+calendar OR nullptr if not opened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a639a0af6603bda2f6dc8ec051fd1dd93}\label{classProgram_a639a0af6603bda2f6dc8ec051fd1dd93}} 
+\index{Program@{Program}!find\+Slot@{find\+Slot}}
+\index{find\+Slot@{find\+Slot}!Program@{Program}}
+\subsubsection{\texorpdfstring{find\+Slot()}{findSlot()}}
+{\footnotesize\ttfamily \hyperlink{structPair}{Pair}$<$ \hyperlink{classDate}{Date}, \hyperlink{classTime}{Time} $>$ Program\+::find\+Slot (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{from,  }\item[{\hyperlink{classTime}{Time} const \&}]{duration,  }\item[{\hyperlink{classCalendar}{Calendar} const $\ast$}]{calendar = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+find the first possible date after $<$from$>$ with $<$duration$>$ and the date cannot be holiday and the hours cannot be before 08 or after 17 
+\begin{DoxyParams}{Parameters}
+{\em from} & \\
+\hline
+{\em duration} & \\
+\hline
+{\em calendar} & -\/ if is nullptr then uses m\+\_\+calendar instead \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ the date, starting time \}; starting time is max time if duration $>$ (17 -\/ 8) hours 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_aa2159591c5711c2846c261cd672643d6}\label{classProgram_aa2159591c5711c2846c261cd672643d6}} 
+\index{Program@{Program}!find\+Slot\+With@{find\+Slot\+With}}
+\index{find\+Slot\+With@{find\+Slot\+With}!Program@{Program}}
+\subsubsection{\texorpdfstring{find\+Slot\+With()}{findSlotWith()}}
+{\footnotesize\ttfamily \hyperlink{structPair}{Pair}$<$ \hyperlink{classDate}{Date}, \hyperlink{classTime}{Time} $>$ Program\+::find\+Slot\+With (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{from,  }\item[{\hyperlink{classTime}{Time} const \&}]{duration,  }\item[{\hyperlink{classCalendar}{Calendar} const $\ast$}]{calendar }\end{DoxyParamCaption}) const}
+
+uses fund\+Slot() method to find the best match for both calendars (m\+\_\+calendar and calendar) 
+\begin{DoxyParams}{Parameters}
+{\em from} & \\
+\hline
+{\em duration} & \\
+\hline
+{\em calendar} & -\/ if is nullptr then returns \{ from, \hyperlink{classTime}{Time()} \} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ the date, starting time \}; starting time is max time if duration $>$ (17 -\/ 8) hours 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}\label{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}} 
+\index{Program@{Program}!find\+String@{find\+String}}
+\index{find\+String@{find\+String}!Program@{Program}}
+\subsubsection{\texorpdfstring{find\+String()}{findString()}}
+{\footnotesize\ttfamily bool Program\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+search appointments to print them by needle; calls m\+\_\+calendar-\/$>$\hyperlink{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}{find\+String()} 
+\begin{DoxyParams}{Parameters}
+{\em needle} & -\/ must be contained by Appointment\+::m\+\_\+name OR Appointment\+::m\+\_\+note \\
+\hline
+{\em out} & -\/ a source to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if calendar isn\textquotesingle{}t opened OR prints nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_af91512a81cffe079b6c300f47df906e8}\label{classProgram_af91512a81cffe079b6c300f47df906e8}} 
+\index{Program@{Program}!get\+Busy\+Days@{get\+Busy\+Days}}
+\index{get\+Busy\+Days@{get\+Busy\+Days}!Program@{Program}}
+\subsubsection{\texorpdfstring{get\+Busy\+Days()}{getBusyDays()}}
+{\footnotesize\ttfamily \hyperlink{structPair}{Pair}$<$ bool, \hyperlink{classVector}{Vector}$<$ \hyperlink{classDate}{Date} $>$ $>$ Program\+::get\+Busy\+Days (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{from,  }\item[{\hyperlink{classDate}{Date} const \&}]{to }\end{DoxyParamCaption}) const}
+
+search for all busy days from the interval order by busy time per day 
+\begin{DoxyParams}{Parameters}
+{\em from} & \\
+\hline
+{\em to} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\{ success, list (array) from days \}; success is false if calendar isn\textquotesingle{}t opened OR from is bigger than to OR it\textquotesingle{}s N\+OT found an appointment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a78c686e8f768666e0377b23317134b4a}\label{classProgram_a78c686e8f768666e0377b23317134b4a}} 
+\index{Program@{Program}!get\+File\+Name@{get\+File\+Name}}
+\index{get\+File\+Name@{get\+File\+Name}!Program@{Program}}
+\subsubsection{\texorpdfstring{get\+File\+Name()}{getFileName()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Program\+::get\+File\+Name (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{path = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+get file name from calendar\textquotesingle{}s path or $<$path$>$ 
+\begin{DoxyParams}{Parameters}
+{\em path} & -\/ if is nullptr (or empty), then uses calendar\textquotesingle{}s path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the file name (with file extension) OR empty string if any path is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_ad14086e73ec4aef58c705e3a19089d97}\label{classProgram_ad14086e73ec4aef58c705e3a19089d97}} 
+\index{Program@{Program}!mark\+As\+Holiday@{mark\+As\+Holiday}}
+\index{mark\+As\+Holiday@{mark\+As\+Holiday}!Program@{Program}}
+\subsubsection{\texorpdfstring{mark\+As\+Holiday()}{markAsHoliday()}}
+{\footnotesize\ttfamily bool Program\+::mark\+As\+Holiday (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date }\end{DoxyParamCaption})}
+
+mark the day $<$date$>$ as holiday; calls m\+\_\+calendar-\/$>$holiday() 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if N\+OT the whole day is free 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_aea58a5865e12fbbb2dda1563e66d092a}\label{classProgram_aea58a5865e12fbbb2dda1563e66d092a}} 
+\index{Program@{Program}!merge\+With@{merge\+With}}
+\index{merge\+With@{merge\+With}!Program@{Program}}
+\subsubsection{\texorpdfstring{merge\+With()}{mergeWith()}}
+{\footnotesize\ttfamily bool Program\+::merge\+With (\begin{DoxyParamCaption}\item[{\hyperlink{classCalendar}{Calendar} $\ast$}]{other\+\_\+calendar,  }\item[{std\+::ostream \&}]{out,  }\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
+
+merge m\+\_\+calendar with $<$other\+\_\+calendar$>$ by adding appointments from the one to the other 
+\begin{DoxyParams}{Parameters}
+{\em other\+\_\+calendar} & \\
+\hline
+{\em out} & -\/ used to print program\textquotesingle{}s messages \\
+\hline
+{\em in} & -\/ used to read user\textquotesingle{}s input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if $<$other\+\_\+calendar$>$ is empty (hasn\textquotesingle{}t appointments) OR m\+\_\+calendar is nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a4658796d44178138e3c50df2346f20c9}\label{classProgram_a4658796d44178138e3c50df2346f20c9}} 
+\index{Program@{Program}!open@{open}}
+\index{open@{open}!Program@{Program}}
+\subsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Program\+::open (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{file\+\_\+path }\end{DoxyParamCaption})}
+
+opens a calendar using $<$file\+\_\+path$>$ 
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the calendar is already opened 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_ad12fa0703d93dbec2b2badc96ab97cf6}\label{classProgram_ad12fa0703d93dbec2b2badc96ab97cf6}} 
+\index{Program@{Program}!open@{open}}
+\index{open@{open}!Program@{Program}}
+\subsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Program\+::open (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{file\+\_\+path,  }\item[{\hyperlink{classCalendar}{Calendar} $\ast$\&}]{calendar }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+opens $<$calendar$>$ using $<$file\+\_\+path$>$ 
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \\
+\hline
+{\em calendar} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the calendar is not nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a2f494b9e0a50657ac89a61a96e92face}\label{classProgram_a2f494b9e0a50657ac89a61a96e92face}} 
+\index{Program@{Program}!opened@{opened}}
+\index{opened@{opened}!Program@{Program}}
+\subsubsection{\texorpdfstring{opened()}{opened()}}
+{\footnotesize\ttfamily bool Program\+::opened (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+calendar != nullptr 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a0c4c553237a075bc9ab5d4c6b80b4471}\label{classProgram_a0c4c553237a075bc9ab5d4c6b80b4471}} 
+\index{Program@{Program}!restore\+Calendar@{restore\+Calendar}}
+\index{restore\+Calendar@{restore\+Calendar}!Program@{Program}}
+\subsubsection{\texorpdfstring{restore\+Calendar()}{restoreCalendar()}}
+{\footnotesize\ttfamily bool Program\+::restore\+Calendar (\begin{DoxyParamCaption}\item[{\hyperlink{classCalendar}{Calendar} $\ast$}]{cloned }\end{DoxyParamCaption})}
+
+restore cloned calendar and clears the previous one 
+\begin{DoxyParams}{Parameters}
+{\em cloned} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there was a previous calendar (which was opened) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a9ab390cc3caa8cc7dee9704a273a6979}\label{classProgram_a9ab390cc3caa8cc7dee9704a273a6979}} 
+\index{Program@{Program}!save@{save}}
+\index{save@{save}!Program@{Program}}
+\subsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily bool Program\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+true if not opened OR successfully serialize m\+\_\+calendar 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}\label{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}} 
+\index{Program@{Program}!unbook@{unbook}}
+\index{unbook@{unbook}!Program@{Program}}
+\subsubsection{\texorpdfstring{unbook()}{unbook()}}
+{\footnotesize\ttfamily bool Program\+::unbook (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{end }\end{DoxyParamCaption})}
+
+remove an appointment; calls m\+\_\+calendar-\/$>$\hyperlink{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}{unbook()} 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em end} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it\textquotesingle{}s opened OR there isn\textquotesingle{}t such appointment 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Program.\+hpp\item 
+Program.\+cpp\end{DoxyCompactItemize}

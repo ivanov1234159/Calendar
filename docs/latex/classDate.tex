@@ -1,0 +1,77 @@
+\hypertarget{classDate}{}\section{Date Class Reference}
+\label{classDate}\index{Date@{Date}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDate_a5e72c9e6a4e666e260e989c2fd16beaf}\label{classDate_a5e72c9e6a4e666e260e989c2fd16beaf}} 
+{\bfseries Date} (std\+::ifstream \&ifs)
+\item 
+\mbox{\Hypertarget{classDate_a6e4979dfc71c09cdab0b65a734e4a4df}\label{classDate_a6e4979dfc71c09cdab0b65a734e4a4df}} 
+{\bfseries Date} (unsigned day, unsigned month, unsigned year)
+\item 
+bool \hyperlink{classDate_aaa7c624e382fff1ba3438cb46232c05e}{serialize} (std\+::ofstream \&ofs) const
+\item 
+\mbox{\Hypertarget{classDate_a0b4650e6e69f6ab4816ee480b0ae2737}\label{classDate_a0b4650e6e69f6ab4816ee480b0ae2737}} 
+bool {\bfseries operator==} (\hyperlink{classDate}{Date} const \&other) const
+\item 
+\mbox{\Hypertarget{classDate_a8b7030515e10d7d79f187165463a3315}\label{classDate_a8b7030515e10d7d79f187165463a3315}} 
+bool {\bfseries operator!=} (\hyperlink{classDate}{Date} const \&other) const
+\item 
+\mbox{\Hypertarget{classDate_a52d36d1aa6868b5afa178bd495714e44}\label{classDate_a52d36d1aa6868b5afa178bd495714e44}} 
+bool {\bfseries operator$>$} (\hyperlink{classDate}{Date} const \&other) const
+\item 
+\mbox{\Hypertarget{classDate_a074316aeb377c6c1ea828b2642b39153}\label{classDate_a074316aeb377c6c1ea828b2642b39153}} 
+bool {\bfseries operator$<$} (\hyperlink{classDate}{Date} const \&other) const
+\item 
+\mbox{\Hypertarget{classDate_ac1bca91434bf336beb5372ee4a2ca46f}\label{classDate_ac1bca91434bf336beb5372ee4a2ca46f}} 
+bool {\bfseries operator$>$=} (\hyperlink{classDate}{Date} const \&other) const
+\item 
+\mbox{\Hypertarget{classDate_a01c66a5f355ed676a1ee8effb78af222}\label{classDate_a01c66a5f355ed676a1ee8effb78af222}} 
+bool {\bfseries operator$<$=} (\hyperlink{classDate}{Date} const \&other) const
+\item 
+\mbox{\Hypertarget{classDate_a3993e645e3408e07d12b70e58f36630c}\label{classDate_a3993e645e3408e07d12b70e58f36630c}} 
+\hyperlink{classDate}{Date} \& {\bfseries operator++} ()
+\item 
+\mbox{\Hypertarget{classDate_a63f7060a7a7997e289e5e885f84557e5}\label{classDate_a63f7060a7a7997e289e5e885f84557e5}} 
+\hyperlink{classDate}{Date} {\bfseries operator++} (int)
+\item 
+\hyperlink{classString}{String} \hyperlink{classDate_a4d4dfda9dfa34c87e06381254bfe5151}{to\+\_\+string} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDate_a025d4abf4e083a5f10d376259aac34a2}\label{classDate_a025d4abf4e083a5f10d376259aac34a2}} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&in, \hyperlink{classDate}{Date} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDate_aaa7c624e382fff1ba3438cb46232c05e}\label{classDate_aaa7c624e382fff1ba3438cb46232c05e}} 
+\index{Date@{Date}!serialize@{serialize}}
+\index{serialize@{serialize}!Date@{Date}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily bool Date\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const}
+
+serialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ofs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a4d4dfda9dfa34c87e06381254bfe5151}\label{classDate_a4d4dfda9dfa34c87e06381254bfe5151}} 
+\index{Date@{Date}!to\+\_\+string@{to\+\_\+string}}
+\index{to\+\_\+string@{to\+\_\+string}!Date@{Date}}
+\subsubsection{\texorpdfstring{to\+\_\+string()}{to\_string()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Date\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+this object as string (format\+: Y\+Y\+Y\+Y-\/\+M\+M-\/\+DD) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Date.\+hpp\item 
+Date.\+cpp\end{DoxyCompactItemize}

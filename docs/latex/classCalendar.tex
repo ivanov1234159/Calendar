@@ -1,0 +1,270 @@
+\hypertarget{classCalendar}{}\section{Calendar Class Reference}
+\label{classCalendar}\index{Calendar@{Calendar}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCalendar_a54d7e31f38979ee7a363594b86ca9419}\label{classCalendar_a54d7e31f38979ee7a363594b86ca9419}} 
+{\bfseries Calendar} (\hyperlink{classString}{String} const \&calendar\+\_\+path)
+\item 
+\mbox{\Hypertarget{classCalendar_a346673cf7dd15ffa3a2ea292703c5421}\label{classCalendar_a346673cf7dd15ffa3a2ea292703c5421}} 
+{\bfseries Calendar} (std\+::ifstream \&ifs, \hyperlink{classString}{String} const \&calendar\+\_\+path=nullptr)
+\item 
+\hyperlink{classString}{String} const  \& \hyperlink{classCalendar_afb5265ef3f8b820048d35dc9921d6789}{get\+File\+Path} () const
+\item 
+bool \hyperlink{classCalendar_a304110c0454b23f75902ddcddbe8a921}{is\+Empty} () const
+\item 
+\hyperlink{classAppointment}{Appointment} \hyperlink{classCalendar_a6c94f89713fac92f1544ea3f1b9a8fc9}{unshift\+Appointment} ()
+\item 
+bool \hyperlink{classCalendar_abd08c73fde62b83cb12afe01ff574223}{serialize} (std\+::ofstream \&ofs) const
+\item 
+bool \hyperlink{classCalendar_ac50220dec77b2c19f09516ea88e9398c}{book} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end, \hyperlink{classString}{String} const \&name, \hyperlink{classString}{String} const \&note)
+\item 
+bool \hyperlink{classCalendar_a24540f159572a53109a20be9ea8f4c5e}{unbook} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end)
+\item 
+bool \hyperlink{classCalendar_ac6112aa4e9b3e6e5b9a478ff66789d77}{agenda} (\hyperlink{classDate}{Date} const \&date, std\+::ostream \&out) const
+\item 
+bool \hyperlink{classCalendar_accc025455e06e4031b9b76fe1a35220d}{find\+String} (\hyperlink{classString}{String} const \&needle, std\+::ostream \&out) const
+\item 
+bool \hyperlink{classCalendar_aa54f943234aebe06350ae6545804dd0a}{holiday} (\hyperlink{classDate}{Date} const \&date)
+\item 
+\hyperlink{classVector}{Vector}$<$ \hyperlink{structPair}{Pair}$<$ \hyperlink{classDate}{Date}, int $>$ $>$ \hyperlink{classCalendar_a33727e15bb2186dbdc1fe227dfa0a6e6}{find\+Busy\+Days} (\hyperlink{classDate}{Date} const \&from, \hyperlink{classDate}{Date} const \&to) const
+\item 
+bool \hyperlink{classCalendar_aecc060737b760817e814121df59a9316}{find\+Slot\+At} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&duration, \hyperlink{classTime}{Time} \&begin) const
+\item 
+\hyperlink{classAppointment}{Appointment} $\ast$ \hyperlink{classCalendar_a249805cf48297698e30512ff9a47bac3}{find} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start) const
+\item 
+bool \hyperlink{classCalendar_abd5c6a36628d47bae770f807254fb639}{is\+Free} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end) const
+\item 
+bool \hyperlink{classCalendar_ae1d1e8979866bb2d03c4e66d801fdebf}{is\+Holiday} (\hyperlink{classDate}{Date} const \&date) const
+\item 
+void \hyperlink{classCalendar_a1dbd9019e73644ee8bf5611884ac5d75}{book} (\hyperlink{classAppointment}{Appointment} const \&app)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCalendar_ac6112aa4e9b3e6e5b9a478ff66789d77}\label{classCalendar_ac6112aa4e9b3e6e5b9a478ff66789d77}} 
+\index{Calendar@{Calendar}!agenda@{agenda}}
+\index{agenda@{agenda}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{agenda()}{agenda()}}
+{\footnotesize\ttfamily bool Calendar\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+print all appointments for the day $<$date$>$ 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em out} & -\/ a stream to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if prints nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_ac50220dec77b2c19f09516ea88e9398c}\label{classCalendar_ac50220dec77b2c19f09516ea88e9398c}} 
+\index{Calendar@{Calendar}!book@{book}}
+\index{book@{book}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{book()}{book()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Calendar\+::book (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{end,  }\item[{\hyperlink{classString}{String} const \&}]{name,  }\item[{\hyperlink{classString}{String} const \&}]{note }\end{DoxyParamCaption})}
+
+book an appointment; uses \hyperlink{classCalendar_a1dbd9019e73644ee8bf5611884ac5d75}{book(\+Appointment const\&)} 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em end} & \\
+\hline
+{\em name} & \\
+\hline
+{\em note} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it\textquotesingle{}s N\+OT free 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_a1dbd9019e73644ee8bf5611884ac5d75}\label{classCalendar_a1dbd9019e73644ee8bf5611884ac5d75}} 
+\index{Calendar@{Calendar}!book@{book}}
+\index{book@{book}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{book()}{book()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Calendar\+::book (\begin{DoxyParamCaption}\item[{\hyperlink{classAppointment}{Appointment} const \&}]{app }\end{DoxyParamCaption})}
+
+book an appointment and uses sorted insert by date and start time 
+\begin{DoxyParams}{Parameters}
+{\em app} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCalendar_a249805cf48297698e30512ff9a47bac3}\label{classCalendar_a249805cf48297698e30512ff9a47bac3}} 
+\index{Calendar@{Calendar}!find@{find}}
+\index{find@{find}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \hyperlink{classAppointment}{Appointment} $\ast$ Calendar\+::find (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start }\end{DoxyParamCaption}) const}
+
+search for an appointment which is on $<$date$>$ and begins at $<$start$>$ 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nullptr if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_a33727e15bb2186dbdc1fe227dfa0a6e6}\label{classCalendar_a33727e15bb2186dbdc1fe227dfa0a6e6}} 
+\index{Calendar@{Calendar}!find\+Busy\+Days@{find\+Busy\+Days}}
+\index{find\+Busy\+Days@{find\+Busy\+Days}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{find\+Busy\+Days()}{findBusyDays()}}
+{\footnotesize\ttfamily \hyperlink{classVector}{Vector}$<$ \hyperlink{structPair}{Pair}$<$ \hyperlink{classDate}{Date}, int $>$ $>$ Calendar\+::find\+Busy\+Days (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{from,  }\item[{\hyperlink{classDate}{Date} const \&}]{to }\end{DoxyParamCaption}) const}
+
+search for all busy days from the interval order by busy time per day 
+\begin{DoxyParams}{Parameters}
+{\em from} & \\
+\hline
+{\em to} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list (array) from \{ day (date), time in seconds \} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_aecc060737b760817e814121df59a9316}\label{classCalendar_aecc060737b760817e814121df59a9316}} 
+\index{Calendar@{Calendar}!find\+Slot\+At@{find\+Slot\+At}}
+\index{find\+Slot\+At@{find\+Slot\+At}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{find\+Slot\+At()}{findSlotAt()}}
+{\footnotesize\ttfamily bool Calendar\+::find\+Slot\+At (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{duration,  }\item[{\hyperlink{classTime}{Time} \&}]{begin }\end{DoxyParamCaption}) const}
+
+search for a time period with length $<$duration$>$ on $<$date$>$ and the hours cannot be before 08 or after 17 
+\begin{DoxyParams}{Parameters}
+{\em date} & -\/ cannot be holiday \\
+\hline
+{\em duration} & -\/ if longer than (17 -\/ 8) hours, then begin is 23\+:59\+:59 \\
+\hline
+{\em begin} & -\/ used to return the starting time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there isn\textquotesingle{}t a time period with length $<$duration$>$ on $<$date$>$ OR the date is holiday 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_accc025455e06e4031b9b76fe1a35220d}\label{classCalendar_accc025455e06e4031b9b76fe1a35220d}} 
+\index{Calendar@{Calendar}!find\+String@{find\+String}}
+\index{find\+String@{find\+String}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{find\+String()}{findString()}}
+{\footnotesize\ttfamily bool Calendar\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+search appointments to print them by needle 
+\begin{DoxyParams}{Parameters}
+{\em needle} & -\/ must be contained by Appointment\+::m\+\_\+name OR Appointment\+::m\+\_\+note \\
+\hline
+{\em out} & -\/ a source to print \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if prints nothing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_afb5265ef3f8b820048d35dc9921d6789}\label{classCalendar_afb5265ef3f8b820048d35dc9921d6789}} 
+\index{Calendar@{Calendar}!get\+File\+Path@{get\+File\+Path}}
+\index{get\+File\+Path@{get\+File\+Path}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{get\+File\+Path()}{getFilePath()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} const  \& Calendar\+::get\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+file\+\_\+path 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_aa54f943234aebe06350ae6545804dd0a}\label{classCalendar_aa54f943234aebe06350ae6545804dd0a}} 
+\index{Calendar@{Calendar}!holiday@{holiday}}
+\index{holiday@{holiday}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{holiday()}{holiday()}}
+{\footnotesize\ttfamily bool Calendar\+::holiday (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date }\end{DoxyParamCaption})}
+
+mark the day $<$date$>$ as holiday 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if N\+OT the whole day is free 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_a304110c0454b23f75902ddcddbe8a921}\label{classCalendar_a304110c0454b23f75902ddcddbe8a921}} 
+\index{Calendar@{Calendar}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily bool Calendar\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+list.\+empty() 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_abd5c6a36628d47bae770f807254fb639}\label{classCalendar_abd5c6a36628d47bae770f807254fb639}} 
+\index{Calendar@{Calendar}!is\+Free@{is\+Free}}
+\index{is\+Free@{is\+Free}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{is\+Free()}{isFree()}}
+{\footnotesize\ttfamily bool Calendar\+::is\+Free (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{end }\end{DoxyParamCaption}) const}
+
+check if day $<$date$>$ is free starting from $<$start$>$ and ending to $<$end$>$ 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em end} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it\textquotesingle{}s N\+OT free 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_ae1d1e8979866bb2d03c4e66d801fdebf}\label{classCalendar_ae1d1e8979866bb2d03c4e66d801fdebf}} 
+\index{Calendar@{Calendar}!is\+Holiday@{is\+Holiday}}
+\index{is\+Holiday@{is\+Holiday}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{is\+Holiday()}{isHoliday()}}
+{\footnotesize\ttfamily bool Calendar\+::is\+Holiday (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date }\end{DoxyParamCaption}) const}
+
+check if $<$date$>$ is holiday 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if it\textquotesingle{}s not holiday OR there isn\textquotesingle{}t an appointment on that day 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_abd08c73fde62b83cb12afe01ff574223}\label{classCalendar_abd08c73fde62b83cb12afe01ff574223}} 
+\index{Calendar@{Calendar}!serialize@{serialize}}
+\index{serialize@{serialize}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily bool Calendar\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const}
+
+serialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ofs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_a24540f159572a53109a20be9ea8f4c5e}\label{classCalendar_a24540f159572a53109a20be9ea8f4c5e}} 
+\index{Calendar@{Calendar}!unbook@{unbook}}
+\index{unbook@{unbook}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{unbook()}{unbook()}}
+{\footnotesize\ttfamily bool Calendar\+::unbook (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{end }\end{DoxyParamCaption})}
+
+remove booking of an appointment by searching it with the params 
+\begin{DoxyParams}{Parameters}
+{\em date} & \\
+\hline
+{\em start} & \\
+\hline
+{\em end} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if there isn\textquotesingle{}t such appointment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCalendar_a6c94f89713fac92f1544ea3f1b9a8fc9}\label{classCalendar_a6c94f89713fac92f1544ea3f1b9a8fc9}} 
+\index{Calendar@{Calendar}!unshift\+Appointment@{unshift\+Appointment}}
+\index{unshift\+Appointment@{unshift\+Appointment}!Calendar@{Calendar}}
+\subsubsection{\texorpdfstring{unshift\+Appointment()}{unshiftAppointment()}}
+{\footnotesize\ttfamily \hyperlink{classAppointment}{Appointment} Calendar\+::unshift\+Appointment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+m\+\_\+list.\+unshift() 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Calendar.\+hpp\item 
+Calendar.\+cpp\end{DoxyCompactItemize}

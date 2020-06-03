@@ -1,0 +1,139 @@
+\hypertarget{classTime}{}\section{Time Class Reference}
+\label{classTime}\index{Time@{Time}}
+
+
+Collaboration diagram for Time\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTime_a393f1af1f9496b8833e3207f99325167}\label{classTime_a393f1af1f9496b8833e3207f99325167}} 
+{\bfseries Time} (unsigned seconds=0, unsigned minutes=0, unsigned hours=0)
+\item 
+\mbox{\Hypertarget{classTime_a85ec464631df4b1284f2e0d53f549750}\label{classTime_a85ec464631df4b1284f2e0d53f549750}} 
+{\bfseries Time} (std\+::istream \&in)
+\item 
+\mbox{\Hypertarget{classTime_a9f96dc51f4ad6a98493ebc129b8f125a}\label{classTime_a9f96dc51f4ad6a98493ebc129b8f125a}} 
+{\bfseries Time} (std\+::ifstream \&ifs)
+\item 
+unsigned \hyperlink{classTime_ac64625b85a2497986774edcc8dde50e9}{get\+Total} () const
+\item 
+int \hyperlink{classTime_af02e08b3bf203d9cedbf9f629cddcc1f}{difference} (\hyperlink{classTime}{Time} const \&other) const
+\item 
+bool \hyperlink{classTime_acab7dbc13c8a0d9a0f33047d41f4aee0}{serialize} (std\+::ofstream \&ofs) const
+\item 
+\mbox{\Hypertarget{classTime_a682cdf808ba44f29b2e33ed257906a10}\label{classTime_a682cdf808ba44f29b2e33ed257906a10}} 
+bool {\bfseries operator==} (\hyperlink{classTime}{Time} const \&other) const
+\item 
+\mbox{\Hypertarget{classTime_a04c5a1b7338a14253ab3797afe39316d}\label{classTime_a04c5a1b7338a14253ab3797afe39316d}} 
+bool {\bfseries operator!=} (\hyperlink{classTime}{Time} const \&other) const
+\item 
+\mbox{\Hypertarget{classTime_a6d544b6af2fd13223a5436d34964fe3a}\label{classTime_a6d544b6af2fd13223a5436d34964fe3a}} 
+bool {\bfseries operator$>$} (\hyperlink{classTime}{Time} const \&other) const
+\item 
+\mbox{\Hypertarget{classTime_a334738a8a0f1f8d1e6ec15d0128ad5d3}\label{classTime_a334738a8a0f1f8d1e6ec15d0128ad5d3}} 
+bool {\bfseries operator$<$} (\hyperlink{classTime}{Time} const \&other) const
+\item 
+\mbox{\Hypertarget{classTime_a1f7d030e8a6095b0bcd41bf4c5db3719}\label{classTime_a1f7d030e8a6095b0bcd41bf4c5db3719}} 
+bool {\bfseries operator$>$=} (\hyperlink{classTime}{Time} const \&other) const
+\item 
+\mbox{\Hypertarget{classTime_a31ca86633797092eb6f997e17dd1a267}\label{classTime_a31ca86633797092eb6f997e17dd1a267}} 
+bool {\bfseries operator$<$=} (\hyperlink{classTime}{Time} const \&other) const
+\item 
+\mbox{\Hypertarget{classTime_a54a1d73b40abf9578a5d324d2805fdce}\label{classTime_a54a1d73b40abf9578a5d324d2805fdce}} 
+\hyperlink{classTime}{Time} const  \& {\bfseries operator+=} (\hyperlink{classTime}{Time} const \&other)
+\item 
+\mbox{\Hypertarget{classTime_ace5e47a96c86c077b4e42b6713ae70de}\label{classTime_ace5e47a96c86c077b4e42b6713ae70de}} 
+\hyperlink{classTime}{Time} {\bfseries operator+} (\hyperlink{classTime}{Time} const \&other) const
+\item 
+\mbox{\Hypertarget{classTime_a55e7ec82d5f390aa1896084e25a0f5a5}\label{classTime_a55e7ec82d5f390aa1896084e25a0f5a5}} 
+\hyperlink{classTime}{Time} \& {\bfseries operator++} ()
+\item 
+\mbox{\Hypertarget{classTime_a9d672dbfc01b4d7f7d5789640017dc37}\label{classTime_a9d672dbfc01b4d7f7d5789640017dc37}} 
+\hyperlink{classTime}{Time} {\bfseries operator++} (int)
+\item 
+\mbox{\Hypertarget{classTime_a7bc1d44c446e70740ab3f0dd64e457be}\label{classTime_a7bc1d44c446e70740ab3f0dd64e457be}} 
+{\bfseries operator int} () const
+\item 
+void \hyperlink{classTime_a2596ef53ebb188dc75b88160bd0aa230}{print} (std\+::ostream \&out) const
+\item 
+bool \hyperlink{classTime_a57f85c6b8295acdcf4e2f22ce7685170}{max} () const
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTime_aeb625f84f2755479deac3ca3fd1d1cb4}\label{classTime_aeb625f84f2755479deac3ca3fd1d1cb4}} 
+static const \hyperlink{classTime}{Time} {\bfseries M\+A\+X\+\_\+\+T\+I\+ME} = \hyperlink{classTime}{Time}((24 $\ast$ 3600) -\/ 1)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTime_ae4ac864187eab9a6a954dd4213ec49fa}\label{classTime_ae4ac864187eab9a6a954dd4213ec49fa}} 
+std\+::istream \& {\bfseries operator$>$$>$} (std\+::istream \&in, \hyperlink{classTime}{Time} \&obj)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTime_af02e08b3bf203d9cedbf9f629cddcc1f}\label{classTime_af02e08b3bf203d9cedbf9f629cddcc1f}} 
+\index{Time@{Time}!difference@{difference}}
+\index{difference@{difference}!Time@{Time}}
+\subsubsection{\texorpdfstring{difference()}{difference()}}
+{\footnotesize\ttfamily int Time\+::difference (\begin{DoxyParamCaption}\item[{\hyperlink{classTime}{Time} const \&}]{other }\end{DoxyParamCaption}) const}
+
+calculate difference between this and other 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(total of this) -\/ (total of other) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTime_ac64625b85a2497986774edcc8dde50e9}\label{classTime_ac64625b85a2497986774edcc8dde50e9}} 
+\index{Time@{Time}!get\+Total@{get\+Total}}
+\index{get\+Total@{get\+Total}!Time@{Time}}
+\subsubsection{\texorpdfstring{get\+Total()}{getTotal()}}
+{\footnotesize\ttfamily unsigned Time\+::get\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+time in seconds 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTime_a57f85c6b8295acdcf4e2f22ce7685170}\label{classTime_a57f85c6b8295acdcf4e2f22ce7685170}} 
+\index{Time@{Time}!max@{max}}
+\index{max@{max}!Time@{Time}}
+\subsubsection{\texorpdfstring{max()}{max()}}
+{\footnotesize\ttfamily bool Time\+::max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+true if this is equal to M\+A\+X\+\_\+\+T\+I\+ME 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTime_a2596ef53ebb188dc75b88160bd0aa230}\label{classTime_a2596ef53ebb188dc75b88160bd0aa230}} 
+\index{Time@{Time}!print@{print}}
+\index{print@{print}!Time@{Time}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Time\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+
+print time in format\+: hh\+:mm\+:ss 
+\begin{DoxyParams}{Parameters}
+{\em out} & -\/ a source to print \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTime_acab7dbc13c8a0d9a0f33047d41f4aee0}\label{classTime_acab7dbc13c8a0d9a0f33047d41f4aee0}} 
+\index{Time@{Time}!serialize@{serialize}}
+\index{serialize@{serialize}!Time@{Time}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily bool Time\+::serialize (\begin{DoxyParamCaption}\item[{std\+::ofstream \&}]{ofs }\end{DoxyParamCaption}) const}
+
+serialize this object 
+\begin{DoxyParams}{Parameters}
+{\em ofs} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false on fail 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Time.\+hpp\item 
+Time.\+cpp\end{DoxyCompactItemize}
