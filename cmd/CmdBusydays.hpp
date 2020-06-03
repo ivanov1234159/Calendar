@@ -10,7 +10,7 @@
 class CmdBusydays : public Command {
 public:
     CmdBusydays();
-    virtual bool action(RunnerType& runner, std::istringstream& iss) const override;
+    virtual bool action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const override;
 };
 
 #endif //CALENDAR_CMDBUSYDAYS_HPP

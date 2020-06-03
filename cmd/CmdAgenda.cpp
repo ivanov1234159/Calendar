@@ -7,19 +7,19 @@
 CmdAgenda::CmdAgenda()
         : Command("agenda", "<date>", "print a list with all appointments for the <date> order by time"){}
 
-bool CmdAgenda::action(RunnerType &runner, std::istringstream &iss) const {
+bool CmdAgenda::action(std::ostream& out, RunnerType &runner, std::istringstream &iss) const {
     Date date;
     iss >> date;
     if(!iss){
-        std::cout << "Wrong date format." << std::endl;
+        out << "Wrong date format." << std::endl;
         return false;
     }
 
-    if(!runner.agenda(date, std::cout)){
+    if(!runner.agenda(date, out)){
         if(runner.opened()){
-            std::cout << "There isn't appointments for the given day." << std::endl;
+            out << "There isn't appointments for the given day." << std::endl;
         }else{
-            std::cout << "There isn't an opened calendar." << std::endl;
+            out << "There isn't an opened calendar." << std::endl;
         }
     }
     return true;

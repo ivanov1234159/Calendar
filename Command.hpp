@@ -28,7 +28,7 @@ public:
     bool operator==(char const* cmd);
     bool canQuit() const;
 
-    virtual bool action(RunnerType& runner, std::istringstream& iss) const;
+    virtual bool action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const;
 
     friend std::ostream& operator<<(std::ostream& out, Command const& obj);
 

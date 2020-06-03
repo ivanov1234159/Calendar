@@ -10,7 +10,7 @@
 class CmdFindSlot : public Command {
 public:
     CmdFindSlot();
-    virtual bool action(RunnerType& runner, std::istringstream& iss) const override;
+    virtual bool action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const override;
 };
 
 #endif //CALENDAR_CMDFINDSLOT_HPP

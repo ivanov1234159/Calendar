@@ -7,18 +7,19 @@
 
 CmdOpen::CmdOpen(): Command("open", "<file>", "open the file at path <file>") {}
 
-bool CmdOpen::action(RunnerType &runner, std::istringstream &iss) const {
+bool CmdOpen::action(std::ostream& out, RunnerType &runner, std::istringstream &iss) const {
     String path;
     iss >> path;
     if(!iss){
+        out << "Couldn't read the path." << std::endl;
         return false;
     }
     bool result = runner.open(path);
     String file_name = runner.getFileName(path);
     if(result){
-        std::cout << "Successfully opened " << file_name << std::endl;
+        out << "Successfully opened " << file_name << std::endl;
     } else {
-        std::cout << "Couldn't open " << file_name << std::endl;
+        out << "Couldn't open " << file_name << std::endl;
     }
     return true;
 }

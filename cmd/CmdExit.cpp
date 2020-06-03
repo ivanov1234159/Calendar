@@ -6,7 +6,7 @@
 
 CmdExit::CmdExit(): Command("exit", "", "exit from the program", true) {}
 
-bool CmdExit::action(RunnerType&, std::istringstream&) const {
-    std::cout << "Exiting the program..." << std::endl;
+bool CmdExit::action(std::ostream& out, RunnerType&, std::istringstream&) const {
+    out << "Exiting the program..." << std::endl;
     return true;
 }

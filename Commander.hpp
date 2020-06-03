@@ -24,7 +24,7 @@ public:
     friend class CmdHelp;
     static void add(Command* item);
     static void run(RunnerType& runner);
-    static bool call(char const* cmd, RunnerType& runner, std::istringstream& iss);
+    static bool call(char const* cmd, RunnerType& runner, std::istringstream& iss, std::ostream& out);
 };
 
 void build_commands();

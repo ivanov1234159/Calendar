@@ -40,8 +40,8 @@ bool Command::canQuit() const {
     return m_quit_when_done;
 }
 
-bool Command::action(RunnerType&, std::istringstream&) const {
-    std::cout << "Invalid command! Type 'help' for more information." << std::endl;
+bool Command::action(std::ostream& out, RunnerType&, std::istringstream&) const {
+    out << "Invalid command! Type 'help' for more information." << std::endl;
     return true;
 }
 
