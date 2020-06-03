@@ -31,6 +31,18 @@ public:
     bool open(String const& file_path);
     void close();
     bool save() const;
+
+    /**
+     * @return pointer to cloned value of m_calendar or nullptr if not opened
+     */
+    Calendar* cloneCalendar() const;
+
+    /**
+     * restore cloned calendar and clears the previous one
+     * @param cloned
+     * @return true if there was a previous calendar (which was opened)
+     */
+    bool restoreCalendar(Calendar* cloned);
     bool book(Date const& date, Time const& start, Time const& end, String const& name, String const& note);
     bool unbook(Date const& date, Time const& start, Time const& end);
     bool agenda(Date const& date, std::ostream& out) const;

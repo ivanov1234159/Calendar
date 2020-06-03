@@ -69,6 +69,20 @@ bool Program::save() const {
     return m_calendar->serialize(ofs);
 }
 
+Calendar* Program::cloneCalendar() const {
+    if(!opened()){
+        return nullptr;
+    }
+    return new Calendar(*m_calendar);
+}
+
+bool Program::restoreCalendar(Calendar *cloned) {
+    bool isOpen = opened();
+    clear();
+    m_calendar = cloned;
+    return isOpen;
+}
+
 bool Program::book(Date const &date, Time const &start, Time const &end, String const& name, String const& note) {
     return m_calendar->book(date, start, end, name, note);
 }
