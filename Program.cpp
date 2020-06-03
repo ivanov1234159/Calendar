@@ -4,12 +4,15 @@
 
 #include "Program.hpp"
 #include "MySpace.hpp"
+#include "Commander.hpp"
 #include <cstring>
 //for: strchr()
 #include <fstream>
 //for: ifstream, ios::binary
 #include <utility>
 //for: swap()
+#include <sstream>
+//for: istringstream, ostringstream
 
 Program& Program::self(){
     static Program p;
@@ -239,6 +242,67 @@ Pair<Date, Time> Program::findSlotWith(Date const &from, Time const &duration, C
         }
     }
     return { date, begin_time };
+}
+
+bool Program::mergeWith(Calendar *other_calendar, std::ostream &out, std::istream &in) {
+    if(!opened() || other_calendar->isEmpty()){
+        return false;
+    }
+    do {
+        Appointment app = other_calendar->unshiftAppointment();
+        if(m_calendar->isFree(app.getDate(), app.getStartTime(), app.getEndTime())){
+            m_calendar->book(app);
+            continue;
+        } else if(app.isHoliday()){
+            out << "An appointment is skipped because it it holiday and it isn't the only on that day." << std::endl;
+            continue;
+        }
+
+        out << "The following appointment cannot be booked." << std::endl;
+        out << app << std::endl;
+        out << "Do you want to skip it? [y/n] ";
+        String answer;
+        in >> answer;
+        if(!in){
+            in.clear();
+        }
+        if(!answer.empty() && (answer[0] == 'Y' || answer[0] == 'y')){
+            continue;
+        }
+
+        out << "Do you want to see all appointments for that day? [y/n] ";
+        in >> answer;
+        if(!in){
+            in.clear();
+        }
+        if(!answer.empty() && (answer[0] == 'Y' || answer[0] == 'y')){
+            std::ostringstream oss;
+            oss << app.getDate();
+            std::istringstream iss(oss.str());
+            Commander::call("agenda", *this, iss, out);
+        }
+
+        Date date;
+        Time start, end;
+        for(; /* no condition */; ) {
+            out << "Please, enter new date and time (start and end)." << std::endl;
+            in >> date >> start >> end;
+            if(!in){
+                out << "Wrong format." << std::endl;
+                out << "Format: <date> <start_time> <end_time>" << std::endl;
+                continue;
+            }
+            if(m_calendar->isFree(date, start, end)){
+                break;
+            }
+            out << "This date and time interval is NOT free." << std::endl;
+        }
+        app.setDate(date);
+        app.setStartTime(start);
+        app.setEndTime(end);
+        m_calendar->book(app);
+    } while (!other_calendar->isEmpty());
+    return true;
 }
 
 bool Program::open(String const& file_path, Calendar*& calendar) {

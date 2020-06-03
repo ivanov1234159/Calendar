@@ -82,6 +82,15 @@ public:
     Pair<Date, Time> findSlotWith(Date const& from, Time const& duration, Calendar const* calendar) const;
 
     /**
+     * merge m_calendar with <other_calendar> by adding appointments from the one to the other
+     * @param other_calendar
+     * @param out - used to print program's messages
+     * @param in - used to read user's input
+     * @return false if <other_calendar> is empty (hasn't appointments) or m_calendar is nullptr
+     */
+    bool mergeWith(Calendar* other_calendar, std::ostream& out, std::istream& in);
+
+    /**
      * opens <calendar> using <file_path>
      * @param file_path
      * @param calendar
