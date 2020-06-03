@@ -13,7 +13,7 @@ bool CmdFindSlot::action(std::ostream& out, RunnerType& runner, std::istringstre
     Time duration;
     iss >> from >> duration;
     if(!iss){
-        out << "Wrong date format." << std::endl;
+        out << "Wrong date or time format." << std::endl;
         return false;
     }
     Pair<Date, Time> result = runner.findSlot(from, duration);
