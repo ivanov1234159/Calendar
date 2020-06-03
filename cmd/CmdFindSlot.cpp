@@ -5,7 +5,8 @@
 #include "CmdFindSlot.hpp"
 
 CmdFindSlot::CmdFindSlot(): Command("findslot", "<from_date> <time>",
-    "search for an appointment time <from_date> with duration <time>\nbut date cannot be holiday and the hours cannot be before 08 or after 17")
+    "search for an appointment time <from_date> with duration <time>\n"
+    "but date cannot be holiday and the hours cannot be before 08 or after 17")
 {}
 
 bool CmdFindSlot::action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const {
