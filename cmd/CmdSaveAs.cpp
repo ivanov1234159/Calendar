@@ -3,10 +3,23 @@
 //
 
 #include "CmdSaveAs.hpp"
+#include "../Commander.hpp"
 
 CmdSaveAs::CmdSaveAs(): Command("saveas", "<file>", "save the current state of the program in <file>") {}
 
-bool CmdSaveAs::action(RunnerType &runner, std::istringstream &iss) const {
-    //TODO: Implement
+bool CmdSaveAs::action(std::ostream& out, RunnerType &runner, std::istringstream &iss) const {
+    String path;
+    iss >> path;
+    if(!iss){
+        out << "Couldn't read the path." << std::endl;
+        return false;
+    }
+    std::ostringstream oss;
+    if(runner.opened()){
+        Commander::call("close", runner, iss, oss);
+    }
+    std::istringstream iss2(path);
+    Commander::call("open", runner, iss2, oss);
+    Commander::call("save", runner, iss2, out);
     return true;
 }
