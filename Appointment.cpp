@@ -34,13 +34,13 @@ String const& Appointment::getNote() const  { return m_note;    }
 Date Appointment::getDate() const           { return m_date;    }
 Time Appointment::getStartTime(int diff_seconds) const {
     if(diff_seconds != 0){
-        return Time(diff_seconds + m_start.getTotal());
+        return Time(diff_seconds + (int)m_start.getTotal());
     }
     return m_start;
 }
 Time Appointment::getEndTime(int diff_seconds) const {
     if(diff_seconds != 0){
-        return Time(diff_seconds + m_end.getTotal());
+        return Time(diff_seconds + (int)m_end.getTotal());
     }
     return m_end;
 }
