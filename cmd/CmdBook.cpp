@@ -43,12 +43,15 @@ bool CmdBook::action(std::ostream& out, RunnerType &runner, std::istringstream &
         out << "Couldn't read the note of an appointment. Cannot book an appointment." << std::endl;
         return false;
     }
-    if(runner.book(date, start, end, name, note)){
-        out << "The appointment was successfully added to the calendar." << std::endl;
+    if(start > end){
+        out << "Reversed start and end times.";
+    }else if(runner.book(date, start, end, name, note)){
+        out << "The appointment was successfully added to the calendar.";
     }else if(!runner.opened()){
-        out << "There isn't an opened calendar." << std::endl;
+        out << "There isn't an opened calendar.";
     }else{
-        out << "This time interval isn't available on this date." << std::endl;
+        out << "This time interval isn't available on this date.";
     }
+    out << std::endl;
     return true;
 }
