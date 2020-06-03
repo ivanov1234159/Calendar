@@ -25,6 +25,17 @@ public:
     Calendar(std::ifstream& ifs, String const& calendar_path = nullptr);
 
     String const& getFilePath() const;
+
+    /**
+     * @return m_list.empty()
+     */
+    bool isEmpty() const;
+
+    /**
+     * @return m_list.unshift()
+     */
+    Appointment unshiftAppointment();
+
     bool serialize(std::ofstream& ofs) const;
 
     bool book(Date const& date, Time const& start, Time const& end, String const& name, String const& note);
@@ -44,8 +55,6 @@ public:
      *      or the date is holiday
      */
     bool findSlotAt(Date const& date, Time const& duration, Time& begin) const;
-    //findslotwith
-    //merge
 
     Appointment* find(Date const& date, Time const& start) const;
 
@@ -57,9 +66,10 @@ public:
      * @return false if it's not holiday or there isn't an appointment on that day
      */
     bool isHoliday(Date const& date) const;
-private:
 
     void book(Appointment const &app);
+private:
+
     Appointment* find(Date const& date, Time const& start, Time const& end);
 
     /**

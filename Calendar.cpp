@@ -24,6 +24,14 @@ String const& Calendar::getFilePath() const {
     return m_file_path;
 }
 
+bool Calendar::isEmpty() const {
+    return m_list.empty();
+}
+
+Appointment Calendar::unshiftAppointment() {
+    return m_list.unshift();
+}
+
 bool Calendar::serialize(std::ofstream &ofs) const {
     unsigned size = m_list.size();
     ofs.write((char const*) &size, sizeof(size));
