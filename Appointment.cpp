@@ -57,8 +57,12 @@ void Appointment::setEndTime(Time const &end)       { m_end = end;          }
 void Appointment::setHoliday(bool holiday)          { m_holiday = holiday;  }
 
 std::ostream& operator<<(std::ostream& out, Appointment const& obj){
-    return out << "An appointment named " << obj.getName()
-    << " is on " << obj.getDate()
+    out << "An appointment named " << obj.getName();
+    if(obj.isHoliday()){
+        return out << " is holiday." << std::endl;
+    }
+
+    return out << " is on " << obj.getDate()
     << " starts at " << obj.getStartTime()
     << " and ends at " << obj.getEndTime()
     <<  std::endl << "\tNotes: " << obj.getNote() << std::endl;
