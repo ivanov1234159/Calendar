@@ -14,6 +14,7 @@
 #include "CmdFindSlotWith.hpp"
 #include "CmdHelp.hpp"
 #include "CmdHoliday.hpp"
+#include "CmdMerge.hpp"
 #include "CmdOpen.hpp"
 #include "CmdSave.hpp"
 #include "CmdSaveAs.hpp"
@@ -31,6 +32,7 @@ void build_commands(){
     Commander::add(new CmdFindSlotWith);
     Commander::add(new CmdHelp);
     Commander::add(new CmdHoliday);
+    Commander::add(new CmdMerge);
     Commander::add(new CmdOpen);
     Commander::add(new CmdSave);
     Commander::add(new CmdSaveAs);
