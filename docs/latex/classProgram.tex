@@ -1,7 +1,13 @@
 \hypertarget{classProgram}{}\section{Program Class Reference}
 \label{classProgram}\index{Program@{Program}}
+
+
+{\ttfamily \#include $<$Program.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProgram_a986aef1c50e1d338a3315a47ba6df549}{$\sim$\+Program} ()
 \item 
 bool \hyperlink{classProgram_a2f494b9e0a50657ac89a61a96e92face}{opened} () const
 \item 
@@ -9,7 +15,6 @@ bool \hyperlink{classProgram_a2f494b9e0a50657ac89a61a96e92face}{opened} () const
 \item 
 bool \hyperlink{classProgram_a4658796d44178138e3c50df2346f20c9}{open} (\hyperlink{classString}{String} const \&file\+\_\+path)
 \item 
-\mbox{\Hypertarget{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}\label{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}} 
 void \hyperlink{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}{close} ()
 \begin{DoxyCompactList}\small\item\em calls clear() method if the calendar is opened \end{DoxyCompactList}\item 
 bool \hyperlink{classProgram_a9ab390cc3caa8cc7dee9704a273a6979}{save} () const
@@ -49,11 +54,19 @@ bool \hyperlink{classProgram_aea58a5865e12fbbb2dda1563e66d092a}{merge\+With} (\h
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classProgram_a6f703bef529f93987481e04ab6f3014a}\label{classProgram_a6f703bef529f93987481e04ab6f3014a}} 
-static \hyperlink{classProgram}{Program} \& {\bfseries self} ()
+static \hyperlink{classProgram}{Program} \& \hyperlink{classProgram_a6f703bef529f93987481e04ab6f3014a}{self} ()
 \item 
 static bool \hyperlink{classProgram_ad12fa0703d93dbec2b2badc96ab97cf6}{open} (\hyperlink{classString}{String} const \&file\+\_\+path, \hyperlink{classCalendar}{Calendar} $\ast$\&calendar)
 \end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProgram_a986aef1c50e1d338a3315a47ba6df549}\label{classProgram_a986aef1c50e1d338a3315a47ba6df549}} 
+\index{Program@{Program}!````~Program@{$\sim$\+Program}}
+\index{````~Program@{$\sim$\+Program}!Program@{Program}}
+\subsubsection{\texorpdfstring{$\sim$\+Program()}{~Program()}}
+{\footnotesize\ttfamily Program\+::$\sim$\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 \subsection{Member Function Documentation}
@@ -194,6 +207,16 @@ change start time of an appointment
 \begin{DoxyReturn}{Returns}
 pointer to cloned value of m\+\_\+calendar OR nullptr if not opened 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}\label{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}} 
+\index{Program@{Program}!close@{close}}
+\index{close@{close}!Program@{Program}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Program\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+calls clear() method if the calendar is opened 
+
 \mbox{\Hypertarget{classProgram_a639a0af6603bda2f6dc8ec051fd1dd93}\label{classProgram_a639a0af6603bda2f6dc8ec051fd1dd93}} 
 \index{Program@{Program}!find\+Slot@{find\+Slot}}
 \index{find\+Slot@{find\+Slot}!Program@{Program}}
@@ -370,6 +393,12 @@ true if there was a previous calendar (which was opened)
 \begin{DoxyReturn}{Returns}
 true if not opened OR successfully serialize m\+\_\+calendar 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a6f703bef529f93987481e04ab6f3014a}\label{classProgram_a6f703bef529f93987481e04ab6f3014a}} 
+\index{Program@{Program}!self@{self}}
+\index{self@{self}!Program@{Program}}
+\subsubsection{\texorpdfstring{self()}{self()}}
+{\footnotesize\ttfamily \hyperlink{classProgram}{Program} \& Program\+::self (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \mbox{\Hypertarget{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}\label{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}} 
 \index{Program@{Program}!unbook@{unbook}}
 \index{unbook@{unbook}!Program@{Program}}
@@ -392,5 +421,5 @@ false if it\textquotesingle{}s opened OR there isn\textquotesingle{}t such appoi
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Program.\+hpp\item 
-Program.\+cpp\end{DoxyCompactItemize}
+\hyperlink{Program_8hpp}{Program.\+hpp}\item 
+\hyperlink{Program_8cpp}{Program.\+cpp}\end{DoxyCompactItemize}

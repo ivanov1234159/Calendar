@@ -1,29 +1,60 @@
 \hypertarget{classCommand}{}\section{Command Class Reference}
 \label{classCommand}\index{Command@{Command}}
+
+
+{\ttfamily \#include $<$Command.\+hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classCommand_ac26b14828c5a72f9bd370421a4788b5d}\label{classCommand_ac26b14828c5a72f9bd370421a4788b5d}} 
-{\bfseries Command} (char const $\ast$name, char const $\ast$params, char const $\ast$notes, bool quit=false)
+\hyperlink{classCommand_a18df2d81039392daeb0b78c346a70537}{Command} ()
 \item 
-\mbox{\Hypertarget{classCommand_a8ccab91a784c447f628ee8fec3873494}\label{classCommand_a8ccab91a784c447f628ee8fec3873494}} 
-{\bfseries Command} (\hyperlink{classCommand}{Command} const \&other)
+\hyperlink{classCommand_ac26b14828c5a72f9bd370421a4788b5d}{Command} (char const $\ast$name, char const $\ast$params, char const $\ast$notes, bool quit=false)
 \item 
-\mbox{\Hypertarget{classCommand_a378451c967b9d585492a778bab58f803}\label{classCommand_a378451c967b9d585492a778bab58f803}} 
-\hyperlink{classCommand}{Command} \& {\bfseries operator=} (\hyperlink{classCommand}{Command} const \&other)
+\hyperlink{classCommand_a8ccab91a784c447f628ee8fec3873494}{Command} (\hyperlink{classCommand}{Command} const \&other)
+\item 
+\hyperlink{classCommand}{Command} \& \hyperlink{classCommand_a378451c967b9d585492a778bab58f803}{operator=} (\hyperlink{classCommand}{Command} const \&other)
+\item 
+virtual \hyperlink{classCommand_ab552bb3a07fdd1acbfd8ea76e69b2278}{$\sim$\+Command} ()
 \item 
 bool \hyperlink{classCommand_a75d6d67687c9d29e47ce9e80540bbd1e}{operator==} (char const $\ast$cmd)
 \item 
 bool \hyperlink{classCommand_a0ec10c9753786caf083aba08cf85afb0}{can\+Quit} () const
 \item 
-virtual bool \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{action} (std\+::ostream \&out, \hyperlink{classProgram}{Runner\+Type} \&runner, std\+::istringstream \&iss) const
+virtual bool \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classCommand_a0a193e228644a3735c309d8b2b5b9899}\label{classCommand_a0a193e228644a3735c309d8b2b5b9899}} 
-std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, \hyperlink{classCommand}{Command} const \&obj)
+std\+::ostream \& \hyperlink{classCommand_a0a193e228644a3735c309d8b2b5b9899}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classCommand}{Command} const \&obj)
 \end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCommand_a18df2d81039392daeb0b78c346a70537}\label{classCommand_a18df2d81039392daeb0b78c346a70537}} 
+\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\subsubsection{\texorpdfstring{Command()}{Command()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Command\+::\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCommand_ac26b14828c5a72f9bd370421a4788b5d}\label{classCommand_ac26b14828c5a72f9bd370421a4788b5d}} 
+\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\subsubsection{\texorpdfstring{Command()}{Command()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Command\+::\+Command (\begin{DoxyParamCaption}\item[{char const $\ast$}]{name,  }\item[{char const $\ast$}]{params,  }\item[{char const $\ast$}]{notes,  }\item[{bool}]{quit = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCommand_a8ccab91a784c447f628ee8fec3873494}\label{classCommand_a8ccab91a784c447f628ee8fec3873494}} 
+\index{Command@{Command}!Command@{Command}}
+\index{Command@{Command}!Command@{Command}}
+\subsubsection{\texorpdfstring{Command()}{Command()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Command\+::\+Command (\begin{DoxyParamCaption}\item[{\hyperlink{classCommand}{Command} const \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classCommand_ab552bb3a07fdd1acbfd8ea76e69b2278}\label{classCommand_ab552bb3a07fdd1acbfd8ea76e69b2278}} 
+\index{Command@{Command}!````~Command@{$\sim$\+Command}}
+\index{````~Command@{$\sim$\+Command}!Command@{Command}}
+\subsubsection{\texorpdfstring{$\sim$\+Command()}{~Command()}}
+{\footnotesize\ttfamily Command\+::$\sim$\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
 
 
 \subsection{Member Function Documentation}
@@ -31,7 +62,7 @@ std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&out, \hyperlink{c
 \index{Command@{Command}!action@{action}}
 \index{action@{action}!Command@{Command}}
 \subsubsection{\texorpdfstring{action()}{action()}}
-{\footnotesize\ttfamily bool Command\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classProgram}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool Command\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 depending from the child class do different things 
 \begin{DoxyParams}{Parameters}
@@ -54,6 +85,12 @@ false if cannot read the params of the command
 \begin{DoxyReturn}{Returns}
 m\+\_\+quit\+\_\+when\+\_\+done 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_a378451c967b9d585492a778bab58f803}\label{classCommand_a378451c967b9d585492a778bab58f803}} 
+\index{Command@{Command}!operator=@{operator=}}
+\index{operator=@{operator=}!Command@{Command}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classCommand}{Command} \& Command\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classCommand}{Command} const \&}]{other }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{classCommand_a75d6d67687c9d29e47ce9e80540bbd1e}\label{classCommand_a75d6d67687c9d29e47ce9e80540bbd1e}} 
 \index{Command@{Command}!operator==@{operator==}}
 \index{operator==@{operator==}!Command@{Command}}
@@ -65,7 +102,16 @@ true if the commands has the same names
 \end{DoxyReturn}
 
 
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classCommand_a0a193e228644a3735c309d8b2b5b9899}\label{classCommand_a0a193e228644a3735c309d8b2b5b9899}} 
+\index{Command@{Command}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Command@{Command}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classCommand}{Command} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Command.\+hpp\item 
-Command.\+cpp\end{DoxyCompactItemize}
+\hyperlink{Command_8hpp}{Command.\+hpp}\item 
+\hyperlink{Command_8cpp}{Command.\+cpp}\end{DoxyCompactItemize}
