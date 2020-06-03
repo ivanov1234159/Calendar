@@ -84,10 +84,16 @@ bool Program::restoreCalendar(Calendar *cloned) {
 }
 
 bool Program::book(Date const &date, Time const &start, Time const &end, String const& name, String const& note) {
+    if(!opened()){
+        return false;
+    }
     return m_calendar->book(date, start, end, name, note);
 }
 
 bool Program::unbook(Date const &date, Time const &start, Time const &end) {
+    if(!opened()){
+        return false;
+    }
     return m_calendar->unbook(date, start, end);
 }
 

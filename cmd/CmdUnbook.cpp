@@ -32,6 +32,8 @@ bool CmdUnbook::action(std::ostream& out, RunnerType &runner, std::istringstream
     }
     if(runner.unbook(date, start, end)){
         out << "The appointment was successfully removed from the calendar." << std::endl;
+    }else if(!runner.opened()){
+        out << "There isn't an opened calendar." << std::endl;
     }else{
         out << "There isn't an appointment on this date at this time interval." << std::endl;
     }

@@ -45,6 +45,8 @@ bool CmdBook::action(std::ostream& out, RunnerType &runner, std::istringstream &
     }
     if(runner.book(date, start, end, name, note)){
         out << "The appointment was successfully added to the calendar." << std::endl;
+    }else if(!runner.opened()){
+        out << "There isn't an opened calendar." << std::endl;
     }else{
         out << "This time interval isn't available on this date." << std::endl;
     }
