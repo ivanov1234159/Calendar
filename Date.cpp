@@ -103,11 +103,11 @@ String Date::to_string() const {
     if(m_year < 100)    { result.push('0'); }
     if(m_year < 10)     { result.push('0'); }
     result += String::to_string(m_year);
-    result.push('-');
-    if(m_month < 10)    { result.push('0'); }
+    result.append("-");
+    if(m_month < 10)    { result.append("0"); }
     result += String::to_string(m_month);
-    result.push('-');
-    if(m_day < 10)    { result.push('0'); }
+    result.append("-");
+    if(m_day < 10)    { result.append("0"); }
     result += String::to_string(m_day);
     return result;
 }
