@@ -155,18 +155,7 @@ Appointment* Calendar::find(Date const &date, Time const &start) const {
 }
 
 bool Calendar::isFree(Date const &date, Time const &start, Time const &end) const {
-    for(unsigned i = 0; i < m_list.size(); i++){
-        if(m_list[i].getDate() != date){
-            continue;
-        }
-        if(m_list[i].getStartTime() >= start && m_list[i].getStartTime() <= end){
-            return false;
-        }
-        if(m_list[i].getStartTime() <= start && m_list[i].getEndTime() > start){
-            return false;
-        }
-    }
-    return true;
+    return findFirst(date, start, end) == nullptr;
 }
 
 bool Calendar::isHoliday(Date const &date) const {
@@ -214,6 +203,9 @@ Appointment const* Calendar::findFirst(Date const &date, Time const &start, Time
     for(unsigned i = 0; i < m_list.size(); i++){
         if(m_list[i].getDate() != date){
             continue;
+        }
+        if(m_list[i].isHoliday()){
+            return &m_list[i];
         }
         if(m_list[i].getStartTime() >= start && m_list[i].getStartTime() <= end){
             return &m_list[i];
