@@ -1,0 +1,61 @@
+\hypertarget{classCmdClose}{}\section{Cmd\+Close Class Reference}
+\label{classCmdClose}\index{Cmd\+Close@{Cmd\+Close}}
+
+
+{\ttfamily \#include $<$Cmd\+Close.\+hpp$>$}
+
+
+
+Inheritance diagram for Cmd\+Close\+:
+% FIG 0
+
+
+Collaboration diagram for Cmd\+Close\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCmdClose_ae4003b40d3f345043c36cd06654d1b37}{Cmd\+Close} ()
+\item 
+virtual bool \hyperlink{classCmdClose_a012e10635d377e533acfadf05e034654}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCmdClose_ae4003b40d3f345043c36cd06654d1b37}\label{classCmdClose_ae4003b40d3f345043c36cd06654d1b37}} 
+\index{Cmd\+Close@{Cmd\+Close}!Cmd\+Close@{Cmd\+Close}}
+\index{Cmd\+Close@{Cmd\+Close}!Cmd\+Close@{Cmd\+Close}}
+\subsubsection{\texorpdfstring{Cmd\+Close()}{CmdClose()}}
+{\footnotesize\ttfamily Cmd\+Close\+::\+Cmd\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCmdClose_a012e10635d377e533acfadf05e034654}\label{classCmdClose_a012e10635d377e533acfadf05e034654}} 
+\index{Cmd\+Close@{Cmd\+Close}!action@{action}}
+\index{action@{action}!Cmd\+Close@{Cmd\+Close}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily bool Cmd\+Close\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+depending from the child class do different things 
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if cannot read the params of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cmd/\hyperlink{CmdClose_8hpp}{Cmd\+Close.\+hpp}\item 
+cmd/\hyperlink{CmdClose_8cpp}{Cmd\+Close.\+cpp}\end{DoxyCompactItemize}

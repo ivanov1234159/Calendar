@@ -1,0 +1,61 @@
+\hypertarget{classCmdFind}{}\section{Cmd\+Find Class Reference}
+\label{classCmdFind}\index{Cmd\+Find@{Cmd\+Find}}
+
+
+{\ttfamily \#include $<$Cmd\+Find.\+hpp$>$}
+
+
+
+Inheritance diagram for Cmd\+Find\+:
+% FIG 0
+
+
+Collaboration diagram for Cmd\+Find\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCmdFind_aa13a72495b6e4d97213abe69541a9d0c}{Cmd\+Find} ()
+\item 
+virtual bool \hyperlink{classCmdFind_a113977b5959b9d2014a3a47b3f42340e}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCmdFind_aa13a72495b6e4d97213abe69541a9d0c}\label{classCmdFind_aa13a72495b6e4d97213abe69541a9d0c}} 
+\index{Cmd\+Find@{Cmd\+Find}!Cmd\+Find@{Cmd\+Find}}
+\index{Cmd\+Find@{Cmd\+Find}!Cmd\+Find@{Cmd\+Find}}
+\subsubsection{\texorpdfstring{Cmd\+Find()}{CmdFind()}}
+{\footnotesize\ttfamily Cmd\+Find\+::\+Cmd\+Find (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCmdFind_a113977b5959b9d2014a3a47b3f42340e}\label{classCmdFind_a113977b5959b9d2014a3a47b3f42340e}} 
+\index{Cmd\+Find@{Cmd\+Find}!action@{action}}
+\index{action@{action}!Cmd\+Find@{Cmd\+Find}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily bool Cmd\+Find\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+depending from the child class do different things 
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if cannot read the params of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cmd/\hyperlink{CmdFind_8hpp}{Cmd\+Find.\+hpp}\item 
+cmd/\hyperlink{CmdFind_8cpp}{Cmd\+Find.\+cpp}\end{DoxyCompactItemize}

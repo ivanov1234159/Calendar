@@ -1,0 +1,61 @@
+\hypertarget{classCmdBook}{}\section{Cmd\+Book Class Reference}
+\label{classCmdBook}\index{Cmd\+Book@{Cmd\+Book}}
+
+
+{\ttfamily \#include $<$Cmd\+Book.\+hpp$>$}
+
+
+
+Inheritance diagram for Cmd\+Book\+:
+% FIG 0
+
+
+Collaboration diagram for Cmd\+Book\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCmdBook_a1f6b2ca988342969602ed97012c15431}{Cmd\+Book} ()
+\item 
+virtual bool \hyperlink{classCmdBook_ad3d3448c7cc058a1ca346d85e40abc66}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCmdBook_a1f6b2ca988342969602ed97012c15431}\label{classCmdBook_a1f6b2ca988342969602ed97012c15431}} 
+\index{Cmd\+Book@{Cmd\+Book}!Cmd\+Book@{Cmd\+Book}}
+\index{Cmd\+Book@{Cmd\+Book}!Cmd\+Book@{Cmd\+Book}}
+\subsubsection{\texorpdfstring{Cmd\+Book()}{CmdBook()}}
+{\footnotesize\ttfamily Cmd\+Book\+::\+Cmd\+Book (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCmdBook_ad3d3448c7cc058a1ca346d85e40abc66}\label{classCmdBook_ad3d3448c7cc058a1ca346d85e40abc66}} 
+\index{Cmd\+Book@{Cmd\+Book}!action@{action}}
+\index{action@{action}!Cmd\+Book@{Cmd\+Book}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily bool Cmd\+Book\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+depending from the child class do different things 
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if cannot read the params of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cmd/\hyperlink{CmdBook_8hpp}{Cmd\+Book.\+hpp}\item 
+cmd/\hyperlink{CmdBook_8cpp}{Cmd\+Book.\+cpp}\end{DoxyCompactItemize}

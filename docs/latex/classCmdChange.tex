@@ -1,0 +1,61 @@
+\hypertarget{classCmdChange}{}\section{Cmd\+Change Class Reference}
+\label{classCmdChange}\index{Cmd\+Change@{Cmd\+Change}}
+
+
+{\ttfamily \#include $<$Cmd\+Change.\+hpp$>$}
+
+
+
+Inheritance diagram for Cmd\+Change\+:
+% FIG 0
+
+
+Collaboration diagram for Cmd\+Change\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCmdChange_a4fc728f5bac93453ad24311561bee975}{Cmd\+Change} ()
+\item 
+virtual bool \hyperlink{classCmdChange_a4c3bdb844bb270715716e21e20bb9c7f}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCmdChange_a4fc728f5bac93453ad24311561bee975}\label{classCmdChange_a4fc728f5bac93453ad24311561bee975}} 
+\index{Cmd\+Change@{Cmd\+Change}!Cmd\+Change@{Cmd\+Change}}
+\index{Cmd\+Change@{Cmd\+Change}!Cmd\+Change@{Cmd\+Change}}
+\subsubsection{\texorpdfstring{Cmd\+Change()}{CmdChange()}}
+{\footnotesize\ttfamily Cmd\+Change\+::\+Cmd\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classCmdChange_a4c3bdb844bb270715716e21e20bb9c7f}\label{classCmdChange_a4c3bdb844bb270715716e21e20bb9c7f}} 
+\index{Cmd\+Change@{Cmd\+Change}!action@{action}}
+\index{action@{action}!Cmd\+Change@{Cmd\+Change}}
+\subsubsection{\texorpdfstring{action()}{action()}}
+{\footnotesize\ttfamily bool Cmd\+Change\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+depending from the child class do different things 
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+{\em runner} & \\
+\hline
+{\em iss} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if cannot read the params of the command 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{Command}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cmd/\hyperlink{CmdChange_8hpp}{Cmd\+Change.\+hpp}\item 
+cmd/\hyperlink{CmdChange_8cpp}{Cmd\+Change.\+cpp}\end{DoxyCompactItemize}
