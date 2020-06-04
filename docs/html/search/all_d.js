@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['readme',['README',['../md_README.html',1,'']]],
   ['rand',['rand',['../namespaceMySpace.html#af98f3ea3e2a0dbabf65f65c74c015830',1,'MySpace']]],
   ['read',['read',['../classString.html#ab0c13e38cf91f55bb6eaedd513f124db',1,'String']]],
   ['read_5fstream',['read_stream',['../namespaceMySpace.html#acfe71ee08c30cdafde43d7db1cd34aff',1,'MySpace']]],
