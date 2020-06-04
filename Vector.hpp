@@ -69,7 +69,7 @@ public:
     /// @return true if m_size is 0
     bool empty() const;
 
-    /// @return true if m_size is m_limit
+    /// @return true if m_size is equal to m_limit
     bool full() const;
 
     /// @return m_size
