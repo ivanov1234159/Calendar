@@ -4,6 +4,10 @@
 
 {\ttfamily \#include $<$Program.\+hpp$>$}
 
+
+
+Collaboration diagram for Program\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -16,7 +20,7 @@ bool \hyperlink{classProgram_a2f494b9e0a50657ac89a61a96e92face}{opened} () const
 bool \hyperlink{classProgram_a4658796d44178138e3c50df2346f20c9}{open} (\hyperlink{classString}{String} const \&file\+\_\+path)
 \item 
 void \hyperlink{classProgram_ab8b7a28d1be3f1b8c5136e936c75ca63}{close} ()
-\begin{DoxyCompactList}\small\item\em calls clear() method if the calendar is opened \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em calls \hyperlink{classProgram_a6fd6135c7adf5af67b55a2303d95defe}{clear()} method if the calendar is opened \end{DoxyCompactList}\item 
 bool \hyperlink{classProgram_a9ab390cc3caa8cc7dee9704a273a6979}{save} () const
 \item 
 \hyperlink{classCalendar}{Calendar} $\ast$ \hyperlink{classProgram_ae2bc41544b2cedf95611867ead89d6c9}{clone\+Calendar} () const
@@ -27,7 +31,7 @@ bool \hyperlink{classProgram_a3fd5b4cf3d1eaa58809f593ccdc7a2d3}{book} (\hyperlin
 \item 
 bool \hyperlink{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}{unbook} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end)
 \item 
-bool \hyperlink{classProgram_a36916661bfce488ed07dbc2a7f3fadce}{agenda} (\hyperlink{classDate}{Date} const \&date, std\+::ostream \&out) const
+bool \hyperlink{classProgram_a36916661bfce488ed07dbc2a7f3fadce}{agenda} (\hyperlink{classDate}{Date} const \&date, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out) const
 \item 
 \hyperlink{structPair}{Pair}$<$ bool, bool $>$ \hyperlink{classProgram_a4a25f61fe0747f0f13ace13b310ed7a3}{change\+Date} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classDate}{Date} const \&new\+\_\+date)
 \item 
@@ -39,7 +43,7 @@ bool \hyperlink{classProgram_a606ccb02438885b2894843613d6de157}{change\+Name} (\
 \item 
 bool \hyperlink{classProgram_a63f49d8259cb4038274a1cb6e9b82374}{change\+Note} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classString}{String} const \&new\+\_\+note)
 \item 
-bool \hyperlink{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}{find\+String} (\hyperlink{classString}{String} const \&needle, std\+::ostream \&out) const
+bool \hyperlink{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}{find\+String} (\hyperlink{classString}{String} const \&needle, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out) const
 \item 
 bool \hyperlink{classProgram_ad14086e73ec4aef58c705e3a19089d97}{mark\+As\+Holiday} (\hyperlink{classDate}{Date} const \&date)
 \item 
@@ -49,7 +53,7 @@ bool \hyperlink{classProgram_ad14086e73ec4aef58c705e3a19089d97}{mark\+As\+Holida
 \item 
 \hyperlink{structPair}{Pair}$<$ \hyperlink{classDate}{Date}, \hyperlink{classTime}{Time} $>$ \hyperlink{classProgram_aa2159591c5711c2846c261cd672643d6}{find\+Slot\+With} (\hyperlink{classDate}{Date} const \&from, \hyperlink{classTime}{Time} const \&duration, \hyperlink{classCalendar}{Calendar} const $\ast$calendar) const
 \item 
-bool \hyperlink{classProgram_aea58a5865e12fbbb2dda1563e66d092a}{merge\+With} (\hyperlink{classCalendar}{Calendar} $\ast$other\+\_\+calendar, std\+::ostream \&out, std\+::istream \&in)
+bool \hyperlink{classProgram_aea58a5865e12fbbb2dda1563e66d092a}{merge\+With} (\hyperlink{classCalendar}{Calendar} $\ast$other\+\_\+calendar, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out, std\+::istream \&in)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -58,9 +62,42 @@ static \hyperlink{classProgram}{Program} \& \hyperlink{classProgram_a6f703bef529
 \item 
 static bool \hyperlink{classProgram_ad12fa0703d93dbec2b2badc96ab97cf6}{open} (\hyperlink{classString}{String} const \&file\+\_\+path, \hyperlink{classCalendar}{Calendar} $\ast$\&calendar)
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classProgram_aaefaa0df08f3484476fc4d61e97acbdc}{Program} ()
+\item 
+\hyperlink{classProgram_a9261168f1c251276a449ec0216c07650}{Program} (\hyperlink{classProgram}{Program} const \&other)=delete
+\item 
+\hyperlink{classProgram}{Program} \& \hyperlink{classProgram_af46704d2258695db8d0bc7d2b5edf48e}{operator=} (\hyperlink{classProgram}{Program} const \&other)=delete
+\item 
+void \hyperlink{classProgram_a6fd6135c7adf5af67b55a2303d95defe}{clear} ()
+\begin{DoxyCompactList}\small\item\em set m\+\_\+calendar to nullptr and free the memory \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classString}{String} \hyperlink{classProgram_a5b0f8b7d9437d17ebc2e851d345f4a9b}{get\+Name\+From\+Path} (char const $\ast$file\+\_\+path)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCalendar}{Calendar} $\ast$ \hyperlink{classProgram_a851d360e6d0aa789dc891896ea75dcbb}{m\+\_\+calendar}
+\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProgram_aaefaa0df08f3484476fc4d61e97acbdc}\label{classProgram_aaefaa0df08f3484476fc4d61e97acbdc}} 
+\index{Program@{Program}!Program@{Program}}
+\index{Program@{Program}!Program@{Program}}
+\subsubsection{\texorpdfstring{Program()}{Program()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Program\+::\+Program (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classProgram_a9261168f1c251276a449ec0216c07650}\label{classProgram_a9261168f1c251276a449ec0216c07650}} 
+\index{Program@{Program}!Program@{Program}}
+\index{Program@{Program}!Program@{Program}}
+\subsubsection{\texorpdfstring{Program()}{Program()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Program\+::\+Program (\begin{DoxyParamCaption}\item[{\hyperlink{classProgram}{Program} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
 \mbox{\Hypertarget{classProgram_a986aef1c50e1d338a3315a47ba6df549}\label{classProgram_a986aef1c50e1d338a3315a47ba6df549}} 
 \index{Program@{Program}!````~Program@{$\sim$\+Program}}
 \index{````~Program@{$\sim$\+Program}!Program@{Program}}
@@ -74,7 +111,7 @@ static bool \hyperlink{classProgram_ad12fa0703d93dbec2b2badc96ab97cf6}{open} (\h
 \index{Program@{Program}!agenda@{agenda}}
 \index{agenda@{agenda}!Program@{Program}}
 \subsubsection{\texorpdfstring{agenda()}{agenda()}}
-{\footnotesize\ttfamily bool Program\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Program\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out }\end{DoxyParamCaption}) const}
 
 print all appointments for the day $<$date$>$; calls \hyperlink{classCalendar_ac6112aa4e9b3e6e5b9a478ff66789d77}{Calendar\+::agenda()} 
 \begin{DoxyParams}{Parameters}
@@ -198,6 +235,16 @@ change start time of an appointment
 \begin{DoxyReturn}{Returns}
 \{ success, is free new\+\_\+start\+\_\+time \}; success is false if calendar isn\textquotesingle{}t opened OR it\textquotesingle{}s not found such appointment 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a6fd6135c7adf5af67b55a2303d95defe}\label{classProgram_a6fd6135c7adf5af67b55a2303d95defe}} 
+\index{Program@{Program}!clear@{clear}}
+\index{clear@{clear}!Program@{Program}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Program\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+set m\+\_\+calendar to nullptr and free the memory 
+
 \mbox{\Hypertarget{classProgram_ae2bc41544b2cedf95611867ead89d6c9}\label{classProgram_ae2bc41544b2cedf95611867ead89d6c9}} 
 \index{Program@{Program}!clone\+Calendar@{clone\+Calendar}}
 \index{clone\+Calendar@{clone\+Calendar}!Program@{Program}}
@@ -215,7 +262,7 @@ pointer to cloned value of m\+\_\+calendar OR nullptr if not opened
 
 
 
-calls clear() method if the calendar is opened 
+calls \hyperlink{classProgram_a6fd6135c7adf5af67b55a2303d95defe}{clear()} method if the calendar is opened 
 
 \mbox{\Hypertarget{classProgram_a639a0af6603bda2f6dc8ec051fd1dd93}\label{classProgram_a639a0af6603bda2f6dc8ec051fd1dd93}} 
 \index{Program@{Program}!find\+Slot@{find\+Slot}}
@@ -257,11 +304,11 @@ uses fund\+Slot() method to find the best match for both calendars (m\+\_\+calen
 \index{Program@{Program}!find\+String@{find\+String}}
 \index{find\+String@{find\+String}!Program@{Program}}
 \subsubsection{\texorpdfstring{find\+String()}{findString()}}
-{\footnotesize\ttfamily bool Program\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Program\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out }\end{DoxyParamCaption}) const}
 
 search appointments to print them by needle; calls \hyperlink{classCalendar_accc025455e06e4031b9b76fe1a35220d}{Calendar\+::find\+String()} 
 \begin{DoxyParams}{Parameters}
-{\em needle} & -\/ must be contained by Appointment\+::m\+\_\+name OR Appointment\+::m\+\_\+note \\
+{\em needle} & -\/ must be contained by \hyperlink{classAppointment_aa3d8a2e3194a6b785b26f7c31a208462}{Appointment\+::m\+\_\+name} OR \hyperlink{classAppointment_a048a5e8081bcdccf2cffa725bcbe91b3}{Appointment\+::m\+\_\+note} \\
 \hline
 {\em out} & -\/ a source to print \\
 \hline
@@ -299,6 +346,20 @@ get file name from calendar\textquotesingle{}s path or $<$path$>$
 \begin{DoxyReturn}{Returns}
 the file name (with file extension) OR empty string if any path is empty 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_a5b0f8b7d9437d17ebc2e851d345f4a9b}\label{classProgram_a5b0f8b7d9437d17ebc2e851d345f4a9b}} 
+\index{Program@{Program}!get\+Name\+From\+Path@{get\+Name\+From\+Path}}
+\index{get\+Name\+From\+Path@{get\+Name\+From\+Path}!Program@{Program}}
+\subsubsection{\texorpdfstring{get\+Name\+From\+Path()}{getNameFromPath()}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Program\+::get\+Name\+From\+Path (\begin{DoxyParamCaption}\item[{char const $\ast$}]{file\+\_\+path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+extracts file name from $<$file\+\_\+path$>$ 
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the file name 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classProgram_ad14086e73ec4aef58c705e3a19089d97}\label{classProgram_ad14086e73ec4aef58c705e3a19089d97}} 
 \index{Program@{Program}!mark\+As\+Holiday@{mark\+As\+Holiday}}
 \index{mark\+As\+Holiday@{mark\+As\+Holiday}!Program@{Program}}
@@ -317,7 +378,7 @@ false if N\+OT the whole day is free
 \index{Program@{Program}!merge\+With@{merge\+With}}
 \index{merge\+With@{merge\+With}!Program@{Program}}
 \subsubsection{\texorpdfstring{merge\+With()}{mergeWith()}}
-{\footnotesize\ttfamily bool Program\+::merge\+With (\begin{DoxyParamCaption}\item[{\hyperlink{classCalendar}{Calendar} $\ast$}]{other\+\_\+calendar,  }\item[{std\+::ostream \&}]{out,  }\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Program\+::merge\+With (\begin{DoxyParamCaption}\item[{\hyperlink{classCalendar}{Calendar} $\ast$}]{other\+\_\+calendar,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out,  }\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
 
 merge m\+\_\+calendar with $<$other\+\_\+calendar$>$ by adding appointments from the one to the other 
 \begin{DoxyParams}{Parameters}
@@ -370,6 +431,12 @@ false if the calendar is not nullptr
 \begin{DoxyReturn}{Returns}
 m\+\_\+calendar != nullptr 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classProgram_af46704d2258695db8d0bc7d2b5edf48e}\label{classProgram_af46704d2258695db8d0bc7d2b5edf48e}} 
+\index{Program@{Program}!operator=@{operator=}}
+\index{operator=@{operator=}!Program@{Program}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classProgram}{Program}\& Program\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classProgram}{Program} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [delete]}}
+
 \mbox{\Hypertarget{classProgram_a0c4c553237a075bc9ab5d4c6b80b4471}\label{classProgram_a0c4c553237a075bc9ab5d4c6b80b4471}} 
 \index{Program@{Program}!restore\+Calendar@{restore\+Calendar}}
 \index{restore\+Calendar@{restore\+Calendar}!Program@{Program}}
@@ -417,6 +484,15 @@ remove an appointment; calls \hyperlink{classCalendar_a24540f159572a53109a20be9e
 \begin{DoxyReturn}{Returns}
 false if it\textquotesingle{}s opened OR there isn\textquotesingle{}t such appointment 
 \end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classProgram_a851d360e6d0aa789dc891896ea75dcbb}\label{classProgram_a851d360e6d0aa789dc891896ea75dcbb}} 
+\index{Program@{Program}!m\+\_\+calendar@{m\+\_\+calendar}}
+\index{m\+\_\+calendar@{m\+\_\+calendar}!Program@{Program}}
+\subsubsection{\texorpdfstring{m\+\_\+calendar}{m\_calendar}}
+{\footnotesize\ttfamily \hyperlink{classCalendar}{Calendar}$\ast$ Program\+::m\+\_\+calendar\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

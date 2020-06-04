@@ -61,6 +61,8 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classTime-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -112,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9d672dbfc01b4d7f7d5789640017dc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bc1d44c446e70740ab3f0dd64e457be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a7bc1d44c446e70740ab3f0dd64e457be">operator int</a> () const</td></tr>
 <tr class="separator:a7bc1d44c446e70740ab3f0dd64e457be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2596ef53ebb188dc75b88160bd0aa230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a2596ef53ebb188dc75b88160bd0aa230">print</a> (std::ostream &amp;out) const</td></tr>
+<tr class="memitem:a2596ef53ebb188dc75b88160bd0aa230"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a2596ef53ebb188dc75b88160bd0aa230">print</a> (<a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;out) const</td></tr>
 <tr class="separator:a2596ef53ebb188dc75b88160bd0aa230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57f85c6b8295acdcf4e2f22ce7685170"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a57f85c6b8295acdcf4e2f22ce7685170">max</a> () const</td></tr>
 <tr class="separator:a57f85c6b8295acdcf4e2f22ce7685170"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +123,20 @@ Public Member Functions</h2></td></tr>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:aeb625f84f2755479deac3ca3fd1d1cb4"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classTime.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#aeb625f84f2755479deac3ca3fd1d1cb4">MAX_TIME</a> = <a class="el" href="classTime.html">Time</a>((24 * 3600) - 1)</td></tr>
 <tr class="separator:aeb625f84f2755479deac3ca3fd1d1cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a28eac7fba803ce12a29fdc565c37842c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a28eac7fba803ce12a29fdc565c37842c">normalize</a> (unsigned hours, unsigned minutes, unsigned seconds)</td></tr>
+<tr class="separator:a28eac7fba803ce12a29fdc565c37842c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a75b303219e28be4ef13dfb64e9a715b1"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a75b303219e28be4ef13dfb64e9a715b1">m_hours</a></td></tr>
+<tr class="separator:a75b303219e28be4ef13dfb64e9a715b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbae8355faea249a8777bf9b26f470fd"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#abbae8355faea249a8777bf9b26f470fd">m_minutes</a></td></tr>
+<tr class="separator:abbae8355faea249a8777bf9b26f470fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a068bd6e2a832b8eba85c5291b6321494"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTime.html#a068bd6e2a832b8eba85c5291b6321494">m_seconds</a></td></tr>
+<tr class="separator:a068bd6e2a832b8eba85c5291b6321494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -257,6 +273,56 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>true if this is equal to MAX_TIME </dd></dl>
+
+</div>
+</div>
+<a id="a28eac7fba803ce12a29fdc565c37842c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28eac7fba803ce12a29fdc565c37842c">&#9670;&nbsp;</a></span>normalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Time::normalize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>hours</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>minutes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>seconds</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>set m_seconds, m_minutes and m_hours </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hours</td><td>- can overload (24 hours = 0 hours) </td></tr>
+    <tr><td class="paramname">minutes</td><td>- can be added to hours (60 min = 1 hour) </td></tr>
+    <tr><td class="paramname">seconds</td><td>- can be added to minutes (60 sec = 1 min) </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -465,7 +531,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void Time::print </td>
           <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -543,6 +609,72 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a75b303219e28be4ef13dfb64e9a715b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75b303219e28be4ef13dfb64e9a715b1">&#9670;&nbsp;</a></span>m_hours</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Time::m_hours</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbae8355faea249a8777bf9b26f470fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbae8355faea249a8777bf9b26f470fd">&#9670;&nbsp;</a></span>m_minutes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Time::m_minutes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a068bd6e2a832b8eba85c5291b6321494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a068bd6e2a832b8eba85c5291b6321494">&#9670;&nbsp;</a></span>m_seconds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Time::m_seconds</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aeb625f84f2755479deac3ca3fd1d1cb4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb625f84f2755479deac3ca3fd1d1cb4">&#9670;&nbsp;</a></span>MAX_TIME</h2>
 

@@ -4,6 +4,10 @@
 
 {\ttfamily \#include $<$Appointment.\+hpp$>$}
 
+
+
+Collaboration diagram for Appointment\+:
+% FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,6 +42,21 @@ void \hyperlink{classAppointment_ae0e33915a3e3d3af95c7e6180809e5fe}{set\+Start\+
 void \hyperlink{classAppointment_a9e6455381eebacbaa3aa98ad3707baac}{set\+End\+Time} (\hyperlink{classTime}{Time} const \&end)
 \item 
 void \hyperlink{classAppointment_acd825ab9b1d23efe1bc95dd440030094}{set\+Holiday} (bool holiday=true)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classString}{String} \hyperlink{classAppointment_aa3d8a2e3194a6b785b26f7c31a208462}{m\+\_\+name}
+\item 
+\hyperlink{classString}{String} \hyperlink{classAppointment_a048a5e8081bcdccf2cffa725bcbe91b3}{m\+\_\+note}
+\item 
+\hyperlink{classDate}{Date} \hyperlink{classAppointment_a0bba9cd4c7e3e9ca7d8faae5726b3a5d}{m\+\_\+date}
+\item 
+\hyperlink{classTime}{Time} \hyperlink{classAppointment_a637a7ec86fc906086d1a3feb69533dbf}{m\+\_\+start}
+\item 
+\hyperlink{classTime}{Time} \hyperlink{classAppointment_a95319a7575e4a9d428412868b7625544}{m\+\_\+end}
+\item 
+bool \hyperlink{classAppointment_ada4f060e6014bcce3f8e5f42cd14061d}{m\+\_\+holiday}
 \end{DoxyCompactItemize}
 
 
@@ -207,6 +226,45 @@ set $<$start$>$ to m\+\_\+start
 {\em start} & \\
 \hline
 \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classAppointment_a0bba9cd4c7e3e9ca7d8faae5726b3a5d}\label{classAppointment_a0bba9cd4c7e3e9ca7d8faae5726b3a5d}} 
+\index{Appointment@{Appointment}!m\+\_\+date@{m\+\_\+date}}
+\index{m\+\_\+date@{m\+\_\+date}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{m\+\_\+date}{m\_date}}
+{\footnotesize\ttfamily \hyperlink{classDate}{Date} Appointment\+::m\+\_\+date\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppointment_a95319a7575e4a9d428412868b7625544}\label{classAppointment_a95319a7575e4a9d428412868b7625544}} 
+\index{Appointment@{Appointment}!m\+\_\+end@{m\+\_\+end}}
+\index{m\+\_\+end@{m\+\_\+end}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{m\+\_\+end}{m\_end}}
+{\footnotesize\ttfamily \hyperlink{classTime}{Time} Appointment\+::m\+\_\+end\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppointment_ada4f060e6014bcce3f8e5f42cd14061d}\label{classAppointment_ada4f060e6014bcce3f8e5f42cd14061d}} 
+\index{Appointment@{Appointment}!m\+\_\+holiday@{m\+\_\+holiday}}
+\index{m\+\_\+holiday@{m\+\_\+holiday}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{m\+\_\+holiday}{m\_holiday}}
+{\footnotesize\ttfamily bool Appointment\+::m\+\_\+holiday\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppointment_aa3d8a2e3194a6b785b26f7c31a208462}\label{classAppointment_aa3d8a2e3194a6b785b26f7c31a208462}} 
+\index{Appointment@{Appointment}!m\+\_\+name@{m\+\_\+name}}
+\index{m\+\_\+name@{m\+\_\+name}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{m\+\_\+name}{m\_name}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Appointment\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppointment_a048a5e8081bcdccf2cffa725bcbe91b3}\label{classAppointment_a048a5e8081bcdccf2cffa725bcbe91b3}} 
+\index{Appointment@{Appointment}!m\+\_\+note@{m\+\_\+note}}
+\index{m\+\_\+note@{m\+\_\+note}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{m\+\_\+note}{m\_note}}
+{\footnotesize\ttfamily \hyperlink{classString}{String} Appointment\+::m\+\_\+note\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classAppointment_a637a7ec86fc906086d1a3feb69533dbf}\label{classAppointment_a637a7ec86fc906086d1a3feb69533dbf}} 
+\index{Appointment@{Appointment}!m\+\_\+start@{m\+\_\+start}}
+\index{m\+\_\+start@{m\+\_\+start}!Appointment@{Appointment}}
+\subsubsection{\texorpdfstring{m\+\_\+start}{m\_start}}
+{\footnotesize\ttfamily \hyperlink{classTime}{Time} Appointment\+::m\+\_\+start\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

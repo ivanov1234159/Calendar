@@ -1,21 +1,15 @@
 var searchData=
 [
-  ['save',['save',['../classProgram.html#a9ab390cc3caa8cc7dee9704a273a6979',1,'Program']]],
-  ['self',['self',['../classProgram.html#a6f703bef529f93987481e04ab6f3014a',1,'Program']]],
-  ['serialize',['serialize',['../classAppointment.html#a2542a8dd24e926a2531f1d88bbf4dd88',1,'Appointment::serialize()'],['../classCalendar.html#abd08c73fde62b83cb12afe01ff574223',1,'Calendar::serialize()'],['../classDate.html#aaa7c624e382fff1ba3438cb46232c05e',1,'Date::serialize()'],['../classString.html#a05ec329796015f98719b6a924c0f0eb4',1,'String::serialize()'],['../classTime.html#acab7dbc13c8a0d9a0f33047d41f4aee0',1,'Time::serialize()'],['../namespaceMySpace.html#ad2ec85a91c9b7fb281271a88f0ce9ef4',1,'MySpace::serialize()']]],
-  ['set',['set',['../classString.html#a809addfc91485db4c89baad03ff12b18',1,'String']]],
-  ['setdate',['setDate',['../classAppointment.html#a0a69e652f7d3fa5091330a92479749a6',1,'Appointment']]],
-  ['setendtime',['setEndTime',['../classAppointment.html#a9e6455381eebacbaa3aa98ad3707baac',1,'Appointment']]],
-  ['setholiday',['setHoliday',['../classAppointment.html#acd825ab9b1d23efe1bc95dd440030094',1,'Appointment']]],
-  ['setname',['setName',['../classAppointment.html#a65ff6f9a246d1bf437cb0be725841a84',1,'Appointment']]],
-  ['setnote',['setNote',['../classAppointment.html#a367bc61167a71691ba150808968f3b8c',1,'Appointment']]],
-  ['setstarttime',['setStartTime',['../classAppointment.html#ae0e33915a3e3d3af95c7e6180809e5fe',1,'Appointment']]],
-  ['shift',['shift',['../classVector.html#adb54584983bf6750f60d5ad375f6c603',1,'Vector']]],
-  ['size',['size',['../classVector.html#a7eef7a769093f4486f3b2083436bf270',1,'Vector']]],
-  ['str_5fadd_5fone',['str_add_one',['../MySpace_8cpp.html#a2e31ae98bbe1f4f9703cc9b8dfa649de',1,'MySpace.cpp']]],
-  ['string',['String',['../classString.html',1,'String'],['../classString.html#a33582c77a4e6b03f950082593cc57de4',1,'String::String()']]],
-  ['string_2ecpp',['String.cpp',['../String_8cpp.html',1,'']]],
-  ['string_2ehpp',['String.hpp',['../String_8hpp.html',1,'']]],
-  ['stringify',['STRINGIFY',['../CMakeCCompilerId_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCXXCompilerId.cpp']]],
-  ['stringify_5fhelper',['STRINGIFY_HELPER',['../CMakeCCompilerId_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCXXCompilerId.cpp']]]
+  ['p',['p',['../classdoctest_1_1Context.html#a1e22f778caf173478623e22546d7b493',1,'doctest::Context']]],
+  ['pair',['Pair',['../structPair.html',1,'']]],
+  ['pair_2ehpp',['Pair.hpp',['../Pair_8hpp.html',1,'']]],
+  ['parseargs',['parseArgs',['../classdoctest_1_1Context.html#a90b2f1bbf67ee4da8e8ff0cf7516a06a',1,'doctest::Context']]],
+  ['platform_5fid',['PLATFORM_ID',['../CMakeCCompilerId_8c.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'PLATFORM_ID():&#160;CMakeCXXCompilerId.cpp']]],
+  ['pop',['pop',['../classVector.html#aef4a3e10a9844ea17cdd89cee17e495a',1,'Vector']]],
+  ['print',['print',['../classTime.html#a2596ef53ebb188dc75b88160bd0aa230',1,'Time']]],
+  ['program',['Program',['../classProgram.html',1,'Program'],['../classProgram.html#aaefaa0df08f3484476fc4d61e97acbdc',1,'Program::Program()'],['../classProgram.html#a9261168f1c251276a449ec0216c07650',1,'Program::Program(Program const &amp;other)=delete']]],
+  ['program_2ecpp',['Program.cpp',['../Program_8cpp.html',1,'']]],
+  ['program_2ehpp',['Program.hpp',['../Program_8hpp.html',1,'']]],
+  ['ptr',['ptr',['../structdoctest_1_1String_1_1view.html#a18a399abb1e4be67bcc6d6557837a98c',1,'doctest::String::view']]],
+  ['push',['push',['../classVector.html#ad15116a272b1924dc11e3543a8fc95d8',1,'Vector']]]
 ];

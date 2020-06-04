@@ -25,12 +25,30 @@ bool \hyperlink{classCommand_a75d6d67687c9d29e47ce9e80540bbd1e}{operator==} (cha
 \item 
 bool \hyperlink{classCommand_a0ec10c9753786caf083aba08cf85afb0}{can\+Quit} () const
 \item 
-virtual bool \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const
+virtual bool \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{action} (\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCommand_a57fbea0c0d10ef4b184c7ef3eb34590d}{clear} ()
+\begin{DoxyCompactList}\small\item\em free the memory of m\+\_\+name, m\+\_\+params and m\+\_\+notes \end{DoxyCompactList}\item 
+void \hyperlink{classCommand_afc097ed76cb9fd7135146ec8703e2c3e}{copy} (\hyperlink{classCommand}{Command} const \&other)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{classCommand_a381973cd5a4b999975c0f79e14245821}{m\+\_\+name}
+\item 
+char $\ast$ \hyperlink{classCommand_ab80277cb25e2e56e59d342d3499fc55a}{m\+\_\+params}
+\item 
+char $\ast$ \hyperlink{classCommand_a1c278c3a3b397e387cb831cd1a93e3a9}{m\+\_\+notes}
+\item 
+bool \hyperlink{classCommand_aa1eb67a0888560ab21c503e1f9ffaad4}{m\+\_\+quit\+\_\+when\+\_\+done}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-std\+::ostream \& \hyperlink{classCommand_a0a193e228644a3735c309d8b2b5b9899}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classCommand}{Command} const \&obj)
+\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \& \hyperlink{classCommand_a0a193e228644a3735c309d8b2b5b9899}{operator$<$$<$} (\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out, \hyperlink{classCommand}{Command} const \&obj)
 \end{DoxyCompactItemize}
 
 
@@ -66,7 +84,7 @@ std\+::ostream \& \hyperlink{classCommand_a0a193e228644a3735c309d8b2b5b9899}{ope
 \index{Command@{Command}!action@{action}}
 \index{action@{action}!Command@{Command}}
 \subsubsection{\texorpdfstring{action()}{action()}}
-{\footnotesize\ttfamily bool Command\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool Command\+::action (\begin{DoxyParamCaption}\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 depending from the child class do different things 
 \begin{DoxyParams}{Parameters}
@@ -93,6 +111,27 @@ Reimplemented in \hyperlink{classCmdAgenda_ab723208cb36623b3d4583e1fae6f22be}{Cm
 \begin{DoxyReturn}{Returns}
 m\+\_\+quit\+\_\+when\+\_\+done 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classCommand_a57fbea0c0d10ef4b184c7ef3eb34590d}\label{classCommand_a57fbea0c0d10ef4b184c7ef3eb34590d}} 
+\index{Command@{Command}!clear@{clear}}
+\index{clear@{clear}!Command@{Command}}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Command\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+free the memory of m\+\_\+name, m\+\_\+params and m\+\_\+notes 
+
+\mbox{\Hypertarget{classCommand_afc097ed76cb9fd7135146ec8703e2c3e}\label{classCommand_afc097ed76cb9fd7135146ec8703e2c3e}} 
+\index{Command@{Command}!copy@{copy}}
+\index{copy@{copy}!Command@{Command}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Command\+::copy (\begin{DoxyParamCaption}\item[{\hyperlink{classCommand}{Command} const \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+copy $<$other$>$ into this 
+\begin{DoxyParams}{Parameters}
+{\em other} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classCommand_a378451c967b9d585492a778bab58f803}\label{classCommand_a378451c967b9d585492a778bab58f803}} 
 \index{Command@{Command}!operator=@{operator=}}
 \index{operator=@{operator=}!Command@{Command}}
@@ -115,7 +154,34 @@ true if the commands has the same names
 \index{Command@{Command}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Command@{Command}}
 \subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
-{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classCommand}{Command} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out,  }\item[{\hyperlink{classCommand}{Command} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classCommand_a381973cd5a4b999975c0f79e14245821}\label{classCommand_a381973cd5a4b999975c0f79e14245821}} 
+\index{Command@{Command}!m\+\_\+name@{m\+\_\+name}}
+\index{m\+\_\+name@{m\+\_\+name}!Command@{Command}}
+\subsubsection{\texorpdfstring{m\+\_\+name}{m\_name}}
+{\footnotesize\ttfamily char$\ast$ Command\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCommand_a1c278c3a3b397e387cb831cd1a93e3a9}\label{classCommand_a1c278c3a3b397e387cb831cd1a93e3a9}} 
+\index{Command@{Command}!m\+\_\+notes@{m\+\_\+notes}}
+\index{m\+\_\+notes@{m\+\_\+notes}!Command@{Command}}
+\subsubsection{\texorpdfstring{m\+\_\+notes}{m\_notes}}
+{\footnotesize\ttfamily char$\ast$ Command\+::m\+\_\+notes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCommand_ab80277cb25e2e56e59d342d3499fc55a}\label{classCommand_ab80277cb25e2e56e59d342d3499fc55a}} 
+\index{Command@{Command}!m\+\_\+params@{m\+\_\+params}}
+\index{m\+\_\+params@{m\+\_\+params}!Command@{Command}}
+\subsubsection{\texorpdfstring{m\+\_\+params}{m\_params}}
+{\footnotesize\ttfamily char$\ast$ Command\+::m\+\_\+params\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classCommand_aa1eb67a0888560ab21c503e1f9ffaad4}\label{classCommand_aa1eb67a0888560ab21c503e1f9ffaad4}} 
+\index{Command@{Command}!m\+\_\+quit\+\_\+when\+\_\+done@{m\+\_\+quit\+\_\+when\+\_\+done}}
+\index{m\+\_\+quit\+\_\+when\+\_\+done@{m\+\_\+quit\+\_\+when\+\_\+done}!Command@{Command}}
+\subsubsection{\texorpdfstring{m\+\_\+quit\+\_\+when\+\_\+done}{m\_quit\_when\_done}}
+{\footnotesize\ttfamily bool Command\+::m\+\_\+quit\+\_\+when\+\_\+done\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

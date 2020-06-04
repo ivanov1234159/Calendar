@@ -45,7 +45,7 @@ bool \hyperlink{classTime_a31ca86633797092eb6f997e17dd1a267}{operator$<$=} (\hyp
 \item 
 \hyperlink{classTime_a7bc1d44c446e70740ab3f0dd64e457be}{operator int} () const
 \item 
-void \hyperlink{classTime_a2596ef53ebb188dc75b88160bd0aa230}{print} (std\+::ostream \&out) const
+void \hyperlink{classTime_a2596ef53ebb188dc75b88160bd0aa230}{print} (\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out) const
 \item 
 bool \hyperlink{classTime_a57f85c6b8295acdcf4e2f22ce7685170}{max} () const
 \end{DoxyCompactItemize}
@@ -53,6 +53,20 @@ bool \hyperlink{classTime_a57f85c6b8295acdcf4e2f22ce7685170}{max} () const
 \begin{DoxyCompactItemize}
 \item 
 static const \hyperlink{classTime}{Time} \hyperlink{classTime_aeb625f84f2755479deac3ca3fd1d1cb4}{M\+A\+X\+\_\+\+T\+I\+ME} = \hyperlink{classTime}{Time}((24 $\ast$ 3600) -\/ 1)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classTime_a28eac7fba803ce12a29fdc565c37842c}{normalize} (unsigned hours, unsigned minutes, unsigned seconds)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{classTime_a75b303219e28be4ef13dfb64e9a715b1}{m\+\_\+hours}
+\item 
+unsigned \hyperlink{classTime_abbae8355faea249a8777bf9b26f470fd}{m\+\_\+minutes}
+\item 
+unsigned \hyperlink{classTime_a068bd6e2a832b8eba85c5291b6321494}{m\+\_\+seconds}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -115,6 +129,21 @@ time in seconds
 \begin{DoxyReturn}{Returns}
 true if this is equal to M\+A\+X\+\_\+\+T\+I\+ME 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classTime_a28eac7fba803ce12a29fdc565c37842c}\label{classTime_a28eac7fba803ce12a29fdc565c37842c}} 
+\index{Time@{Time}!normalize@{normalize}}
+\index{normalize@{normalize}!Time@{Time}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void Time\+::normalize (\begin{DoxyParamCaption}\item[{unsigned}]{hours,  }\item[{unsigned}]{minutes,  }\item[{unsigned}]{seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+set m\+\_\+seconds, m\+\_\+minutes and m\+\_\+hours 
+\begin{DoxyParams}{Parameters}
+{\em hours} & -\/ can overload (24 hours = 0 hours) \\
+\hline
+{\em minutes} & -\/ can be added to hours (60 min = 1 hour) \\
+\hline
+{\em seconds} & -\/ can be added to minutes (60 sec = 1 min) \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classTime_a7bc1d44c446e70740ab3f0dd64e457be}\label{classTime_a7bc1d44c446e70740ab3f0dd64e457be}} 
 \index{Time@{Time}!operator int@{operator int}}
 \index{operator int@{operator int}!Time@{Time}}
@@ -185,7 +214,7 @@ true if this is equal to M\+A\+X\+\_\+\+T\+I\+ME
 \index{Time@{Time}!print@{print}}
 \index{print@{print}!Time@{Time}}
 \subsubsection{\texorpdfstring{print()}{print()}}
-{\footnotesize\ttfamily void Time\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void Time\+::print (\begin{DoxyParamCaption}\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out }\end{DoxyParamCaption}) const}
 
 print time in format\+: hh\+:mm\+:ss 
 \begin{DoxyParams}{Parameters}
@@ -218,6 +247,24 @@ false on fail
 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{classTime_a75b303219e28be4ef13dfb64e9a715b1}\label{classTime_a75b303219e28be4ef13dfb64e9a715b1}} 
+\index{Time@{Time}!m\+\_\+hours@{m\+\_\+hours}}
+\index{m\+\_\+hours@{m\+\_\+hours}!Time@{Time}}
+\subsubsection{\texorpdfstring{m\+\_\+hours}{m\_hours}}
+{\footnotesize\ttfamily unsigned Time\+::m\+\_\+hours\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTime_abbae8355faea249a8777bf9b26f470fd}\label{classTime_abbae8355faea249a8777bf9b26f470fd}} 
+\index{Time@{Time}!m\+\_\+minutes@{m\+\_\+minutes}}
+\index{m\+\_\+minutes@{m\+\_\+minutes}!Time@{Time}}
+\subsubsection{\texorpdfstring{m\+\_\+minutes}{m\_minutes}}
+{\footnotesize\ttfamily unsigned Time\+::m\+\_\+minutes\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classTime_a068bd6e2a832b8eba85c5291b6321494}\label{classTime_a068bd6e2a832b8eba85c5291b6321494}} 
+\index{Time@{Time}!m\+\_\+seconds@{m\+\_\+seconds}}
+\index{m\+\_\+seconds@{m\+\_\+seconds}!Time@{Time}}
+\subsubsection{\texorpdfstring{m\+\_\+seconds}{m\_seconds}}
+{\footnotesize\ttfamily unsigned Time\+::m\+\_\+seconds\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classTime_aeb625f84f2755479deac3ca3fd1d1cb4}\label{classTime_aeb625f84f2755479deac3ca3fd1d1cb4}} 
 \index{Time@{Time}!M\+A\+X\+\_\+\+T\+I\+ME@{M\+A\+X\+\_\+\+T\+I\+ME}}
 \index{M\+A\+X\+\_\+\+T\+I\+ME@{M\+A\+X\+\_\+\+T\+I\+ME}!Time@{Time}}

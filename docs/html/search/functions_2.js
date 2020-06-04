@@ -1,14 +1,18 @@
 var searchData=
 [
+  ['c_5fstr',['c_str',['../classdoctest_1_1String.html#a607c6977b193fecf29622110e6081625',1,'doctest::String::c_str() const'],['../classdoctest_1_1String.html#a35df67f11652bcc568ad3af470c344c0',1,'doctest::String::c_str()']]],
   ['calendar',['Calendar',['../classCalendar.html#a568f7ef431263d9667286aebac96febf',1,'Calendar::Calendar()=default'],['../classCalendar.html#a54d7e31f38979ee7a363594b86ca9419',1,'Calendar::Calendar(String const &amp;calendar_path)'],['../classCalendar.html#a346673cf7dd15ffa3a2ea292703c5421',1,'Calendar::Calendar(std::ifstream &amp;ifs, String const &amp;calendar_path=nullptr)']]],
   ['call',['call',['../classCommander.html#a28323e9560f01aba51869d54832ca987',1,'Commander']]],
   ['canquit',['canQuit',['../classCommand.html#a0ec10c9753786caf083aba08cf85afb0',1,'Command']]],
-  ['capacity',['capacity',['../classVector.html#a30435b1635ae160705f53755d25a407b',1,'Vector']]],
+  ['capacity',['capacity',['../classdoctest_1_1String.html#adad8703f08950d173d2cb1426391fcdf',1,'doctest::String::capacity()'],['../classVector.html#a30435b1635ae160705f53755d25a407b',1,'Vector::capacity()']]],
   ['changedate',['changeDate',['../classProgram.html#a4a25f61fe0747f0f13ace13b310ed7a3',1,'Program']]],
   ['changeendtime',['changeEndTime',['../classProgram.html#a8038bf54fd0e358c48d02ced033b6848',1,'Program']]],
   ['changename',['changeName',['../classProgram.html#a606ccb02438885b2894843613d6de157',1,'Program']]],
   ['changenote',['changeNote',['../classProgram.html#a63f49d8259cb4038274a1cb6e9b82374',1,'Program']]],
   ['changestarttime',['changeStartTime',['../classProgram.html#afb92c7d470233331feb450698ea66531',1,'Program']]],
+  ['checkifshouldthrow',['checkIfShouldThrow',['../namespacedoctest_1_1detail.html#acec9ff072dd86af95225a8beb9c57298',1,'doctest::detail']]],
+  ['clear',['clear',['../classCommand.html#a57fbea0c0d10ef4b184c7ef3eb34590d',1,'Command::clear()'],['../classCommander.html#a4c16aa1bbc5ec2045d3e66f146d54884',1,'Commander::clear()'],['../classProgram.html#a6fd6135c7adf5af67b55a2303d95defe',1,'Program::clear()'],['../classVector.html#a32ad98b135472b0ebc5d6cb3ae5d0085',1,'Vector::clear()']]],
+  ['clearfilters',['clearFilters',['../classdoctest_1_1Context.html#aaa878723e89310d5aa3f516bc7ab3165',1,'doctest::Context']]],
   ['clonecalendar',['cloneCalendar',['../classProgram.html#ae2bc41544b2cedf95611867ead89d6c9',1,'Program']]],
   ['close',['close',['../classProgram.html#ab8b7a28d1be3f1b8c5136e936c75ca63',1,'Program']]],
   ['cmdagenda',['CmdAgenda',['../classCmdAgenda.html#a5433bd5e949c77b69ed255e0baa86c6f',1,'CmdAgenda']]],
@@ -28,5 +32,12 @@ var searchData=
   ['cmdsaveas',['CmdSaveAs',['../classCmdSaveAs.html#a8b34fcd8a762a3a6be87dcaee290d304',1,'CmdSaveAs']]],
   ['cmdunbook',['CmdUnbook',['../classCmdUnbook.html#ae5bc9a66b878281e7db66c13e581f6b4',1,'CmdUnbook']]],
   ['command',['Command',['../classCommand.html#a18df2d81039392daeb0b78c346a70537',1,'Command::Command()'],['../classCommand.html#ac26b14828c5a72f9bd370421a4788b5d',1,'Command::Command(char const *name, char const *params, char const *notes, bool quit=false)'],['../classCommand.html#a8ccab91a784c447f628ee8fec3873494',1,'Command::Command(Command const &amp;other)']]],
-  ['contains',['contains',['../classString.html#a16b809e6c0a80889b2ee8e753003ab70',1,'String']]]
+  ['commander',['Commander',['../classCommander.html#accd2048a7f1b8aa3a2b362493d546495',1,'Commander::Commander()=delete'],['../classCommander.html#aaf951ebc1b2909dbdccfb3ab7bd80b0d',1,'Commander::Commander(Commander const &amp;other)=delete']]],
+  ['compare',['compare',['../classdoctest_1_1String.html#aef87d1f106d32d8c31af87335b44164d',1,'doctest::String::compare(const char *other, bool no_case=false) const'],['../classdoctest_1_1String.html#adb57becb56e054d981e7c2b967a7e359',1,'doctest::String::compare(const String &amp;other, bool no_case=false) const']]],
+  ['contains',['contains',['../classString.html#a16b809e6c0a80889b2ee8e753003ab70',1,'String']]],
+  ['context',['Context',['../classdoctest_1_1Context.html#a881bc2d0fe207d672e1debe830768a98',1,'doctest::Context']]],
+  ['contextscope',['ContextScope',['../classdoctest_1_1detail_1_1ContextScope.html#a344c76a0374615d567a084c0a0ffd215',1,'doctest::detail::ContextScope::ContextScope(const L &amp;lambda)'],['../classdoctest_1_1detail_1_1ContextScope.html#afca3228fdeb0e86257a21f826c4247ff',1,'doctest::detail::ContextScope::ContextScope(ContextScope &amp;&amp;other)']]],
+  ['contextscopebase',['ContextScopeBase',['../classdoctest_1_1detail_1_1ContextScopeBase.html#af3a3ff7ad6b98142ef0f7e1d01912d48',1,'doctest::detail::ContextScopeBase']]],
+  ['convert',['convert',['../structdoctest_1_1detail_1_1StringMakerBase.html#a67d29f2a5de9a522d8e8607c1a39db9b',1,'doctest::detail::StringMakerBase::convert()'],['../structdoctest_1_1detail_1_1StringMakerBase_3_01true_01_4.html#ae1a11dee413117f36e335677589b047f',1,'doctest::detail::StringMakerBase&lt; true &gt;::convert()'],['../structdoctest_1_1StringMaker_3_01T_01_5_01_4.html#a79dfd2e72f48a1d9941b924d6ac23104',1,'doctest::StringMaker&lt; T * &gt;::convert()'],['../structdoctest_1_1StringMaker_3_01R_01C_1_1_5_01_4.html#a06144903aacd73ed31c2fb043be8abb0',1,'doctest::StringMaker&lt; R C::* &gt;::convert()'],['../structdoctest_1_1detail_1_1StringStreamBase.html#a0eca8e2711f17a565fea3696635a3833',1,'doctest::detail::StringStreamBase::convert(std::ostream *s, const T &amp;in)'],['../structdoctest_1_1detail_1_1StringStreamBase.html#a7c248639907b26e46344b91d7ab90be7',1,'doctest::detail::StringStreamBase::convert(std::ostream *s, const char *in)'],['../structdoctest_1_1detail_1_1StringStreamBase_3_01true_01_4.html#a3f86285d254474498065e6b70522e2b7',1,'doctest::detail::StringStreamBase&lt; true &gt;::convert()']]],
+  ['copy',['copy',['../classCommand.html#afc097ed76cb9fd7135146ec8703e2c3e',1,'Command::copy()'],['../classdoctest_1_1String.html#a9adde1fae310e0d1a394cc1383495572',1,'doctest::String::copy()'],['../classVector.html#a13238db900a2c169c9fea56118fb33dd',1,'Vector::copy()']]]
 ];

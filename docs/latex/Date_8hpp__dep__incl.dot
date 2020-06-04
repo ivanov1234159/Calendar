@@ -114,9 +114,15 @@ digraph "Date.hpp"
   Node10 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node9 -> Node50 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node50 [label="Calendar.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Calendar_8cpp.html"];
+  Node9 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node51 [label="tests/calendar_tests.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$calendar__tests_8hpp.html"];
+  Node51 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 -> Node52 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node52 [label="tests/appointment_tests.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$appointment__tests_8hpp.html"];
+  Node52 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node6 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node51 [label="Date.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Date_8cpp.html"];
+  Node6 -> Node53 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node53 [label="Date.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Date_8cpp.html"];
 }

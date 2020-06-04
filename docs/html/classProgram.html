@@ -61,6 +61,9 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classProgram-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Program Class Reference</div>  </div>
@@ -68,6 +71,12 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="Program_8hpp_source.html">Program.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Program:</div>
+<div class="dyncontent">
+<div class="center"><img src="classProgram__coll__graph.png" border="0" usemap="#Program_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -80,7 +89,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4658796d44178138e3c50df2346f20c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a4658796d44178138e3c50df2346f20c9">open</a> (<a class="el" href="classString.html">String</a> const &amp;file_path)</td></tr>
 <tr class="separator:a4658796d44178138e3c50df2346f20c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8b7a28d1be3f1b8c5136e936c75ca63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#ab8b7a28d1be3f1b8c5136e936c75ca63">close</a> ()</td></tr>
-<tr class="memdesc:ab8b7a28d1be3f1b8c5136e936c75ca63"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls clear() method if the calendar is opened  <a href="#ab8b7a28d1be3f1b8c5136e936c75ca63">More...</a><br /></td></tr>
+<tr class="memdesc:ab8b7a28d1be3f1b8c5136e936c75ca63"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls <a class="el" href="classProgram.html#a6fd6135c7adf5af67b55a2303d95defe" title="set m_calendar to nullptr and free the memory ">clear()</a> method if the calendar is opened  <a href="#ab8b7a28d1be3f1b8c5136e936c75ca63">More...</a><br /></td></tr>
 <tr class="separator:ab8b7a28d1be3f1b8c5136e936c75ca63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ab390cc3caa8cc7dee9704a273a6979"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a9ab390cc3caa8cc7dee9704a273a6979">save</a> () const</td></tr>
 <tr class="separator:a9ab390cc3caa8cc7dee9704a273a6979"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -92,7 +101,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3fd5b4cf3d1eaa58809f593ccdc7a2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86a0e7e6c345dd50643cc6f466fb965a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a86a0e7e6c345dd50643cc6f466fb965a">unbook</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, <a class="el" href="classTime.html">Time</a> const &amp;start, <a class="el" href="classTime.html">Time</a> const &amp;end)</td></tr>
 <tr class="separator:a86a0e7e6c345dd50643cc6f466fb965a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36916661bfce488ed07dbc2a7f3fadce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a36916661bfce488ed07dbc2a7f3fadce">agenda</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, std::ostream &amp;out) const</td></tr>
+<tr class="memitem:a36916661bfce488ed07dbc2a7f3fadce"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a36916661bfce488ed07dbc2a7f3fadce">agenda</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, <a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;out) const</td></tr>
 <tr class="separator:a36916661bfce488ed07dbc2a7f3fadce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a25f61fe0747f0f13ace13b310ed7a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPair.html">Pair</a>&lt; bool, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a4a25f61fe0747f0f13ace13b310ed7a3">changeDate</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, <a class="el" href="classTime.html">Time</a> const &amp;start, <a class="el" href="classDate.html">Date</a> const &amp;new_date)</td></tr>
 <tr class="separator:a4a25f61fe0747f0f13ace13b310ed7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -104,7 +113,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a606ccb02438885b2894843613d6de157"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63f49d8259cb4038274a1cb6e9b82374"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a63f49d8259cb4038274a1cb6e9b82374">changeNote</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, <a class="el" href="classTime.html">Time</a> const &amp;start, <a class="el" href="classString.html">String</a> const &amp;new_note)</td></tr>
 <tr class="separator:a63f49d8259cb4038274a1cb6e9b82374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af80c02ad4f189ee0d6c67ccc7efdc814"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#af80c02ad4f189ee0d6c67ccc7efdc814">findString</a> (<a class="el" href="classString.html">String</a> const &amp;needle, std::ostream &amp;out) const</td></tr>
+<tr class="memitem:af80c02ad4f189ee0d6c67ccc7efdc814"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#af80c02ad4f189ee0d6c67ccc7efdc814">findString</a> (<a class="el" href="classString.html">String</a> const &amp;needle, <a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;out) const</td></tr>
 <tr class="separator:af80c02ad4f189ee0d6c67ccc7efdc814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad14086e73ec4aef58c705e3a19089d97"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#ad14086e73ec4aef58c705e3a19089d97">markAsHoliday</a> (<a class="el" href="classDate.html">Date</a> const &amp;date)</td></tr>
 <tr class="separator:ad14086e73ec4aef58c705e3a19089d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,7 +123,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a639a0af6603bda2f6dc8ec051fd1dd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2159591c5711c2846c261cd672643d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPair.html">Pair</a>&lt; <a class="el" href="classDate.html">Date</a>, <a class="el" href="classTime.html">Time</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#aa2159591c5711c2846c261cd672643d6">findSlotWith</a> (<a class="el" href="classDate.html">Date</a> const &amp;from, <a class="el" href="classTime.html">Time</a> const &amp;duration, <a class="el" href="classCalendar.html">Calendar</a> const *calendar) const</td></tr>
 <tr class="separator:aa2159591c5711c2846c261cd672643d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea58a5865e12fbbb2dda1563e66d092a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#aea58a5865e12fbbb2dda1563e66d092a">mergeWith</a> (<a class="el" href="classCalendar.html">Calendar</a> *other_calendar, std::ostream &amp;out, std::istream &amp;in)</td></tr>
+<tr class="memitem:aea58a5865e12fbbb2dda1563e66d092a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#aea58a5865e12fbbb2dda1563e66d092a">mergeWith</a> (<a class="el" href="classCalendar.html">Calendar</a> *other_calendar, <a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;out, std::istream &amp;in)</td></tr>
 <tr class="separator:aea58a5865e12fbbb2dda1563e66d092a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
@@ -123,8 +132,81 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a6f703bef529f93987481e04ab6f3014a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad12fa0703d93dbec2b2badc96ab97cf6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#ad12fa0703d93dbec2b2badc96ab97cf6">open</a> (<a class="el" href="classString.html">String</a> const &amp;file_path, <a class="el" href="classCalendar.html">Calendar</a> *&amp;calendar)</td></tr>
 <tr class="separator:ad12fa0703d93dbec2b2badc96ab97cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aaefaa0df08f3484476fc4d61e97acbdc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#aaefaa0df08f3484476fc4d61e97acbdc">Program</a> ()</td></tr>
+<tr class="separator:aaefaa0df08f3484476fc4d61e97acbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9261168f1c251276a449ec0216c07650"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a9261168f1c251276a449ec0216c07650">Program</a> (<a class="el" href="classProgram.html">Program</a> const &amp;other)=delete</td></tr>
+<tr class="separator:a9261168f1c251276a449ec0216c07650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af46704d2258695db8d0bc7d2b5edf48e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classProgram.html">Program</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#af46704d2258695db8d0bc7d2b5edf48e">operator=</a> (<a class="el" href="classProgram.html">Program</a> const &amp;other)=delete</td></tr>
+<tr class="separator:af46704d2258695db8d0bc7d2b5edf48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fd6135c7adf5af67b55a2303d95defe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a6fd6135c7adf5af67b55a2303d95defe">clear</a> ()</td></tr>
+<tr class="memdesc:a6fd6135c7adf5af67b55a2303d95defe"><td class="mdescLeft">&#160;</td><td class="mdescRight">set m_calendar to nullptr and free the memory  <a href="#a6fd6135c7adf5af67b55a2303d95defe">More...</a><br /></td></tr>
+<tr class="separator:a6fd6135c7adf5af67b55a2303d95defe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a5b0f8b7d9437d17ebc2e851d345f4a9b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classString.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a5b0f8b7d9437d17ebc2e851d345f4a9b">getNameFromPath</a> (char const *file_path)</td></tr>
+<tr class="separator:a5b0f8b7d9437d17ebc2e851d345f4a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a851d360e6d0aa789dc891896ea75dcbb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCalendar.html">Calendar</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classProgram.html#a851d360e6d0aa789dc891896ea75dcbb">m_calendar</a></td></tr>
+<tr class="separator:a851d360e6d0aa789dc891896ea75dcbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aaefaa0df08f3484476fc4d61e97acbdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaefaa0df08f3484476fc4d61e97acbdc">&#9670;&nbsp;</a></span>Program() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Program::Program </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9261168f1c251276a449ec0216c07650"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9261168f1c251276a449ec0216c07650">&#9670;&nbsp;</a></span>Program() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Program::Program </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classProgram.html">Program</a> const &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a986aef1c50e1d338a3315a47ba6df549"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a986aef1c50e1d338a3315a47ba6df549">&#9670;&nbsp;</a></span>~Program()</h2>
 
@@ -158,7 +240,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em>&#160;</td>
         </tr>
         <tr>
@@ -451,6 +533,33 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6fd6135c7adf5af67b55a2303d95defe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fd6135c7adf5af67b55a2303d95defe">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Program::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set m_calendar to nullptr and free the memory </p>
+
+</div>
+</div>
 <a id="ae2bc41544b2cedf95611867ead89d6c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2bc41544b2cedf95611867ead89d6c9">&#9670;&nbsp;</a></span>cloneCalendar()</h2>
 
@@ -484,7 +593,7 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>calls clear() method if the calendar is opened </p>
+<p>calls <a class="el" href="classProgram.html#a6fd6135c7adf5af67b55a2303d95defe" title="set m_calendar to nullptr and free the memory ">clear()</a> method if the calendar is opened </p>
 
 </div>
 </div>
@@ -589,7 +698,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em>&#160;</td>
         </tr>
         <tr>
@@ -601,7 +710,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>search appointments to print them by needle; calls <a class="el" href="classCalendar.html#accc025455e06e4031b9b76fe1a35220d">Calendar::findString()</a> </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">needle</td><td>- must be contained by Appointment::m_name OR Appointment::m_note </td></tr>
+    <tr><td class="paramname">needle</td><td>- must be contained by <a class="el" href="classAppointment.html#aa3d8a2e3194a6b785b26f7c31a208462">Appointment::m_name</a> OR <a class="el" href="classAppointment.html#a048a5e8081bcdccf2cffa725bcbe91b3">Appointment::m_note</a> </td></tr>
     <tr><td class="paramname">out</td><td>- a source to print </td></tr>
   </table>
   </dd>
@@ -671,6 +780,39 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5b0f8b7d9437d17ebc2e851d345f4a9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b0f8b7d9437d17ebc2e851d345f4a9b">&#9670;&nbsp;</a></span>getNameFromPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classString.html">String</a> Program::getNameFromPath </td>
+          <td>(</td>
+          <td class="paramtype">char const *&#160;</td>
+          <td class="paramname"><em>file_path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>extracts file name from &lt;file_path&gt; </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the file name </dd></dl>
+
+</div>
+</div>
 <a id="ad14086e73ec4aef58c705e3a19089d97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad14086e73ec4aef58c705e3a19089d97">&#9670;&nbsp;</a></span>markAsHoliday()</h2>
 
@@ -711,7 +853,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em>, </td>
         </tr>
         <tr>
@@ -826,6 +968,32 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af46704d2258695db8d0bc7d2b5edf48e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af46704d2258695db8d0bc7d2b5edf48e">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classProgram.html">Program</a>&amp; Program::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classProgram.html">Program</a> const &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0c4c553237a075bc9ab5d4c6b80b4471"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0c4c553237a075bc9ab5d4c6b80b4471">&#9670;&nbsp;</a></span>restoreCalendar()</h2>
 
@@ -934,6 +1102,29 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false if it's opened OR there isn't such appointment </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a851d360e6d0aa789dc891896ea75dcbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a851d360e6d0aa789dc891896ea75dcbb">&#9670;&nbsp;</a></span>m_calendar</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classCalendar.html">Calendar</a>* Program::m_calendar</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

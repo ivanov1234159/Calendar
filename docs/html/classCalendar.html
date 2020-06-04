@@ -60,6 +60,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCalendar-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Calendar Class Reference</div>  </div>
@@ -67,6 +69,12 @@ $(function() {
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="Calendar_8hpp_source.html">Calendar.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Calendar:</div>
+<div class="dyncontent">
+<div class="center"><img src="classCalendar__coll__graph.png" border="0" usemap="#Calendar_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -88,9 +96,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac50220dec77b2c19f09516ea88e9398c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24540f159572a53109a20be9ea8f4c5e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#a24540f159572a53109a20be9ea8f4c5e">unbook</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, <a class="el" href="classTime.html">Time</a> const &amp;start, <a class="el" href="classTime.html">Time</a> const &amp;end)</td></tr>
 <tr class="separator:a24540f159572a53109a20be9ea8f4c5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6112aa4e9b3e6e5b9a478ff66789d77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#ac6112aa4e9b3e6e5b9a478ff66789d77">agenda</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, std::ostream &amp;out) const</td></tr>
+<tr class="memitem:ac6112aa4e9b3e6e5b9a478ff66789d77"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#ac6112aa4e9b3e6e5b9a478ff66789d77">agenda</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, <a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;out) const</td></tr>
 <tr class="separator:ac6112aa4e9b3e6e5b9a478ff66789d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accc025455e06e4031b9b76fe1a35220d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#accc025455e06e4031b9b76fe1a35220d">findString</a> (<a class="el" href="classString.html">String</a> const &amp;needle, std::ostream &amp;out) const</td></tr>
+<tr class="memitem:accc025455e06e4031b9b76fe1a35220d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#accc025455e06e4031b9b76fe1a35220d">findString</a> (<a class="el" href="classString.html">String</a> const &amp;needle, <a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;out) const</td></tr>
 <tr class="separator:accc025455e06e4031b9b76fe1a35220d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa54f943234aebe06350ae6545804dd0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#aa54f943234aebe06350ae6545804dd0a">holiday</a> (<a class="el" href="classDate.html">Date</a> const &amp;date)</td></tr>
 <tr class="separator:aa54f943234aebe06350ae6545804dd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -106,6 +114,22 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae1d1e8979866bb2d03c4e66d801fdebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1dbd9019e73644ee8bf5611884ac5d75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#a1dbd9019e73644ee8bf5611884ac5d75">book</a> (<a class="el" href="classAppointment.html">Appointment</a> const &amp;app)</td></tr>
 <tr class="separator:a1dbd9019e73644ee8bf5611884ac5d75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a9211e4068cad119ff203509c9cb50ef1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAppointment.html">Appointment</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#a9211e4068cad119ff203509c9cb50ef1">find</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, <a class="el" href="classTime.html">Time</a> const &amp;start, <a class="el" href="classTime.html">Time</a> const &amp;end)</td></tr>
+<tr class="separator:a9211e4068cad119ff203509c9cb50ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870fea13a7c605023a6b4cd70b5a9727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classAppointment.html">Appointment</a> const  *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#a870fea13a7c605023a6b4cd70b5a9727">findFirst</a> (<a class="el" href="classDate.html">Date</a> const &amp;date, <a class="el" href="classTime.html">Time</a> const &amp;start, <a class="el" href="classTime.html">Time</a> const &amp;end) const</td></tr>
+<tr class="separator:a870fea13a7c605023a6b4cd70b5a9727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a886351ebec41505485aa58503c6448d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classString.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#a886351ebec41505485aa58503c6448d6">m_file_path</a></td></tr>
+<tr class="memdesc:a886351ebec41505485aa58503c6448d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">the file path in which the calendar had been saved  <a href="#a886351ebec41505485aa58503c6448d6">More...</a><br /></td></tr>
+<tr class="separator:a886351ebec41505485aa58503c6448d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cf793b2acf7116988fd212628f79a59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVector.html">Vector</a>&lt; <a class="el" href="classAppointment.html">Appointment</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCalendar.html#a4cf793b2acf7116988fd212628f79a59">m_list</a></td></tr>
+<tr class="memdesc:a4cf793b2acf7116988fd212628f79a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">container form Appointments  <a href="#a4cf793b2acf7116988fd212628f79a59">More...</a><br /></td></tr>
+<tr class="separator:a4cf793b2acf7116988fd212628f79a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a568f7ef431263d9667286aebac96febf"></a>
@@ -195,7 +219,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em>&#160;</td>
         </tr>
         <tr>
@@ -298,7 +322,7 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="a249805cf48297698e30512ff9a47bac3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a249805cf48297698e30512ff9a47bac3">&#9670;&nbsp;</a></span>find()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a249805cf48297698e30512ff9a47bac3">&#9670;&nbsp;</a></span>find() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -326,6 +350,57 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">date</td><td></td></tr>
     <tr><td class="paramname">start</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nullptr if not found </dd></dl>
+
+</div>
+</div>
+<a id="a9211e4068cad119ff203509c9cb50ef1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9211e4068cad119ff203509c9cb50ef1">&#9670;&nbsp;</a></span>find() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAppointment.html">Appointment</a> * Calendar::find </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDate.html">Date</a> const &amp;&#160;</td>
+          <td class="paramname"><em>date</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTime.html">Time</a> const &amp;&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTime.html">Time</a> const &amp;&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>search for an appointment which is on &lt;date&gt; and begins at &lt;start&gt; and ends at &lt;end&gt; </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td></td></tr>
+    <tr><td class="paramname">start</td><td></td></tr>
+    <tr><td class="paramname">end</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -366,6 +441,57 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>list (array) from { day (date), time in seconds } </dd></dl>
+
+</div>
+</div>
+<a id="a870fea13a7c605023a6b4cd70b5a9727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a870fea13a7c605023a6b4cd70b5a9727">&#9670;&nbsp;</a></span>findFirst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classAppointment.html">Appointment</a> const  * Calendar::findFirst </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classDate.html">Date</a> const &amp;&#160;</td>
+          <td class="paramname"><em>date</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTime.html">Time</a> const &amp;&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classTime.html">Time</a> const &amp;&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>search for the first appointment that is in the interval between &lt;start&gt; and &lt;end&gt; on &lt;date&gt; </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td></td></tr>
+    <tr><td class="paramname">start</td><td></td></tr>
+    <tr><td class="paramname">end</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nullptr if not found (ONLY if isFree(date, start, end) == true) </dd></dl>
 
 </div>
 </div>
@@ -427,7 +553,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3">std::ostream</a> &amp;&#160;</td>
           <td class="paramname"><em>out</em>&#160;</td>
         </tr>
         <tr>
@@ -439,7 +565,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>search appointments to print them by needle </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">needle</td><td>- must be contained by Appointment::m_name OR Appointment::m_note </td></tr>
+    <tr><td class="paramname">needle</td><td>- must be contained by <a class="el" href="classAppointment.html#aa3d8a2e3194a6b785b26f7c31a208462">Appointment::m_name</a> OR <a class="el" href="classAppointment.html#a048a5e8081bcdccf2cffa725bcbe91b3">Appointment::m_note</a> </td></tr>
     <tr><td class="paramname">out</td><td>- a source to print </td></tr>
   </table>
   </dd>
@@ -660,6 +786,55 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>m_list.unshift() </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a886351ebec41505485aa58503c6448d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a886351ebec41505485aa58503c6448d6">&#9670;&nbsp;</a></span>m_file_path</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classString.html">String</a> Calendar::m_file_path</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the file path in which the calendar had been saved </p>
+
+</div>
+</div>
+<a id="a4cf793b2acf7116988fd212628f79a59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cf793b2acf7116988fd212628f79a59">&#9670;&nbsp;</a></span>m_list</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classVector.html">Vector</a>&lt;<a class="el" href="classAppointment.html">Appointment</a>&gt; Calendar::m_list</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>container form Appointments </p>
 
 </div>
 </div>

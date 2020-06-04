@@ -33,6 +33,25 @@ bool \hyperlink{classDate_a01c66a5f355ed676a1ee8effb78af222}{operator$<$=} (\hyp
 \item 
 \hyperlink{classString}{String} \hyperlink{classDate_a4d4dfda9dfa34c87e06381254bfe5151}{to\+\_\+string} () const
 \end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classDate_a3f4544fd0b6b7d4ab893aa449c73c98a}{normalize} (unsigned day, unsigned month, unsigned year)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned \hyperlink{classDate_a0480cc260643a23afe2eb7671d6c5e79}{get\+Last\+Day} (unsigned month, unsigned year)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \hyperlink{classDate_acb66f968e19f1f20a55001d2a88beb69}{m\+\_\+day}
+\item 
+unsigned \hyperlink{classDate_a856644d57cd0c87254c108cb1d85444c}{m\+\_\+month}
+\item 
+unsigned \hyperlink{classDate_ad326b89685e94f61827d4822ffcdefd3}{m\+\_\+year}
+\end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,6 +81,37 @@ std\+::istream \& \hyperlink{classDate_a025d4abf4e083a5f10d376259aac34a2}{operat
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classDate_a0480cc260643a23afe2eb7671d6c5e79}\label{classDate_a0480cc260643a23afe2eb7671d6c5e79}} 
+\index{Date@{Date}!get\+Last\+Day@{get\+Last\+Day}}
+\index{get\+Last\+Day@{get\+Last\+Day}!Date@{Date}}
+\subsubsection{\texorpdfstring{get\+Last\+Day()}{getLastDay()}}
+{\footnotesize\ttfamily unsigned Date\+::get\+Last\+Day (\begin{DoxyParamCaption}\item[{unsigned}]{month,  }\item[{unsigned}]{year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+calculate the last day of the month 
+\begin{DoxyParams}{Parameters}
+{\em month} & \\
+\hline
+{\em year} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the last day 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDate_a3f4544fd0b6b7d4ab893aa449c73c98a}\label{classDate_a3f4544fd0b6b7d4ab893aa449c73c98a}} 
+\index{Date@{Date}!normalize@{normalize}}
+\index{normalize@{normalize}!Date@{Date}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily void Date\+::normalize (\begin{DoxyParamCaption}\item[{unsigned}]{day,  }\item[{unsigned}]{month,  }\item[{unsigned}]{year }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+set m\+\_\+day, m\+\_\+month and m\+\_\+year but valid 
+\begin{DoxyParams}{Parameters}
+{\em day} & \\
+\hline
+{\em month} & \\
+\hline
+{\em year} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classDate_a8b7030515e10d7d79f187165463a3315}\label{classDate_a8b7030515e10d7d79f187165463a3315}} 
 \index{Date@{Date}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!Date@{Date}}
@@ -141,6 +191,27 @@ this object as string (format\+: Y\+Y\+Y\+Y-\/\+M\+M-\/\+DD)
 \index{operator$>$$>$@{operator$>$$>$}!Date@{Date}}
 \subsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
 {\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\hyperlink{classDate}{Date} \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classDate_acb66f968e19f1f20a55001d2a88beb69}\label{classDate_acb66f968e19f1f20a55001d2a88beb69}} 
+\index{Date@{Date}!m\+\_\+day@{m\+\_\+day}}
+\index{m\+\_\+day@{m\+\_\+day}!Date@{Date}}
+\subsubsection{\texorpdfstring{m\+\_\+day}{m\_day}}
+{\footnotesize\ttfamily unsigned Date\+::m\+\_\+day\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDate_a856644d57cd0c87254c108cb1d85444c}\label{classDate_a856644d57cd0c87254c108cb1d85444c}} 
+\index{Date@{Date}!m\+\_\+month@{m\+\_\+month}}
+\index{m\+\_\+month@{m\+\_\+month}!Date@{Date}}
+\subsubsection{\texorpdfstring{m\+\_\+month}{m\_month}}
+{\footnotesize\ttfamily unsigned Date\+::m\+\_\+month\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDate_ad326b89685e94f61827d4822ffcdefd3}\label{classDate_ad326b89685e94f61827d4822ffcdefd3}} 
+\index{Date@{Date}!m\+\_\+year@{m\+\_\+year}}
+\index{m\+\_\+year@{m\+\_\+year}!Date@{Date}}
+\subsubsection{\texorpdfstring{m\+\_\+year}{m\_year}}
+{\footnotesize\ttfamily unsigned Date\+::m\+\_\+year\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

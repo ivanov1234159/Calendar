@@ -60,6 +60,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classDate-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -97,6 +100,25 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a63f7060a7a7997e289e5e885f84557e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d4dfda9dfa34c87e06381254bfe5151"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classString.html">String</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDate.html#a4d4dfda9dfa34c87e06381254bfe5151">to_string</a> () const</td></tr>
 <tr class="separator:a4d4dfda9dfa34c87e06381254bfe5151"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a3f4544fd0b6b7d4ab893aa449c73c98a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDate.html#a3f4544fd0b6b7d4ab893aa449c73c98a">normalize</a> (unsigned day, unsigned month, unsigned year)</td></tr>
+<tr class="separator:a3f4544fd0b6b7d4ab893aa449c73c98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a0480cc260643a23afe2eb7671d6c5e79"><td class="memItemLeft" align="right" valign="top">static unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDate.html#a0480cc260643a23afe2eb7671d6c5e79">getLastDay</a> (unsigned month, unsigned year)</td></tr>
+<tr class="separator:a0480cc260643a23afe2eb7671d6c5e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:acb66f968e19f1f20a55001d2a88beb69"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDate.html#acb66f968e19f1f20a55001d2a88beb69">m_day</a></td></tr>
+<tr class="separator:acb66f968e19f1f20a55001d2a88beb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856644d57cd0c87254c108cb1d85444c"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDate.html#a856644d57cd0c87254c108cb1d85444c">m_month</a></td></tr>
+<tr class="separator:a856644d57cd0c87254c108cb1d85444c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad326b89685e94f61827d4822ffcdefd3"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDate.html#ad326b89685e94f61827d4822ffcdefd3">m_year</a></td></tr>
+<tr class="separator:ad326b89685e94f61827d4822ffcdefd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -174,6 +196,100 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0480cc260643a23afe2eb7671d6c5e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0480cc260643a23afe2eb7671d6c5e79">&#9670;&nbsp;</a></span>getLastDay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Date::getLastDay </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>year</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>calculate the last day of the month </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">month</td><td></td></tr>
+    <tr><td class="paramname">year</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the last day </dd></dl>
+
+</div>
+</div>
+<a id="a3f4544fd0b6b7d4ab893aa449c73c98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f4544fd0b6b7d4ab893aa449c73c98a">&#9670;&nbsp;</a></span>normalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Date::normalize </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>day</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>month</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>year</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>set m_day, m_month and m_year but valid </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">day</td><td></td></tr>
+    <tr><td class="paramname">month</td><td></td></tr>
+    <tr><td class="paramname">year</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8b7030515e10d7d79f187165463a3315"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b7030515e10d7d79f187165463a3315">&#9670;&nbsp;</a></span>operator!=()</h2>
 
@@ -391,6 +507,73 @@ Friends</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="acb66f968e19f1f20a55001d2a88beb69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb66f968e19f1f20a55001d2a88beb69">&#9670;&nbsp;</a></span>m_day</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Date::m_day</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a856644d57cd0c87254c108cb1d85444c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856644d57cd0c87254c108cb1d85444c">&#9670;&nbsp;</a></span>m_month</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Date::m_month</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad326b89685e94f61827d4822ffcdefd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad326b89685e94f61827d4822ffcdefd3">&#9670;&nbsp;</a></span>m_year</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Date::m_year</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

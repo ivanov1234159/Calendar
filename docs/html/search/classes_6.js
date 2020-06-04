@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['vector',['Vector',['../classVector.html',1,'']]],
-  ['vector_3c_20appointment_20_3e',['Vector&lt; Appointment &gt;',['../classVector.html',1,'']]],
-  ['vector_3c_20char_20_3e',['Vector&lt; char &gt;',['../classVector.html',1,'']]],
-  ['vector_3c_20command_20_2a_3e',['Vector&lt; Command *&gt;',['../classVector.html',1,'']]]
+  ['icontextscope',['IContextScope',['../structdoctest_1_1IContextScope.html',1,'doctest']]],
+  ['iexceptiontranslator',['IExceptionTranslator',['../structdoctest_1_1detail_1_1IExceptionTranslator.html',1,'doctest::detail']]],
+  ['ireporter',['IReporter',['../structdoctest_1_1IReporter.html',1,'doctest']]]
 ];
