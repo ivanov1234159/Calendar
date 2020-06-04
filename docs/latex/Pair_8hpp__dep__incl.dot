@@ -110,8 +110,5 @@ digraph "Pair.hpp"
   Node3 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node2 -> Node43 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node43 [label="Calendar.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Calendar_8cpp.html"];
-  Node2 -> Node44 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node44 [label="tests/calendar_tests.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$calendar__tests_8hpp.html"];
-  Node44 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
 }

@@ -116,20 +116,14 @@ digraph "String.hpp"
   Node10 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node9 -> Node50 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node50 [label="Calendar.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Calendar_8cpp.html"];
-  Node9 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node51 [label="tests/calendar_tests.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$calendar__tests_8hpp.html"];
-  Node51 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node7 -> Node52 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node52 [label="tests/appointment_tests.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$appointment__tests_8hpp.html"];
-  Node52 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 -> Node53 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node53 [label="Date.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Date_8cpp.html"];
+  Node6 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node51 [label="Date.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Date_8cpp.html"];
   Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 -> Node54 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node54 [label="String.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$String_8cpp.html"];
+  Node5 -> Node52 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node52 [label="String.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$String_8cpp.html"];
 }

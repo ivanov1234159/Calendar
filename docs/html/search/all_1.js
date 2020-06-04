@@ -1,28 +1,7 @@
 var searchData=
 [
-  ['abort_5fafter',['abort_after',['../structdoctest_1_1ContextOptions.html#a8ba5bfec2229bc2da9ab917f4bdee5e7',1,'doctest::ContextOptions']]],
-  ['action',['action',['../classCmdAgenda.html#ab723208cb36623b3d4583e1fae6f22be',1,'CmdAgenda::action()'],['../classCmdBook.html#ad3d3448c7cc058a1ca346d85e40abc66',1,'CmdBook::action()'],['../classCmdBusydays.html#af53f2b27156a0e94911dd5e6ae4149f8',1,'CmdBusydays::action()'],['../classCmdChange.html#a4c3bdb844bb270715716e21e20bb9c7f',1,'CmdChange::action()'],['../classCmdClose.html#a012e10635d377e533acfadf05e034654',1,'CmdClose::action()'],['../classCmdExit.html#a51706475cf423b184855ba45fd7fa1a7',1,'CmdExit::action()'],['../classCmdFind.html#a113977b5959b9d2014a3a47b3f42340e',1,'CmdFind::action()'],['../classCmdFindSlot.html#a01d81fa82fa98c28d353bf7ea28a2afe',1,'CmdFindSlot::action()'],['../classCmdFindSlotWith.html#a0889715eef40b0c204fd97fef5050894',1,'CmdFindSlotWith::action()'],['../classCmdHelp.html#adae5afd78e75a73735d0ced85b5604a5',1,'CmdHelp::action()'],['../classCmdHoliday.html#adaaed1d04098dde0bfa8b3d6c3d322e1',1,'CmdHoliday::action()'],['../classCmdMerge.html#a426f4d5c54b67471fff531adb8010fb8',1,'CmdMerge::action()'],['../classCmdOpen.html#adc72961afcb2a282e4e627273e111281',1,'CmdOpen::action()'],['../classCmdSave.html#a44fb7fe716f0d65f597e7eccb647ba3d',1,'CmdSave::action()'],['../classCmdSaveAs.html#a12607c0c78b9eec192fa11d6addbb567',1,'CmdSaveAs::action()'],['../classCmdUnbook.html#a1504b0d1183a3ccd2487b3cab4bb5e0d',1,'CmdUnbook::action()'],['../classCommand.html#ac423f5674fc858c0cc42f494943bc0d0',1,'Command::action()']]],
-  ['add',['add',['../classCommander.html#a467f6a4ceeb5dab750cf3f4821b5db90',1,'Commander']]],
-  ['add_5ffail_5fat',['ADD_FAIL_AT',['../doctest_8h.html#ae9198d684b0ca06b0efef9dd773707e5',1,'doctest.h']]],
-  ['add_5ffail_5fcheck_5fat',['ADD_FAIL_CHECK_AT',['../doctest_8h.html#a2787e9f3c538079e2b7652af637cbbfb',1,'doctest.h']]],
-  ['add_5fmessage_5fat',['ADD_MESSAGE_AT',['../doctest_8h.html#a285505606bef4b4d31c77a1996f98aee',1,'doctest.h']]],
-  ['addfilter',['addFilter',['../classdoctest_1_1Context.html#a60ad57a46c19db2b142468c3acac448a',1,'doctest::Context']]],
-  ['agenda',['agenda',['../classCalendar.html#ac6112aa4e9b3e6e5b9a478ff66789d77',1,'Calendar::agenda()'],['../classProgram.html#a36916661bfce488ed07dbc2a7f3fadce',1,'Program::agenda()']]],
-  ['and_5fthen',['AND_THEN',['../doctest_8h.html#a6272f72e74c723b318c2439075d888ab',1,'doctest.h']]],
-  ['and_5fwhen',['AND_WHEN',['../doctest_8h.html#a6894cdaa24f62067bbe1a80d8a48f8cb',1,'doctest.h']]],
-  ['any_5ft',['any_t',['../structdoctest_1_1detail_1_1has__insertion__operator__impl_1_1any__t.html',1,'doctest::detail::has_insertion_operator_impl::any_t'],['../structdoctest_1_1detail_1_1has__insertion__operator__impl_1_1any__t.html#a253f4ce5a749ffd79ae9b1c68914e69b',1,'doctest::detail::has_insertion_operator_impl::any_t::any_t()']]],
-  ['append',['append',['../classString.html#a8a191fafb7af689d86f50423e97e60d7',1,'String']]],
-  ['applycommandline',['applyCommandLine',['../classdoctest_1_1Context.html#ad55229220bf9ca74e6e0c6323bf672e1',1,'doctest::Context']]],
-  ['appointment',['Appointment',['../classAppointment.html',1,'Appointment'],['../classAppointment.html#a6f5ebbe07e02feaab6600c0f6297e694',1,'Appointment::Appointment()'],['../classAppointment.html#a3b5b82331c630dcce3b1e724d0e6c48e',1,'Appointment::Appointment(std::ifstream &amp;ifs)'],['../classAppointment.html#a5ad76b006f94741008318f0a5053b7a0',1,'Appointment::Appointment(String const &amp;name, String const &amp;note, Date const &amp;date, Time const &amp;start, Time const &amp;end)']]],
-  ['appointment_2ecpp',['Appointment.cpp',['../Appointment_8cpp.html',1,'']]],
-  ['appointment_2ehpp',['Appointment.hpp',['../Appointment_8hpp.html',1,'']]],
-  ['appointment_5ftests_2ehpp',['appointment_tests.hpp',['../appointment__tests_8hpp.html',1,'']]],
-  ['approx',['Approx',['../classdoctest_1_1Approx.html',1,'doctest::Approx'],['../classdoctest_1_1Approx.html#a86f0d1b44c1cf095697f23ccdab00802',1,'doctest::Approx::Approx()']]],
-  ['architecture_5fid',['ARCHITECTURE_ID',['../CMakeCCompilerId_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../CMakeCXXCompilerId_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]],
-  ['array_5ffind_5fstr',['array_find_str',['../namespaceMySpace.html#a3b9b473aea635657e0bb296a09912634',1,'MySpace']]],
-  ['assert_5fhandler',['assert_handler',['../namespacedoctest_1_1detail.html#a5b5db6997f20389de5735e3ee3439b95',1,'doctest::detail']]],
-  ['assertdata',['AssertData',['../structdoctest_1_1AssertData.html',1,'doctest']]],
-  ['assertfailure',['AssertFailure',['../namespacedoctest_1_1TestCaseFailureReason.html#aecb2ca1f80416d60f0d6b96f65859d3ca06ab32ff93cacaa65c6a2667ddde64e9',1,'doctest::TestCaseFailureReason']]],
-  ['assertstring',['assertString',['../namespacedoctest.html#aa51be8558a5ec9675a77d2ecbc08e663',1,'doctest']]],
-  ['at',['at',['../classVector.html#a0a53d8de64ae7cc1e388df4e46ab06bf',1,'Vector::at(int index)'],['../classVector.html#a2539a2d9ca64fd4e400d1bdc23dc292c',1,'Vector::at(int index) const']]]
+  ['book',['book',['../classCalendar.html#ac50220dec77b2c19f09516ea88e9398c',1,'Calendar::book(Date const &amp;date, Time const &amp;start, Time const &amp;end, String const &amp;name, String const &amp;note)'],['../classCalendar.html#a1dbd9019e73644ee8bf5611884ac5d75',1,'Calendar::book(Appointment const &amp;app)'],['../classProgram.html#a3fd5b4cf3d1eaa58809f593ccdc7a2d3',1,'Program::book()']]],
+  ['buffer_5fsize',['BUFFER_SIZE',['../classCommander.html#a9e1b32d844b2d8080e51c4e8a4ca0442',1,'Commander']]],
+  ['build_5fcommands',['build_commands',['../build__commands_8cpp.html#a0955a410bf1b5456a6bead44a5ab2727',1,'build_commands():&#160;build_commands.cpp'],['../Commander_8hpp.html#a0955a410bf1b5456a6bead44a5ab2727',1,'build_commands():&#160;build_commands.cpp']]],
+  ['build_5fcommands_2ecpp',['build_commands.cpp',['../build__commands_8cpp.html',1,'']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['failed_5fout_5fof_5fa_5ftesting_5fcontext',['failed_out_of_a_testing_context',['../namespacedoctest_1_1detail.html#a0ff832be68bf666d856aefd539e1ce81',1,'doctest::detail']]],
-  ['failurestring',['failureString',['../namespacedoctest.html#a9d2d487c802fb0e66172a0ed2c9f76db',1,'doctest']]],
   ['find',['find',['../classCalendar.html#a249805cf48297698e30512ff9a47bac3',1,'Calendar::find(Date const &amp;date, Time const &amp;start) const'],['../classCalendar.html#a9211e4068cad119ff203509c9cb50ef1',1,'Calendar::find(Date const &amp;date, Time const &amp;start, Time const &amp;end)'],['../classCommander.html#a544dc076c0f448ebf284585cfcd68fcb',1,'Commander::find()']]],
   ['findbusydays',['findBusyDays',['../classCalendar.html#a33727e15bb2186dbdc1fe227dfa0a6e6',1,'Calendar']]],
   ['findfirst',['findFirst',['../classCalendar.html#a870fea13a7c605023a6b4cd70b5a9727',1,'Calendar']]],

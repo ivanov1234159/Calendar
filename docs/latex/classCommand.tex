@@ -25,7 +25,7 @@ bool \hyperlink{classCommand_a75d6d67687c9d29e47ce9e80540bbd1e}{operator==} (cha
 \item 
 bool \hyperlink{classCommand_a0ec10c9753786caf083aba08cf85afb0}{can\+Quit} () const
 \item 
-virtual bool \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{action} (\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const
+virtual bool \hyperlink{classCommand_ac423f5674fc858c0cc42f494943bc0d0}{action} (std\+::ostream \&out, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss) const
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -48,7 +48,7 @@ bool \hyperlink{classCommand_aa1eb67a0888560ab21c503e1f9ffaad4}{m\+\_\+quit\+\_\
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \& \hyperlink{classCommand_a0a193e228644a3735c309d8b2b5b9899}{operator$<$$<$} (\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out, \hyperlink{classCommand}{Command} const \&obj)
+std\+::ostream \& \hyperlink{classCommand_a0a193e228644a3735c309d8b2b5b9899}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classCommand}{Command} const \&obj)
 \end{DoxyCompactItemize}
 
 
@@ -84,7 +84,7 @@ bool \hyperlink{classCommand_aa1eb67a0888560ab21c503e1f9ffaad4}{m\+\_\+quit\+\_\
 \index{Command@{Command}!action@{action}}
 \index{action@{action}!Command@{Command}}
 \subsubsection{\texorpdfstring{action()}{action()}}
-{\footnotesize\ttfamily bool Command\+::action (\begin{DoxyParamCaption}\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool Command\+::action (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 depending from the child class do different things 
 \begin{DoxyParams}{Parameters}
@@ -154,7 +154,7 @@ true if the commands has the same names
 \index{Command@{Command}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Command@{Command}}
 \subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
-{\footnotesize\ttfamily \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out,  }\item[{\hyperlink{classCommand}{Command} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classCommand}{Command} const \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 

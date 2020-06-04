@@ -31,7 +31,7 @@ bool \hyperlink{classProgram_a3fd5b4cf3d1eaa58809f593ccdc7a2d3}{book} (\hyperlin
 \item 
 bool \hyperlink{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}{unbook} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end)
 \item 
-bool \hyperlink{classProgram_a36916661bfce488ed07dbc2a7f3fadce}{agenda} (\hyperlink{classDate}{Date} const \&date, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out) const
+bool \hyperlink{classProgram_a36916661bfce488ed07dbc2a7f3fadce}{agenda} (\hyperlink{classDate}{Date} const \&date, std\+::ostream \&out) const
 \item 
 \hyperlink{structPair}{Pair}$<$ bool, bool $>$ \hyperlink{classProgram_a4a25f61fe0747f0f13ace13b310ed7a3}{change\+Date} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classDate}{Date} const \&new\+\_\+date)
 \item 
@@ -43,7 +43,7 @@ bool \hyperlink{classProgram_a606ccb02438885b2894843613d6de157}{change\+Name} (\
 \item 
 bool \hyperlink{classProgram_a63f49d8259cb4038274a1cb6e9b82374}{change\+Note} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classString}{String} const \&new\+\_\+note)
 \item 
-bool \hyperlink{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}{find\+String} (\hyperlink{classString}{String} const \&needle, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out) const
+bool \hyperlink{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}{find\+String} (\hyperlink{classString}{String} const \&needle, std\+::ostream \&out) const
 \item 
 bool \hyperlink{classProgram_ad14086e73ec4aef58c705e3a19089d97}{mark\+As\+Holiday} (\hyperlink{classDate}{Date} const \&date)
 \item 
@@ -53,7 +53,7 @@ bool \hyperlink{classProgram_ad14086e73ec4aef58c705e3a19089d97}{mark\+As\+Holida
 \item 
 \hyperlink{structPair}{Pair}$<$ \hyperlink{classDate}{Date}, \hyperlink{classTime}{Time} $>$ \hyperlink{classProgram_aa2159591c5711c2846c261cd672643d6}{find\+Slot\+With} (\hyperlink{classDate}{Date} const \&from, \hyperlink{classTime}{Time} const \&duration, \hyperlink{classCalendar}{Calendar} const $\ast$calendar) const
 \item 
-bool \hyperlink{classProgram_aea58a5865e12fbbb2dda1563e66d092a}{merge\+With} (\hyperlink{classCalendar}{Calendar} $\ast$other\+\_\+calendar, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out, std\+::istream \&in)
+bool \hyperlink{classProgram_aea58a5865e12fbbb2dda1563e66d092a}{merge\+With} (\hyperlink{classCalendar}{Calendar} $\ast$other\+\_\+calendar, std\+::ostream \&out, std\+::istream \&in)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -111,7 +111,7 @@ static \hyperlink{classString}{String} \hyperlink{classProgram_a5b0f8b7d9437d17e
 \index{Program@{Program}!agenda@{agenda}}
 \index{agenda@{agenda}!Program@{Program}}
 \subsubsection{\texorpdfstring{agenda()}{agenda()}}
-{\footnotesize\ttfamily bool Program\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Program\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
 
 print all appointments for the day $<$date$>$; calls \hyperlink{classCalendar_ac6112aa4e9b3e6e5b9a478ff66789d77}{Calendar\+::agenda()} 
 \begin{DoxyParams}{Parameters}
@@ -304,7 +304,7 @@ uses fund\+Slot() method to find the best match for both calendars (m\+\_\+calen
 \index{Program@{Program}!find\+String@{find\+String}}
 \index{find\+String@{find\+String}!Program@{Program}}
 \subsubsection{\texorpdfstring{find\+String()}{findString()}}
-{\footnotesize\ttfamily bool Program\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Program\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
 
 search appointments to print them by needle; calls \hyperlink{classCalendar_accc025455e06e4031b9b76fe1a35220d}{Calendar\+::find\+String()} 
 \begin{DoxyParams}{Parameters}
@@ -378,7 +378,7 @@ false if N\+OT the whole day is free
 \index{Program@{Program}!merge\+With@{merge\+With}}
 \index{merge\+With@{merge\+With}!Program@{Program}}
 \subsubsection{\texorpdfstring{merge\+With()}{mergeWith()}}
-{\footnotesize\ttfamily bool Program\+::merge\+With (\begin{DoxyParamCaption}\item[{\hyperlink{classCalendar}{Calendar} $\ast$}]{other\+\_\+calendar,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out,  }\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Program\+::merge\+With (\begin{DoxyParamCaption}\item[{\hyperlink{classCalendar}{Calendar} $\ast$}]{other\+\_\+calendar,  }\item[{std\+::ostream \&}]{out,  }\item[{std\+::istream \&}]{in }\end{DoxyParamCaption})}
 
 merge m\+\_\+calendar with $<$other\+\_\+calendar$>$ by adding appointments from the one to the other 
 \begin{DoxyParams}{Parameters}

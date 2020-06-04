@@ -15,7 +15,7 @@ static void \hyperlink{classCommander_a467f6a4ceeb5dab750cf3f4821b5db90}{add} (\
 \item 
 static void \hyperlink{classCommander_afea1bfe2bc8dbeea0d0523f369c9539e}{run} (\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner)
 \item 
-static bool \hyperlink{classCommander_a28323e9560f01aba51869d54832ca987}{call} (char const $\ast$cmd, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out)
+static bool \hyperlink{classCommander_a28323e9560f01aba51869d54832ca987}{call} (char const $\ast$cmd, \hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&runner, std\+::istringstream \&iss, std\+::ostream \&out)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -81,7 +81,7 @@ add the command in the list (cmd\+\_\+list)
 \index{Commander@{Commander}!call@{call}}
 \index{call@{call}!Commander@{Commander}}
 \subsubsection{\texorpdfstring{call()}{call()}}
-{\footnotesize\ttfamily bool Commander\+::call (\begin{DoxyParamCaption}\item[{char const $\ast$}]{cmd,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily bool Commander\+::call (\begin{DoxyParamCaption}\item[{char const $\ast$}]{cmd,  }\item[{\hyperlink{Command_8hpp_ad45c3de597c2023a8be0399d914161f4}{Runner\+Type} \&}]{runner,  }\item[{std\+::istringstream \&}]{iss,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 calls the command named $<$cmd$>$; if no such command, uses the \char`\"{}empty\char`\"{} (\char`\"{}default\char`\"{}) command 
 \begin{DoxyParams}{Parameters}

@@ -7,7 +7,7 @@ Include dependency graph for Appointment.\+cpp\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \& \hyperlink{Appointment_8cpp_a4159db96203e0882146c93acc5e71f96}{operator$<$$<$} (\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out, \hyperlink{classAppointment}{Appointment} const \&obj)
+std\+::ostream \& \hyperlink{Appointment_8cpp_a4159db96203e0882146c93acc5e71f96}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classAppointment}{Appointment} const \&obj)
 \end{DoxyCompactItemize}
 
 
@@ -16,5 +16,5 @@ Include dependency graph for Appointment.\+cpp\+:
 \index{Appointment.\+cpp@{Appointment.\+cpp}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Appointment.\+cpp@{Appointment.\+cpp}}
 \subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
-{\footnotesize\ttfamily \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out,  }\item[{\hyperlink{classAppointment}{Appointment} const \&}]{obj }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classAppointment}{Appointment} const \&}]{obj }\end{DoxyParamCaption})}
 

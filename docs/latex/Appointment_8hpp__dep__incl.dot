@@ -112,10 +112,4 @@ digraph "Appointment.hpp"
   Node11 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node10 -> Node51 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node51 [label="Calendar.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Calendar_8cpp.html"];
-  Node10 -> Node52 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node52 [label="tests/calendar_tests.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$calendar__tests_8hpp.html"];
-  Node52 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node8 -> Node53 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node53 [label="tests/appointment_tests.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$appointment__tests_8hpp.html"];
-  Node53 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid"];
 }

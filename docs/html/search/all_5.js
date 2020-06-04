@@ -1,12 +1,16 @@
 var searchData=
 [
-  ['empty',['empty',['../classVector.html#ad688a8a0dfbd07ea63d838058a436f79',1,'Vector']]],
-  ['enum',['Enum',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92',1,'doctest::Color::Enum()'],['../namespacedoctest_1_1assertType.html#ae1bb5bed722f34f1c38b83cb19d326d3',1,'doctest::assertType::Enum()'],['../namespacedoctest_1_1detail_1_1binaryAssertComparison.html#a2117cafa5b007d26f2e0988f3a081569',1,'doctest::detail::binaryAssertComparison::Enum()'],['../namespacedoctest_1_1detail_1_1assertAction.html#a38ba820518d42da988fab24b2f3d0548',1,'doctest::detail::assertAction::Enum()'],['../namespacedoctest_1_1TestCaseFailureReason.html#aecb2ca1f80416d60f0d6b96f65859d3c',1,'doctest::TestCaseFailureReason::Enum()']]],
-  ['epsilon',['epsilon',['../classdoctest_1_1Approx.html#af8df6b0af00fd875e5b6a0c30b86f636',1,'doctest::Approx']]],
-  ['eq',['eq',['../namespacedoctest_1_1detail_1_1binaryAssertComparison.html#a2117cafa5b007d26f2e0988f3a081569af644d2e3091c342ab78b12da1fcb06dc',1,'doctest::detail::binaryAssertComparison']]],
-  ['error_5fstring',['error_string',['../structdoctest_1_1TestCaseException.html#a656c8971ccbedc7d3a0a38f7c6af927e',1,'doctest::TestCaseException']]],
-  ['exception',['Exception',['../namespacedoctest_1_1TestCaseFailureReason.html#aecb2ca1f80416d60f0d6b96f65859d3ca0474331a35ec33aefa287574dbe9a142',1,'doctest::TestCaseFailureReason']]],
-  ['exceptiontranslator',['ExceptionTranslator',['../classdoctest_1_1detail_1_1ExceptionTranslator.html',1,'doctest::detail::ExceptionTranslator&lt; T &gt;'],['../classdoctest_1_1detail_1_1ExceptionTranslator.html#a3ac05488993c40c6ba55ce51a6bf7eae',1,'doctest::detail::ExceptionTranslator::ExceptionTranslator()']]],
-  ['exit',['exit',['../structdoctest_1_1ContextOptions.html#a85d785559ea88e0bd61890f77f00a82f',1,'doctest::ContextOptions']]],
-  ['expressiondecomposer',['ExpressionDecomposer',['../structdoctest_1_1detail_1_1ExpressionDecomposer.html',1,'doctest::detail::ExpressionDecomposer'],['../structdoctest_1_1detail_1_1ExpressionDecomposer.html#a6bf2c46ebf0dc68106be801a90776e65',1,'doctest::detail::ExpressionDecomposer::ExpressionDecomposer()']]]
+  ['feature_5ftests_2ec',['feature_tests.c',['../feature__tests_8c.html',1,'']]],
+  ['feature_5ftests_2ecxx',['feature_tests.cxx',['../feature__tests_8cxx.html',1,'']]],
+  ['features',['features',['../feature__tests_8c.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.c'],['../feature__tests_8cxx.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.cxx']]],
+  ['find',['find',['../classCalendar.html#a249805cf48297698e30512ff9a47bac3',1,'Calendar::find(Date const &amp;date, Time const &amp;start) const'],['../classCalendar.html#a9211e4068cad119ff203509c9cb50ef1',1,'Calendar::find(Date const &amp;date, Time const &amp;start, Time const &amp;end)'],['../classCommander.html#a544dc076c0f448ebf284585cfcd68fcb',1,'Commander::find()']]],
+  ['findbusydays',['findBusyDays',['../classCalendar.html#a33727e15bb2186dbdc1fe227dfa0a6e6',1,'Calendar']]],
+  ['findfirst',['findFirst',['../classCalendar.html#a870fea13a7c605023a6b4cd70b5a9727',1,'Calendar']]],
+  ['findslot',['findSlot',['../classProgram.html#a639a0af6603bda2f6dc8ec051fd1dd93',1,'Program']]],
+  ['findslotat',['findSlotAt',['../classCalendar.html#aecc060737b760817e814121df59a9316',1,'Calendar']]],
+  ['findslotwith',['findSlotWith',['../classProgram.html#aa2159591c5711c2846c261cd672643d6',1,'Program']]],
+  ['findstring',['findString',['../classCalendar.html#accc025455e06e4031b9b76fe1a35220d',1,'Calendar::findString()'],['../classProgram.html#af80c02ad4f189ee0d6c67ccc7efdc814',1,'Program::findString()']]],
+  ['fixed',['fixed',['../classVector.html#ada65b076d4102d21479cdb00fec6b6a1',1,'Vector']]],
+  ['free',['free',['../classVector.html#a1c11aef701f6eb3194946594d064af09',1,'Vector']]],
+  ['full',['full',['../classVector.html#a31a67e97a324510bff15ea79c64839af',1,'Vector']]]
 ];

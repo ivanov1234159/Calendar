@@ -29,9 +29,9 @@ bool \hyperlink{classCalendar_ac50220dec77b2c19f09516ea88e9398c}{book} (\hyperli
 \item 
 bool \hyperlink{classCalendar_a24540f159572a53109a20be9ea8f4c5e}{unbook} (\hyperlink{classDate}{Date} const \&date, \hyperlink{classTime}{Time} const \&start, \hyperlink{classTime}{Time} const \&end)
 \item 
-bool \hyperlink{classCalendar_ac6112aa4e9b3e6e5b9a478ff66789d77}{agenda} (\hyperlink{classDate}{Date} const \&date, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out) const
+bool \hyperlink{classCalendar_ac6112aa4e9b3e6e5b9a478ff66789d77}{agenda} (\hyperlink{classDate}{Date} const \&date, std\+::ostream \&out) const
 \item 
-bool \hyperlink{classCalendar_accc025455e06e4031b9b76fe1a35220d}{find\+String} (\hyperlink{classString}{String} const \&needle, \hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&out) const
+bool \hyperlink{classCalendar_accc025455e06e4031b9b76fe1a35220d}{find\+String} (\hyperlink{classString}{String} const \&needle, std\+::ostream \&out) const
 \item 
 bool \hyperlink{classCalendar_aa54f943234aebe06350ae6545804dd0a}{holiday} (\hyperlink{classDate}{Date} const \&date)
 \item 
@@ -89,7 +89,7 @@ void \hyperlink{classCalendar_a1dbd9019e73644ee8bf5611884ac5d75}{book} (\hyperli
 \index{Calendar@{Calendar}!agenda@{agenda}}
 \index{agenda@{agenda}!Calendar@{Calendar}}
 \subsubsection{\texorpdfstring{agenda()}{agenda()}}
-{\footnotesize\ttfamily bool Calendar\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Calendar\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
 
 print all appointments for the day $<$date$>$ 
 \begin{DoxyParams}{Parameters}
@@ -224,7 +224,7 @@ false if there isn\textquotesingle{}t a time period with length $<$duration$>$ o
 \index{Calendar@{Calendar}!find\+String@{find\+String}}
 \index{find\+String@{find\+String}!Calendar@{Calendar}}
 \subsubsection{\texorpdfstring{find\+String()}{findString()}}
-{\footnotesize\ttfamily bool Calendar\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{\hyperlink{doctest_8h_a116af65cb5e924b33ad9d9ecd7a783f3}{std\+::ostream} \&}]{out }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily bool Calendar\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
 
 search appointments to print them by needle 
 \begin{DoxyParams}{Parameters}
