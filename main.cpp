@@ -4,6 +4,7 @@
 
 #define ___TEST_FILE_NAME___ "test.tmp"
 #include "appointment_tests.hpp"
+#include "calendar_tests.hpp"
 
 #include "Commander.hpp"
 #include "Program.hpp"
