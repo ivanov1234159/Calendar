@@ -59,7 +59,7 @@ public:
     bool restoreCalendar(Calendar* cloned);
 
     /**
-     * book an appointment; calls m_calendar->book()
+     * book an appointment; calls Calendar::book()
      * @param date
      * @param start
      * @param end
@@ -70,7 +70,7 @@ public:
     bool book(Date const& date, Time const& start, Time const& end, String const& name, String const& note);
 
     /**
-     * remove an appointment; calls m_calendar->unbook()
+     * remove an appointment; calls Calendar::unbook()
      * @param date
      * @param start
      * @param end
@@ -79,7 +79,7 @@ public:
     bool unbook(Date const& date, Time const& start, Time const& end);
 
     /**
-     * print all appointments for the day <date>; calls m_calendar->agenda()
+     * print all appointments for the day <date>; calls Calendar::agenda()
      * @param date
      * @param out
      * @return false if prints nothing
@@ -135,7 +135,7 @@ public:
     bool changeNote(Date const& date, Time const& start, String const& new_note);
 
     /**
-     * search appointments to print them by needle; calls m_calendar->findString()
+     * search appointments to print them by needle; calls Calendar::findString()
      * @param needle - must be contained by Appointment::m_name OR Appointment::m_note
      * @param out - a source to print
      * @return false if calendar isn't opened OR prints nothing
@@ -143,7 +143,7 @@ public:
     bool findString(String const& needle, std::ostream& out) const;
 
     /**
-     * mark the day <date> as holiday; calls m_calendar->holiday()
+     * mark the day <date> as holiday; calls Calendar::holiday()
      * @param date
      * @return false if NOT the whole day is free
      */
