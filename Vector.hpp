@@ -213,6 +213,9 @@ T const* Vector<T>::list() const {
 
 template<typename T>
 unsigned Vector<T>::normalizeIndex(int index) const {
+    if(m_size == 1){
+        return 0;
+    }
     if(index < 0){
         return m_size - ((-index) % m_size);
     }
