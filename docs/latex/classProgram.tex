@@ -76,7 +76,7 @@ static bool \hyperlink{classProgram_ad12fa0703d93dbec2b2badc96ab97cf6}{open} (\h
 \subsubsection{\texorpdfstring{agenda()}{agenda()}}
 {\footnotesize\ttfamily bool Program\+::agenda (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
 
-print all appointments for the day $<$date$>$; calls m\+\_\+calendar-\/$>$\hyperlink{classProgram_a36916661bfce488ed07dbc2a7f3fadce}{agenda()} 
+print all appointments for the day $<$date$>$; calls \hyperlink{classCalendar_ac6112aa4e9b3e6e5b9a478ff66789d77}{Calendar\+::agenda()} 
 \begin{DoxyParams}{Parameters}
 {\em date} & \\
 \hline
@@ -92,7 +92,7 @@ false if prints nothing
 \subsubsection{\texorpdfstring{book()}{book()}}
 {\footnotesize\ttfamily bool Program\+::book (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{end,  }\item[{\hyperlink{classString}{String} const \&}]{name,  }\item[{\hyperlink{classString}{String} const \&}]{note }\end{DoxyParamCaption})}
 
-book an appointment; calls m\+\_\+calendar-\/$>$\hyperlink{classProgram_a3fd5b4cf3d1eaa58809f593ccdc7a2d3}{book()} 
+book an appointment; calls \hyperlink{classCalendar_ac50220dec77b2c19f09516ea88e9398c}{Calendar\+::book()} 
 \begin{DoxyParams}{Parameters}
 {\em date} & \\
 \hline
@@ -259,7 +259,7 @@ uses fund\+Slot() method to find the best match for both calendars (m\+\_\+calen
 \subsubsection{\texorpdfstring{find\+String()}{findString()}}
 {\footnotesize\ttfamily bool Program\+::find\+String (\begin{DoxyParamCaption}\item[{\hyperlink{classString}{String} const \&}]{needle,  }\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption}) const}
 
-search appointments to print them by needle; calls m\+\_\+calendar-\/$>$\hyperlink{classProgram_af80c02ad4f189ee0d6c67ccc7efdc814}{find\+String()} 
+search appointments to print them by needle; calls \hyperlink{classCalendar_accc025455e06e4031b9b76fe1a35220d}{Calendar\+::find\+String()} 
 \begin{DoxyParams}{Parameters}
 {\em needle} & -\/ must be contained by Appointment\+::m\+\_\+name OR Appointment\+::m\+\_\+note \\
 \hline
@@ -305,7 +305,7 @@ the file name (with file extension) OR empty string if any path is empty
 \subsubsection{\texorpdfstring{mark\+As\+Holiday()}{markAsHoliday()}}
 {\footnotesize\ttfamily bool Program\+::mark\+As\+Holiday (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date }\end{DoxyParamCaption})}
 
-mark the day $<$date$>$ as holiday; calls m\+\_\+calendar-\/$>$holiday() 
+mark the day $<$date$>$ as holiday; calls \hyperlink{classCalendar_aa54f943234aebe06350ae6545804dd0a}{Calendar\+::holiday()} 
 \begin{DoxyParams}{Parameters}
 {\em date} & \\
 \hline
@@ -405,7 +405,7 @@ true if not opened OR successfully serialize m\+\_\+calendar
 \subsubsection{\texorpdfstring{unbook()}{unbook()}}
 {\footnotesize\ttfamily bool Program\+::unbook (\begin{DoxyParamCaption}\item[{\hyperlink{classDate}{Date} const \&}]{date,  }\item[{\hyperlink{classTime}{Time} const \&}]{start,  }\item[{\hyperlink{classTime}{Time} const \&}]{end }\end{DoxyParamCaption})}
 
-remove an appointment; calls m\+\_\+calendar-\/$>$\hyperlink{classProgram_a86a0e7e6c345dd50643cc6f466fb965a}{unbook()} 
+remove an appointment; calls \hyperlink{classCalendar_a24540f159572a53109a20be9ea8f4c5e}{Calendar\+::unbook()} 
 \begin{DoxyParams}{Parameters}
 {\em date} & \\
 \hline

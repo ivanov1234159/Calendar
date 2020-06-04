@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['feature_5ftests_2ec',['feature_tests.c',['../feature__tests_8c.html',1,'']]],
+  ['feature_5ftests_2ecxx',['feature_tests.cxx',['../feature__tests_8cxx.html',1,'']]],
+  ['features',['features',['../feature__tests_8c.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.c'],['../feature__tests_8cxx.html#a1582568e32f689337602a16bf8a5bff0',1,'features():&#160;feature_tests.cxx']]],
   ['find',['find',['../classCalendar.html#a249805cf48297698e30512ff9a47bac3',1,'Calendar']]],
   ['findbusydays',['findBusyDays',['../classCalendar.html#a33727e15bb2186dbdc1fe227dfa0a6e6',1,'Calendar']]],
   ['findslot',['findSlot',['../classProgram.html#a639a0af6603bda2f6dc8ec051fd1dd93',1,'Program']]],

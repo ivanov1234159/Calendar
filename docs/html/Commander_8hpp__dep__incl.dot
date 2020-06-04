@@ -6,9 +6,19 @@ digraph "Commander.hpp"
   Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 [label="build_commands.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$build__commands_8cpp.html"];
   Node14 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node16 [label="Commander.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Commander_8cpp.html"];
+  Node16 [label="cmd/CmdBook.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CmdBook_8cpp.html"];
   Node14 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node17 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html"];
+  Node17 [label="cmd/CmdHelp.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CmdHelp_8cpp.html"];
   Node14 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node18 [label="Program.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Program_8cpp.html"];
+  Node18 [label="cmd/CmdHoliday.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CmdHoliday_8cpp.html"];
+  Node14 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="cmd/CmdOpen.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CmdOpen_8cpp.html"];
+  Node14 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="cmd/CmdSaveAs.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$CmdSaveAs_8cpp.html"];
+  Node14 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="Commander.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Commander_8cpp.html"];
+  Node14 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node22 [label="main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html"];
+  Node14 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="Program.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Program_8cpp.html"];
 }
