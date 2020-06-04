@@ -33,6 +33,7 @@ TEST_CASE("Test class Calendar constructor with param String const& and isEmpty(
 
     SUBCASE("Test class Calendar find() methods and findFirst() method") {
         CHECK_EQ(obj.find(Date(4, 6, 2020), Time(0, 0, 15)), nullptr);
+        CHECK_NE(obj.find(Date(4, 6, 2020), Time(0, 15, 15)), nullptr);
         CHECK_EQ(obj.find(Date(4, 6, 2020), Time(0, 15, 15))->getName(), "name");
 
         /*
