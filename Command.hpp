@@ -2,31 +2,30 @@
 // Created by toi on 08/04/2020.
 //
 
-#ifndef CALENDAR_COMMAND_HPP
-#define CALENDAR_COMMAND_HPP
+#ifndef JURASSICPARK_COMMAND_HPP
+#define JURASSICPARK_COMMAND_HPP
 
 #include <iostream>
 //for: ostream, cout, endl
 #include <sstream>
 //for: istringstream
-#include "Program.hpp"
+#include "JurassicPark.hpp"
+#include "String.hpp"
 
-typedef Program RunnerType;
+typedef JurassicPark RunnerType;
 
 class Command {
-    char* m_name;
-    char* m_params;
-    char* m_notes;
+    String m_name;
+    String m_params;
+    String m_notes;
     bool m_quit_when_done;
 public:
     Command();
-    Command(char const* name, char const* params, char const* notes, bool quit = false);
-    Command(Command const& other);
-    Command& operator=(Command const& other);
-    virtual ~Command();
+    Command(String const& name, String const& params, String const& notes, bool quit = false);
+    virtual ~Command() = default;
 
     ///@return true if the commands has the same names
-    bool operator==(char const* cmd);
+    bool operator==(String const& cmd);
 
     /// @return m_quit_when_done
     bool canQuit() const;
@@ -41,18 +40,8 @@ public:
     virtual bool action(std::ostream& out, RunnerType& runner, std::istringstream& iss) const;
 
     friend std::ostream& operator<<(std::ostream& out, Command const& obj);
-
-private:
-    /// free the memory of m_name, m_params and m_notes
-    void clear();
-
-    /**
-     * copy <other> into this
-     * @param other
-     */
-    void copy(Command const& other);
 };
 
 std::ostream& operator<<(std::ostream& out, Command const& obj);
 
-#endif //CALENDAR_COMMAND_HPP
+#endif //JURASSICPARK_COMMAND_HPP
