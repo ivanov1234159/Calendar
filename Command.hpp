@@ -9,10 +9,10 @@
 //for: ostream, cout, endl
 #include <sstream>
 //for: istringstream
-#include "JurassicPark.hpp"
+#include "Program.hpp"
 #include "String.hpp"
 
-typedef JurassicPark RunnerType;
+typedef Program RunnerType;
 
 class Command {
     String m_name;
