@@ -24,6 +24,10 @@ String const& Calendar::getFilePath() const {
     return m_file_path;
 }
 
+void Calendar::setFilePath(String const &path) {
+    m_file_path = path;
+}
+
 bool Calendar::isEmpty() const {
     return m_list.empty();
 }

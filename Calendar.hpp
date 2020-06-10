@@ -29,6 +29,12 @@ public:
     /// @return m_file_path
     String const& getFilePath() const;
 
+    /**
+     * setter for m_file_path
+     * @param path
+     */
+    void setFilePath(String const& path);
+
     /// @return m_list.empty()
     bool isEmpty() const;
 

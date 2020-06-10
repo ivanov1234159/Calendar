@@ -16,12 +16,18 @@ bool CmdSaveAs::action(std::ostream& out, RunnerType &runner, std::istringstream
     }
     Calendar* calendar = runner.cloneCalendar();
     std::ostringstream oss;
-    if(runner.opened()){
-        Commander::call("close", runner, iss, oss);
+    if(calendar != nullptr){
+        calendar->setFilePath(path);
+        if(runner.opened()){
+            // always when calendar is NOT nullptr
+            Commander::call("close", runner, iss, oss);
+        }
     }
     std::istringstream iss2(path.get());
     Commander::call("open", runner, iss2, oss);
-    runner.restoreCalendar(calendar);
+    if(calendar != nullptr){
+        runner.restoreCalendar(calendar);
+    }
     Commander::call("save", runner, iss2, out);
     return true;
 }
